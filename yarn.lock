@@ -4724,6 +4724,10 @@ normalize-range@^0.1.2:
   version "0.1.2"
   resolved "https://registry.yarnpkg.com/normalize-range/-/normalize-range-0.1.2.tgz#2d10c06bdfd312ea9777695a4d28439456b75942"
 
+normalize-styl@^4.1.1:
+  version "4.1.1"
+  resolved "https://registry.yarnpkg.com/normalize-styl/-/normalize-styl-4.1.1.tgz#8e1230f4e1f94ea113fd5772db9776ebe769cadb"
+
 normalize-url@^3.0.0:
   version "3.2.0"
   resolved "https://registry.yarnpkg.com/normalize-url/-/normalize-url-3.2.0.tgz#98d0948afc82829f374320f405fe9ca55a5f8567"
