@@ -1,8 +1,8 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/">Home</router-link>
-      <router-link to="/about">Login</router-link>
+      <router-link to="/"><fa icon="home" /> Home</router-link>
+      <router-link to="/about"><fa icon="sign-in-alt" /> Login</router-link>
     </div>
     <router-view/>
   </div>
@@ -29,6 +29,7 @@
     display: block;
     font-weight: bold;
     padding: 30px;
+    text-decoration: none;
 
     &.router-link-exact-active {
       color: $color1;
