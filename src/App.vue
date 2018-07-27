@@ -1,27 +1,38 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+      <router-link to="/">Home</router-link>
+      <router-link to="/about">Login</router-link>
     </div>
     <router-view/>
   </div>
 </template>
 
 <style lang="stylus">
-@import '../node_modules/normalize-styl/normalize'
+@import '../node_modules/normalize-styl/normalize';
+@import './styles/palette.styl';
 
-#app
-  font-family 'Avenir', Helvetica, Arial, sans-serif
-  -webkit-font-smoothing antialiased
-  -moz-osx-font-smoothing grayscale
-  text-align center
+#app {
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+}
 
-#nav
-  padding 30px
-  a
-    font-weight bold
-    color #2c3e50
-    &.router-link-exact-active
-      color #42b983
+#nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+  a {
+    color: #2c3e50;
+    display: block;
+    font-weight: bold;
+    padding: 30px;
+
+    &.router-link-exact-active {
+      color: $color1;
+    }
+  }
+}
 </style>
