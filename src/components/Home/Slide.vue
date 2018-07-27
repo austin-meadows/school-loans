@@ -1,5 +1,5 @@
 <template>
-  <div class="section">
+  <div class="slide">
     <div v-if="title" class="title">
       {{ title }}
     </div>
@@ -11,7 +11,7 @@
 
 <script>
 export default {
-  name: 'Section',
+  name: 'Slide',
   props: {
     msg: String,
     title: String,
@@ -20,32 +20,17 @@ export default {
 </script>
 
 <style lang="stylus">
-@import '../styles/sizes.styl';
-@import '../styles/palette.styl';
+@import '../../styles/sizes.styl';
+@import '../../styles/palette.styl';
 
-.section {
+.slide {
   align-items: center;
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  height: 85vh;
   justify-content: center;
   padding: 0 $sizes-m;
-
-  &[num='1'] {
-    background-color: $color1;
-  }
-
-  &[num='2'] {
-    background-color: $color2;
-  }
-
-  &[num='3'] {
-    background-color: $color3;
-  }
-
-  &[num='4'] {
-    background-color: $color4;
-  }
+  text-align: center;
 }
 
 .title {

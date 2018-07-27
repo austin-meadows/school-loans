@@ -12,6 +12,10 @@
 @import '../node_modules/normalize-styl/normalize';
 @import './styles/palette.styl';
 
+body {
+  min-width: 320px;
+}
+
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
 }

@@ -1,8 +1,11 @@
 import Vue from 'vue';
+
 import { library } from '@fortawesome/fontawesome-svg-core';
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
+
+// font awesome icons
 import { faHome } from '@fortawesome/free-solid-svg-icons/faHome';
 import { faSignInAlt } from '@fortawesome/free-solid-svg-icons/faSignInAlt';
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 
 import App from './App.vue';
 import router from './router';
