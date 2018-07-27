@@ -1,6 +1,6 @@
 <template>
   <div class="section">
-    <div :if="title" :class="num" class="title">
+    <div v-if="title" class="title">
       {{ title }}
     </div>
     <div class="msg">
