@@ -31,6 +31,52 @@ export default {
   justify-content: center;
   padding: 0 $sizes-m;
   text-align: center;
+
+  &[id='1'] {
+    background-color: $color1;
+
+    .title, .msg {
+      color: $color1;
+    }
+  }
+
+  &[id='2'] {
+    background-color: $color2;
+
+    .title, .msg {
+      color: $color2;
+    }
+  }
+
+  &[id='3'] {
+    background-color: $color3;
+
+    .title, .msg {
+      color: $color3;
+    }
+  }
+
+  &[id='4'] {
+    background-color: $color4;
+
+    .title, .msg {
+      color: $color4;
+    }
+  }
+
+  &[id='5'] {
+    background-color: $color5;
+
+    .title, .msg {
+      color: $color5;
+    }
+  }
+
+  &[id='1'], &[id='2'], &[id='3'], &[id='4'], &[id='5'] {
+    .title, .msg {
+      filter: invert(1) grayscale(1) contrast(9);
+    }
+  }
 }
 
 .title {
