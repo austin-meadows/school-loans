@@ -29,7 +29,7 @@ body {
   a {
     color: #2c3e50;
     display: block;
-    padding: 30px;
+    padding: 20px 30px;
     text-decoration: none;
 
     &.router-link-exact-active {
