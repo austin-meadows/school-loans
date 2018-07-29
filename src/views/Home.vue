@@ -33,7 +33,7 @@ export default {
         },
         {
           title: 'Or help out students like you',
-          msg: 'Help pay off other student\'s loans.'
+          msg: 'Help pay off other student\'s loans.',
         },
       ],
     };
