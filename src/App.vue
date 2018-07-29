@@ -2,7 +2,7 @@
   <div id="app">
     <div id="nav">
       <router-link to="/"><fa icon="home" /> Home</router-link>
-      <router-link to="/"><fa icon="sign-in-alt" /> Login</router-link>
+      <router-link to="/login"><fa icon="sign-in-alt" /> Login</router-link>
     </div>
     <router-view/>
   </div>
