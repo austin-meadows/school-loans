@@ -11,6 +11,7 @@
 
 <style lang="stylus">
 @import '../node_modules/normalize-styl/normalize';
+@import './styles/breakpoints.styl';
 @import './styles/palette.styl';
 
 body {
@@ -24,8 +25,12 @@ body {
 #nav {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: flex-end;
   overflow: auto;
+
+  @media screen and (max-width: $screen-size-s) {
+    justify-content: space-between;
+  }
 
   a {
     color: #2c3e50;
