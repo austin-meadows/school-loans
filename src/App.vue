@@ -25,12 +25,14 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  overflow: auto;
 
   a {
     color: #2c3e50;
     display: block;
     padding: 20px 30px;
     text-decoration: none;
+    white-space: nowrap;
 
     &.router-link-exact-active {
       color: $color1;

@@ -1,18 +1,7 @@
-<template>
-  <div class="home">
-    <Slide
-      v-for="(slide, index) in slides"
-      :key="index"
-      :title="slide.title"
-      :msg="slide.msg"
-      :color="index % 5 + 1"
-    />
-  </div>
-</template>
-
 <script>
 // @ is an alias to /src
 import Slide from '@/components/Home/Slide.vue';
+import Section from '@/components/Section.vue';
 
 export default {
   name: 'home',
@@ -39,7 +28,20 @@ export default {
     };
   },
   components: {
+    Section,
     Slide,
   },
 };
 </script>
+
+<template>
+  <Section>
+    <Slide
+      v-for="(slide, index) in slides"
+      :key="index"
+      :title="slide.title"
+      :msg="slide.msg"
+      :color="index % 5 + 1"
+    />
+  </Section>
+</template>
