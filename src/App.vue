@@ -2,6 +2,7 @@
   <div id="app">
     <div id="nav">
       <router-link to="/"><fa icon="home" /> Home</router-link>
+      <router-link to="/give"><fa icon="piggy-bank" /> Give</router-link>
       <router-link to="/login"><fa icon="sign-in-alt" /> Login</router-link>
     </div>
     <router-view/>
