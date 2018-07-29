@@ -32,7 +32,7 @@ export default {
   padding: 0 $sizes-m;
   text-align: center;
 
-  &[id='1'] {
+  &[color='1'] {
     background-color: $color1;
 
     .title, .msg {
@@ -40,7 +40,7 @@ export default {
     }
   }
 
-  &[id='2'] {
+  &[color='2'] {
     background-color: $color2;
 
     .title, .msg {
@@ -48,7 +48,7 @@ export default {
     }
   }
 
-  &[id='3'] {
+  &[color='3'] {
     background-color: $color3;
 
     .title, .msg {
@@ -56,7 +56,7 @@ export default {
     }
   }
 
-  &[id='4'] {
+  &[color='4'] {
     background-color: $color4;
 
     .title, .msg {
@@ -64,7 +64,7 @@ export default {
     }
   }
 
-  &[id='5'] {
+  &[color='5'] {
     background-color: $color5;
 
     .title, .msg {
@@ -72,7 +72,7 @@ export default {
     }
   }
 
-  &[id='1'], &[id='2'], &[id='3'], &[id='4'], &[id='5'] {
+  &[color='1'], &[color='2'], &[color='3'], &[color='4'], &[color='5'] {
     .title, .msg {
       filter: invert(1) grayscale(1) contrast(9);
     }

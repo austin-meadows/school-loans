@@ -5,7 +5,7 @@
       :key="index"
       :title="slide.title"
       :msg="slide.msg"
-      :id="index % 5 + 1"
+      :color="index % 5 + 1"
     />
   </div>
 </template>
