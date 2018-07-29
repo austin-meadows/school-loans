@@ -28,7 +28,6 @@ body {
   a {
     color: #2c3e50;
     display: block;
-    font-weight: bold;
     padding: 30px;
     text-decoration: none;
 
