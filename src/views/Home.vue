@@ -1,7 +1,7 @@
 <script>
 // @ is an alias to /src
-import Slide from '@/components/Home/Slide.vue';
 import Section from '@/components/Section.vue';
+import Slide from '@/components/Home/Slide.vue';
 
 export default {
   name: 'home',
