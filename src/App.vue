@@ -2,12 +2,10 @@
 export default {
   methods: {
     onClickMenu() {
-      const mobileMenu = document.querySelector('.mobileMenu');
-      mobileMenu.classList.toggle('closed');
+      this.$refs.mobileMenu.classList.toggle('closed');
     },
     onClickMenuLink() {
-      const mobileMenu = document.querySelector('.mobileMenu');
-      mobileMenu.classList.add('closed');
+      this.$refs.mobileMenu.classList.add('closed');
     },
   },
 };
@@ -17,7 +15,7 @@ export default {
   <div id="app">
     <div id="nav" class="small">
       <a @click="onClickMenu"><fa icon="bars" /> Menu</a>
-      <div class="mobileMenu closed">
+      <div ref="mobileMenu" class="mobileMenu closed">
         <router-link v-on:click.native="onClickMenuLink" to="/">
           <fa icon="home" /> Home
         </router-link>
