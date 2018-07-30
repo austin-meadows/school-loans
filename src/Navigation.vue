@@ -46,21 +46,27 @@ export default {
 
 $screenSizeSmPlusOne = $screen-size-s + 1;
 
-#nav > * {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  overflow: auto;
+#nav {
+  background: white;
 
-  @media screen and (max-width: $screen-size-s) {
-    &.large {
-      display: none;
+  .menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+
+    @media screen and (max-width: $screen-size-s) {
+      background: white;
+      flex-direction: column;
+      position: absolute;
+      width: 100%;
     }
   }
 
-  @media screen and (min-width: $screenSizeSmPlusOne) {
-    &.small {
-      display: none;
+  #menuButton {
+    display: none;
+
+    @media screen and (max-width: $screen-size-s) {
+      display: block;
     }
   }
 
