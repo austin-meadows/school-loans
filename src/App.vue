@@ -7,8 +7,8 @@ export default {
     },
     onClickMenuLink() {
       const mobileMenu = document.querySelector('.mobileMenu');
-      mobileMenu.classList.add('closed')
-    }
+      mobileMenu.classList.add('closed');
+    },
   },
 };
 </script>
@@ -18,10 +18,18 @@ export default {
     <div id="nav" class="small">
       <a @click="onClickMenu"><fa icon="bars" /> Menu</a>
       <div class="mobileMenu closed">
-        <router-link v-on:click.native="onClickMenuLink" to="/"><fa icon="home" /> Home</router-link>
-        <router-link v-on:click.native="onClickMenuLink" to="/give"><fa icon="piggy-bank" /> Give</router-link>
-        <router-link v-on:click.native="onClickMenuLink" to="/stats"><fa icon="chart-bar" /> Statistics</router-link>
-        <router-link v-on:click.native="onClickMenuLink" to="/login"><fa icon="sign-in-alt" /> Login</router-link>
+        <router-link v-on:click.native="onClickMenuLink" to="/">
+          <fa icon="home" /> Home
+        </router-link>
+        <router-link v-on:click.native="onClickMenuLink" to="/give">
+          <fa icon="piggy-bank" /> Give
+        </router-link>
+        <router-link v-on:click.native="onClickMenuLink" to="/stats">
+          <fa icon="chart-bar" /> Statistics
+        </router-link>
+        <router-link v-on:click.native="onClickMenuLink" to="/login">
+          <fa icon="sign-in-alt" /> Login
+        </router-link>
       </div>
     </div>
     <div id="nav" class="large">
@@ -70,7 +78,8 @@ body {
   a {
     color: #2c3e50;
     display: block;
-    padding: $sizes-l;
+    line-height: $base;
+    padding: $base;
     text-decoration: none;
     white-space: nowrap;
 
@@ -90,7 +99,7 @@ body {
 
 .mobileMenu {
   background: white;
-  margin-top: ($sizes-l * 2) + $base + 5;
+  margin-top: ($base * 3); // comes from line-height + padding-top + padding-bottom.
   position: absolute;
   text-align: right;
   width: 100%;
