@@ -9,10 +9,10 @@ export default {
 </script>
 
 <template>
-  <div id="app">
-    <Navigation />
-    <router-view />
-  </div>
+<div id="app">
+  <Navigation />
+  <router-view />
+</div>
 </template>
 
 <style lang="stylus">

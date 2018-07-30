@@ -14,7 +14,9 @@ export default {
 </script>
 
 <template>
+<div id="login">
   <Section>
     test
   </Section>
+</div>
 </template>

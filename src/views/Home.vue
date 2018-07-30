@@ -35,6 +35,7 @@ export default {
 </script>
 
 <template>
+<div id="home">
   <Section>
     <Slide
       v-for="(slide, index) in slides"
@@ -44,4 +45,5 @@ export default {
       :color="index % 5 + 1"
     />
   </Section>
+</div>
 </template>

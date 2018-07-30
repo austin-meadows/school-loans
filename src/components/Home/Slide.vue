@@ -9,14 +9,14 @@ export default {
 </script>
 
 <template>
-  <div class="slide">
-    <div v-if="title" class="title">
-      {{ title }}
-    </div>
-    <div class="msg">
-      {{ msg }}
-    </div>
+<div class="slide">
+  <div v-if="title" class="title">
+    {{ title }}
   </div>
+  <div class="msg">
+    {{ msg }}
+  </div>
+</div>
 </template>
 
 <style lang="stylus">
