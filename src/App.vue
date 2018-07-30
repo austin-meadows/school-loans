@@ -29,16 +29,6 @@ body {
 }
 
 #app {
-  display: flex;
-  flex-direction: column;
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  height: 100%;
-  overflow-y: scroll;
-  position: fixed;
-  width: 100%;
-}
-
-#app > *:last-child {
-  flex: 1;
 }
 </style>
