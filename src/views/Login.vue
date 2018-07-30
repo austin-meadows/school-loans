@@ -14,9 +14,7 @@ export default {
 </script>
 
 <template>
-  <div class="login">
-    <Section>
-      test
-    </Section>
-  </div>
+  <Section>
+    test
+  </Section>
 </template>
