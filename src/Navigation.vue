@@ -2,41 +2,33 @@
 export default {
   methods: {
     onClickMenu() {
-      this.$refs.mobileMenu.classList.toggle('closed');
+      this.$refs.menu.classList.toggle('closed');
     },
     onClickMenuLink() {
-      this.$refs.mobileMenu.classList.add('closed');
+      this.$refs.menu.classList.add('closed');
     },
   },
 };
 </script>
 
 <template>
-  <div id="nav">
-    <div class="small">
-      <a @click="onClickMenu"><fa icon="bars" /> Menu</a>
-      <div ref="mobileMenu" class="mobileMenu closed">
-        <router-link v-on:click.native="onClickMenuLink" to="/">
-          <fa icon="home" /> Home
-        </router-link>
-        <router-link v-on:click.native="onClickMenuLink" to="/give">
-          <fa icon="piggy-bank" /> Give
-        </router-link>
-        <router-link v-on:click.native="onClickMenuLink" to="/stats">
-          <fa icon="chart-bar" /> Statistics
-        </router-link>
-        <router-link v-on:click.native="onClickMenuLink" to="/login">
-          <fa icon="sign-in-alt" /> Login
-        </router-link>
-      </div>
-    </div>
-    <div class="large">
-      <router-link to="/"><fa icon="home" /> Home</router-link>
-      <router-link to="/give"><fa icon="piggy-bank" /> Give</router-link>
-      <router-link to="/stats"><fa icon="chart-bar" /> Statistics</router-link>
-      <router-link to="/login"><fa icon="sign-in-alt" /> Login</router-link>
-    </div>
+<div id="nav">
+  <a id="menuButton" @click="onClickMenu"><fa icon="bars" /> Menu</a>
+  <div ref="menu" class="menu closed">
+    <router-link v-on:click.native="onClickMenuLink" to="/">
+      <fa icon="home" /> Home
+    </router-link>
+    <router-link v-on:click.native="onClickMenuLink" to="/give">
+      <fa icon="piggy-bank" /> Give
+    </router-link>
+    <router-link v-on:click.native="onClickMenuLink" to="/stats">
+      <fa icon="chart-bar" /> Statistics
+    </router-link>
+    <router-link v-on:click.native="onClickMenuLink" to="/login">
+      <fa icon="sign-in-alt" /> Login
+    </router-link>
   </div>
+</div>
 </template>
 
 <style lang="stylus">
@@ -76,6 +68,7 @@ $screenSizeSmPlusOne = $screen-size-s + 1;
     display: block;
     line-height: $base;
     padding: $base;
+    text-align: right;
     text-decoration: none;
     white-space: nowrap;
 
@@ -89,16 +82,9 @@ $screenSizeSmPlusOne = $screen-size-s + 1;
   }
 
   .closed {
-    display: none;
+    @media screen and (max-width: $screen-size-s) {
+      display: none;
+    }
   }
-}
-
-.mobileMenu {
-  background: white;
-  margin-top: ($base * 3);
-  position: absolute;
-  text-align: right;
-  width: 100%;
-  z-index: 2;
 }
 </style>
