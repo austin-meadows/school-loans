@@ -66,7 +66,11 @@ $screenSizeSmPlusOne = $screen-size-s + 1;
     color: #2c3e50;
     cursor: pointer;
     display: block;
+    // The following fixes a quirk with how text is sized so we can
+    // ensure this is consistent.
+    // https://stackoverflow.com/questions/41336177/font-size-vs-line-height-vs-actual-height/41336458
     line-height: $base;
+    max-height: $base;
     padding: $base;
     text-align: right;
     text-decoration: none;
