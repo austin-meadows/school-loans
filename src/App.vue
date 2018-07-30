@@ -1,40 +1,44 @@
+<script>
+import Navigation from '@/Navigation.vue';
+
+export default {
+  components: {
+    Navigation,
+  },
+};
+</script>
+
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/"><fa icon="home" /> Home</router-link>
-      <router-link to="/give"><fa icon="piggy-bank" /> Give</router-link>
-      <router-link to="/login"><fa icon="sign-in-alt" /> Login</router-link>
-    </div>
-    <router-view/>
+    <Navigation />
+    <router-view />
   </div>
 </template>
 
 <style lang="stylus">
 @import '../node_modules/normalize-styl/normalize';
-@import './styles/palette.styl';
+@import './styles/sizes.styl';
+
+div, li, p {
+  box-sizing: border-box;
+}
 
 body {
+  font-size: $base;
   min-width: 320px;
 }
 
 #app {
+  display: flex;
+  flex-direction: column;
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  height: 100%;
+  overflow-y: scroll;
+  position: fixed;
+  width: 100%;
 }
 
-#nav {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-
-  a {
-    color: #2c3e50;
-    display: block;
-    padding: 20px 30px;
-    text-decoration: none;
-
-    &.router-link-exact-active {
-      color: $color1;
-    }
-  }
+#app > *:last-child {
+  flex: 1;
 }
 </style>

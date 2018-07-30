@@ -1,10 +1,5 @@
-<template>
-  <div class="login">
-    test
-  </div>
-</template>
-
 <script>
+import Section from '@/components/Section.vue';
 
 export default {
   name: 'login',
@@ -12,6 +7,14 @@ export default {
     return {
     };
   },
-  components: {},
+  components: {
+    Section,
+  },
 };
 </script>
+
+<template>
+  <Section>
+    test
+  </Section>
+</template>

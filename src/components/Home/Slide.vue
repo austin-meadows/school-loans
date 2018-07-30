@@ -1,3 +1,13 @@
+<script>
+export default {
+  name: 'Slide',
+  props: {
+    msg: String,
+    title: String,
+  },
+};
+</script>
+
 <template>
   <div class="slide">
     <div v-if="title" class="title">
@@ -9,28 +19,17 @@
   </div>
 </template>
 
-<script>
-export default {
-  name: 'Slide',
-  props: {
-    msg: String,
-    title: String,
-  },
-};
-</script>
-
 <style lang="stylus">
 @import '../../styles/sizes.styl';
 @import '../../styles/palette.styl';
 
 .slide {
-  align-items: center;
   display: flex;
   flex-direction: column;
   height: 85vh;
   justify-content: center;
-  padding: 0 $sizes-m;
-  text-align: center;
+  margin: 0 - $base 0 - $base 0 0 - $base;
+  padding: 0 $base;
 
   &[color='1'] {
     background-color: $color1;
