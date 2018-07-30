@@ -14,7 +14,7 @@ export default {
 @import '../styles/sizes.styl';
 
 section {
-  padding: $base;
+  padding: $base $base 0 $base;
   text-align: center;
 }
 </style>

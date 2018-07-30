@@ -28,7 +28,7 @@ export default {
   flex-direction: column;
   height: 85vh;
   justify-content: center;
-  margin: 0 - $base;
+  margin: 0 - $base 0 - $base 0 0 - $base;
   padding: 0 $base;
 
   &[color='1'] {

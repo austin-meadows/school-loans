@@ -69,7 +69,7 @@ body {
     }
   }
 
-  @media screen and (min-width: $screen-size-s) {
+  @media screen and (min-width: ($screen-size-s + 1)) {
     &.small {
       display: none;
     }
@@ -77,6 +77,7 @@ body {
 
   a {
     color: #2c3e50;
+    cursor: pointer;
     display: block;
     line-height: $base;
     padding: $base;
