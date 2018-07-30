@@ -28,8 +28,8 @@ export default {
   flex-direction: column;
   height: 85vh;
   justify-content: center;
-  margin: 0 0 - $sizes-m;
-  padding: 0 $sizes-m;
+  margin: 0 - $base;
+  padding: 0 $base;
 
   &[color='1'] {
     background-color: $color1;
