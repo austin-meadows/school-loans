@@ -48,6 +48,8 @@ export default {
 @import './styles/palette.styl';
 @import './styles/sizes.styl';
 
+$screenSizeSmPlusOne = $screen-size-s + 1;
+
 body {
   font-size: $base;
   min-width: 320px;
@@ -69,7 +71,7 @@ body {
     }
   }
 
-  @media screen and (min-width: ($screen-size-s + 1)) {
+  @media screen and (min-width: $screenSizeSmPlusOne) {
     &.small {
       display: none;
     }
