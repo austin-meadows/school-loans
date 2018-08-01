@@ -1,4 +1,4 @@
-# school-loans
+# test
 
 ## Project setup
 ```

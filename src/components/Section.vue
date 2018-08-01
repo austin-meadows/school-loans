@@ -10,8 +10,8 @@ export default {
 </section>
 </template>
 
-<style lang="stylus">
-@import '../styles/sizes.styl';
+<style lang="scss">
+@import '../styles/sizes';
 
 section {
   padding: $base $base 0 $base;

@@ -19,9 +19,9 @@ export default {
 </div>
 </template>
 
-<style lang="stylus">
-@import '../../styles/sizes.styl';
-@import '../../styles/palette.styl';
+<style lang="scss">
+@import '../../styles/sizes';
+@import '../../styles/palette';
 
 .slide {
   display: flex;

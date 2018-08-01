@@ -31,12 +31,12 @@ export default {
 </div>
 </template>
 
-<style lang="stylus">
-@import './styles/breakpoints.styl';
-@import './styles/palette.styl';
-@import './styles/sizes.styl';
+<style lang="scss">
+@import './styles/breakpoints';
+@import './styles/palette';
+@import './styles/sizes';
 
-$screenSizeSmPlusOne = $screen-size-s + 1;
+$screenSizeSmPlusOne: $screen-size-s + 1;
 
 #nav {
   background: white;
