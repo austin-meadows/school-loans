@@ -13,7 +13,9 @@ export default {
 
 <template>
   <div id="nav">
-    <a id="menuButton" @click="onClickMenu"><fa icon="bars" /> Menu</a>
+    <a id="menuButton" @click="onClickMenu">
+      <fa icon="bars" /> Menu
+    </a>
     <div ref="menu" class="menu closed">
       <router-link v-on:click.native="onClickMenuLink" to="/">
         <fa icon="home" /> Home
@@ -63,7 +65,7 @@ $screenSizeSmPlusOne: $screen-size-s + 1;
   }
 
   a {
-    color: #2c3e50;
+    color: $text;
     cursor: pointer;
     display: block;
     // The following fixes a quirk with how text is sized so we can

@@ -10,6 +10,7 @@ export default {
 
 <template>
   <div id="app">
+    <notifications group="auth" position="bottom center" width="75%"/>
     <Navigation />
     <router-view />
   </div>
@@ -18,12 +19,17 @@ export default {
 <style lang="scss">
 @import '../node_modules/normalize.css/normalize';
 @import './styles/sizes';
+@import './styles/palette';
 
-div, li, p {
-  box-sizing: border-box;
+textarea,
+select,
+input,
+button {
+  outline: none;
 }
 
 body {
+  color: $text;
   font-size: $base;
   min-width: 320px;
 }
