@@ -15,9 +15,9 @@ export default {
   </div>
 </template>
 
-<style lang="stylus">
-@import '../node_modules/normalize-styl/normalize';
-@import './styles/sizes.styl';
+<style lang="scss">
+@import '../node_modules/normalize.css/normalize';
+@import './styles/sizes';
 
 div, li, p {
   box-sizing: border-box;
