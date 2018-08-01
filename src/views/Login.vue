@@ -1,4 +1,6 @@
 <script>
+import firebase from 'firebase';
+
 import Section from '@/components/Section.vue';
 import HeaderText from '@/components/HeaderText.vue';
 import validate from '@/utils/js/validate';
@@ -35,11 +37,54 @@ export default {
           this.errors.push("Emails don't match.");
         }
       }
-      if (!this.errors.length) {
-        return true;
+      if (this.formKind === 'signUpForm' && !this.errors.length) {
+        firebase
+          .auth()
+          .createUserWithEmailAndPassword(this.email, this.password)
+          .then(
+            () => {
+              this.$notify({
+                group: 'auth',
+                text: 'Your account has been created!',
+                type: 'success',
+              });
+            },
+            (err) => {
+              this.$notify({
+                group: 'auth',
+                text: err.message,
+                type: 'error',
+              });
+            },
+          );
+        // return true;
       }
-      // eslint-disable-next-line
-      this.errors.forEach(error => {
+
+      if (this.formKind === 'loginForm' && !this.errors.length) {
+        firebase
+          .auth()
+          .signInWithEmailAndPassword(this.email, this.password)
+          .then(
+            () => {
+              this.$router.replace('/');
+              this.$notify({
+                group: 'auth',
+                text: 'You have signed in!',
+                type: 'success',
+              });
+            },
+            (err) => {
+              this.$notify({
+                group: 'auth',
+                text: err.message,
+                type: 'error',
+              });
+            },
+          );
+        // return true;
+      }
+
+      this.errors.forEach((error) => {
         this.$notify({
           group: 'auth',
           text: error,

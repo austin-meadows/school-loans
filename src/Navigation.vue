@@ -1,4 +1,6 @@
 <script>
+import firebase from 'firebase';
+
 export default {
   methods: {
     onClickMenu() {
@@ -7,6 +9,24 @@ export default {
     onClickMenuLink() {
       this.$refs.menu.classList.add('closed');
     },
+    onClickSignOut() {
+      firebase
+        .auth()
+        .signOut()
+        .then(() => {
+          this.$router.replace('login');
+          this.$notify({
+            group: 'auth',
+            text: 'You have signed out!',
+            type: 'success',
+          });
+        });
+    },
+  },
+  data() {
+    return {
+      isSignedIn: this.$root.$data.isSignedIn,
+    };
   },
 };
 </script>
@@ -26,8 +46,11 @@ export default {
       <router-link v-on:click.native="onClickMenuLink" to="/stats">
         <fa icon="chart-bar" /> Statistics
       </router-link>
-      <router-link v-on:click.native="onClickMenuLink" to="/login">
+      <router-link v-if="!isSignedIn" v-on:click.native="onClickMenuLink" to="/login">
         <fa icon="sign-in-alt" /> Login
+      </router-link>
+      <router-link v-if="isSignedIn" v-on:click.native="onClickSignOut" to="/login">
+        <fa icon="sign-in-alt" /> Sign Out
       </router-link>
     </div>
   </div>

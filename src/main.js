@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import VueFire from 'vuefire';
 import firebase from 'firebase/app';
+import firebaseAuth from 'firebase';
 import 'firebase/firestore';
 import Notifications from 'vue-notification';
 
@@ -38,9 +39,15 @@ Vue.config.productionTip = false;
 
 firebase.initializeApp(config);
 
-export default firebase.firestore();
+firebaseAuth.auth().onAuthStateChanged((user) => {
+  new Vue({
+    data: {
+      user,
+      isSignedIn: !!user,
+    },
+    router,
+    render: h => h(App),
+  }).$mount('#app');
+});
 
-new Vue({
-  router,
-  render: h => h(App),
-}).$mount('#app');
+export default firebase.firestore();
