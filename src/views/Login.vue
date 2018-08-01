@@ -182,7 +182,8 @@ form {
     font-size: $label-font-size;
     height: $label-font-size * 2;
     margin: $sizes-s 0;
-    padding: 0 $label-font-size * 2;
+    min-width: 200px;
+    padding: 0 $sizes-s 0 $label-font-size * 2;
 
     &::placeholder {
       color: #bbb;
@@ -192,6 +193,7 @@ form {
     &[type='submit'] {
       background: $color1;
       border: 0;
+      padding: 0 $label-font-size * 2;
     }
   }
 }
