@@ -3,10 +3,6 @@ import Section from '@/components/Section.vue';
 
 export default {
   name: 'login',
-  data() {
-    return {
-    };
-  },
   components: {
     Section,
   },
@@ -14,9 +10,9 @@ export default {
 </script>
 
 <template>
-<div id="login">
-  <Section>
-    test
-  </Section>
-</div>
+  <div id="login">
+    <Section>
+      test
+    </Section>
+  </div>
 </template>

@@ -35,15 +35,15 @@ export default {
 </script>
 
 <template>
-<div id="home">
-  <Section>
-    <Slide
-      v-for="(slide, index) in slides"
-      :key="index"
-      :title="slide.title"
-      :msg="slide.msg"
-      :color="index % 5 + 1"
-    />
-  </Section>
-</div>
+  <div id="home">
+    <Section>
+      <Slide
+        v-for="(slide, index) in slides"
+        :key="index"
+        :title="slide.title"
+        :msg="slide.msg"
+        :color="index % 5 + 1"
+      />
+    </Section>
+  </div>
 </template>

@@ -12,23 +12,23 @@ export default {
 </script>
 
 <template>
-<div id="nav">
-  <a id="menuButton" @click="onClickMenu"><fa icon="bars" /> Menu</a>
-  <div ref="menu" class="menu closed">
-    <router-link v-on:click.native="onClickMenuLink" to="/">
-      <fa icon="home" /> Home
-    </router-link>
-    <router-link v-on:click.native="onClickMenuLink" to="/give">
-      <fa icon="piggy-bank" /> Give
-    </router-link>
-    <router-link v-on:click.native="onClickMenuLink" to="/stats">
-      <fa icon="chart-bar" /> Statistics
-    </router-link>
-    <router-link v-on:click.native="onClickMenuLink" to="/login">
-      <fa icon="sign-in-alt" /> Login
-    </router-link>
+  <div id="nav">
+    <a id="menuButton" @click="onClickMenu"><fa icon="bars" /> Menu</a>
+    <div ref="menu" class="menu closed">
+      <router-link v-on:click.native="onClickMenuLink" to="/">
+        <fa icon="home" /> Home
+      </router-link>
+      <router-link v-on:click.native="onClickMenuLink" to="/give">
+        <fa icon="piggy-bank" /> Give
+      </router-link>
+      <router-link v-on:click.native="onClickMenuLink" to="/stats">
+        <fa icon="chart-bar" /> Statistics
+      </router-link>
+      <router-link v-on:click.native="onClickMenuLink" to="/login">
+        <fa icon="sign-in-alt" /> Login
+      </router-link>
+    </div>
   </div>
-</div>
 </template>
 
 <style lang="scss">
