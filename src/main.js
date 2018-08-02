@@ -15,6 +15,7 @@ import { faEnvelope } from '@fortawesome/free-solid-svg-icons/faEnvelope';
 import { faKey } from '@fortawesome/free-solid-svg-icons/faKey';
 import { faPiggyBank } from '@fortawesome/free-solid-svg-icons/faPiggyBank';
 import { faSignInAlt } from '@fortawesome/free-solid-svg-icons/faSignInAlt';
+import { faSignOutAlt } from '@fortawesome/free-solid-svg-icons/faSignOutAlt';
 
 import App from './App.vue';
 import router from './router';
@@ -31,6 +32,7 @@ library.add(
   faKey,
   faPiggyBank,
   faSignInAlt,
+  faSignOutAlt,
 );
 
 Vue.component('fa', FontAwesomeIcon);

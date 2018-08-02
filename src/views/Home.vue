@@ -10,7 +10,8 @@ export default {
       slides: [
         {
           title: 'Student Loans are a problem',
-          msg: 'It is estimated the current total student loan debt is close to $2 trillion.',
+          msg:
+            'It is estimated the current total student loan debt is close to $2 trillion.',
         },
         {
           title: 'We are the solution',
@@ -18,11 +19,12 @@ export default {
         },
         {
           title: 'Post your student loan',
-          msg: 'Track your student loan. Get money to pay off your loan directly.',
+          msg:
+            'Track your student loan. Get money to pay off your loan directly.',
         },
         {
           title: 'Or help out students like you',
-          msg: 'Help pay off other student\'s loans.',
+          msg: "Help pay off other student's loans.",
         },
       ],
     };
@@ -42,7 +44,6 @@ export default {
         :key="index"
         :title="slide.title"
         :msg="slide.msg"
-        :color="index % 5 + 1"
       />
     </Section>
   </div>

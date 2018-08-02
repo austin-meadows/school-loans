@@ -67,11 +67,6 @@ export default {
           .then(
             () => {
               this.$router.replace('/');
-              this.$notify({
-                group: 'auth',
-                text: 'You have signed in!',
-                type: 'success',
-              });
             },
             (err) => {
               this.$notify({
@@ -174,7 +169,7 @@ $label-font-size: $sizes-m;
   align-items: center;
   display: flex;
   flex-direction: column;
-  height: calc(100vh - #{$navHeight});
+  height: calc(100vh - #{$navHeight * 2});
   justify-content: center;
   padding-bottom: $base * 3;
 }

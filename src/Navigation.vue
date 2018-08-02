@@ -10,17 +10,7 @@ export default {
       this.$refs.menu.classList.add('closed');
     },
     onClickSignOut() {
-      firebase
-        .auth()
-        .signOut()
-        .then(() => {
-          this.$router.replace('login');
-          this.$notify({
-            group: 'auth',
-            text: 'You have signed out!',
-            type: 'success',
-          });
-        });
+      firebase.auth().signOut();
     },
   },
   data() {
@@ -50,7 +40,7 @@ export default {
         <fa icon="sign-in-alt" /> Login
       </router-link>
       <router-link v-if="isSignedIn" v-on:click.native="onClickSignOut" to="/login">
-        <fa icon="sign-in-alt" /> Sign Out
+        <fa icon="sign-out-alt" /> Sign Out
       </router-link>
     </div>
   </div>
