@@ -4,13 +4,14 @@ import Section from '@/components/Section.vue';
 import Slide from '@/components/Home/Slide.vue';
 
 export default {
-  name: 'home',
   data() {
     return {
+      isSignedIn: this.$root.$data.isSignedIn,
       slides: [
         {
           title: 'Student Loans are a problem',
-          msg: 'It is estimated the current total student loan debt is close to $2 trillion.',
+          msg:
+            'It is estimated the current total student loan debt is close to $2 trillion.',
         },
         {
           title: 'We are the solution',
@@ -18,11 +19,12 @@ export default {
         },
         {
           title: 'Post your student loan',
-          msg: 'Track your student loan. Get money to pay off your loan directly.',
+          msg:
+            'Track your student loan. Get money to pay off your loan directly.',
         },
         {
           title: 'Or help out students like you',
-          msg: 'Help pay off other student\'s loans.',
+          msg: "Help pay off other student's loans.",
         },
       ],
     };
@@ -35,13 +37,17 @@ export default {
 </script>
 
 <template>
-  <Section>
-    <Slide
-      v-for="(slide, index) in slides"
-      :key="index"
-      :title="slide.title"
-      :msg="slide.msg"
-      :color="index % 5 + 1"
-    />
-  </Section>
+  <div id="home">
+    <Section v-if="!isSignedIn">
+      <Slide
+        v-for="(slide, index) in slides"
+        :key="index"
+        :title="slide.title"
+        :msg="slide.msg"
+      />
+    </Section>
+    <Section v-else>
+      Dashboard
+    </Section>
+  </div>
 </template>

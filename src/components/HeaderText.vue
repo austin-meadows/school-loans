@@ -1,0 +1,32 @@
+<script>
+export default {
+  props: {
+    type: String,
+  },
+};
+</script>
+
+<template>
+  <h1 :class="{'primary': !type, [type]: type}">
+    <slot></slot>
+  </h1>
+</template>
+
+<style lang="scss">
+@import '../utils/styles/palette';
+@import '../utils/styles/sizes';
+
+h1 {
+  color: $color1;
+  font-size: $sizes-l;
+  margin: 0;
+
+  &.primary {
+    color: $color1;
+  }
+
+  &.secondary {
+    color: $text;
+  }
+}
+</style>
