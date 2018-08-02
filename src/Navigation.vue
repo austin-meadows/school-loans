@@ -48,9 +48,9 @@ export default {
 </template>
 
 <style lang="scss">
-@import './styles/breakpoints';
-@import './styles/palette';
-@import './styles/sizes';
+@import './utils/styles/breakpoints';
+@import './utils/styles/palette';
+@import './utils/styles/sizes';
 
 $screenSizeSmPlusOne: $screen-size-s + 1;
 

@@ -20,8 +20,8 @@ export default {
 </template>
 
 <style lang="scss">
-@import '../../styles/sizes';
-@import '../../styles/palette';
+@import '../../utils/styles/sizes';
+@import '../../utils/styles/palette';
 
 .slide {
   color: $text;

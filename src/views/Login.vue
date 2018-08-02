@@ -163,8 +163,8 @@ export default {
 </template>
 
 <style lang="scss">
-@import '../styles/sizes';
-@import '../styles/palette.scss';
+@import '../utils/styles/sizes';
+@import '../utils/styles/palette.scss';
 
 $label-font-size: $sizes-m;
 

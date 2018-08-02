@@ -15,7 +15,7 @@ export default {
 </template>
 
 <style lang="scss">
-@import '../styles/sizes';
+@import '../utils/styles/sizes';
 
 h1 {
   font-size: $sizes-l;

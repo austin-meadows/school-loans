@@ -11,7 +11,7 @@ export default {
 </template>
 
 <style lang="scss">
-@import '../styles/sizes';
+@import '../utils/styles/sizes';
 
 section {
   padding: $base $base 0 $base;

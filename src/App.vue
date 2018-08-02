@@ -18,8 +18,8 @@ export default {
 
 <style lang="scss">
 @import '../node_modules/normalize.css/normalize';
-@import './styles/sizes';
-@import './styles/palette';
+@import './utils/styles/sizes';
+@import './utils/styles/palette';
 
 textarea,
 select,
