@@ -7,6 +7,7 @@ export default {
   name: 'home',
   data() {
     return {
+      isSignedIn: this.$root.$data.isSignedIn,
       slides: [
         {
           title: 'Student Loans are a problem',
@@ -38,13 +39,16 @@ export default {
 
 <template>
   <div id="home">
-    <Section>
+    <Section v-if="!isSignedIn">
       <Slide
         v-for="(slide, index) in slides"
         :key="index"
         :title="slide.title"
         :msg="slide.msg"
       />
+    </Section>
+    <Section v-else>
+      Dashboard
     </Section>
   </div>
 </template>
