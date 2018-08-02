@@ -15,9 +15,11 @@ export default {
 </template>
 
 <style lang="scss">
+@import '../utils/styles/palette';
 @import '../utils/styles/sizes';
 
 h1 {
+  color: $color1;
   font-size: $sizes-l;
   margin: 0;
 }
