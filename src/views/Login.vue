@@ -1,5 +1,5 @@
 <script>
-import { auth } from 'firebase';
+import { auth } from '@/main';
 
 import HeaderText from '@/components/HeaderText.vue';
 import Input from '@/components/Input.vue';
@@ -39,41 +39,37 @@ export default {
         }
       }
       if (!this.errors.length && this.formKind === 'signUpForm') {
-        auth()
-          .createUserWithEmailAndPassword(this.email, this.password)
-          .then(
-            () => {
-              this.$notify({
-                group: 'auth',
-                text: 'Your account has been created!',
-                type: 'success',
-              });
-            },
-            (err) => {
-              this.$notify({
-                group: 'auth',
-                text: err.message,
-                type: 'error',
-              });
-            },
-          );
+        auth.createUserWithEmailAndPassword(this.email, this.password).then(
+          () => {
+            this.$notify({
+              group: 'auth',
+              text: 'Your account has been created!',
+              type: 'success',
+            });
+          },
+          (err) => {
+            this.$notify({
+              group: 'auth',
+              text: err.message,
+              type: 'error',
+            });
+          },
+        );
       }
 
       if (!this.errors.length && this.formKind === 'loginForm') {
-        auth()
-          .signInWithEmailAndPassword(this.email, this.password)
-          .then(
-            () => {
-              this.$router.replace('/');
-            },
-            (err) => {
-              this.$notify({
-                group: 'auth',
-                text: err.message,
-                type: 'error',
-              });
-            },
-          );
+        auth.signInWithEmailAndPassword(this.email, this.password).then(
+          () => {
+            this.$router.replace('/');
+          },
+          (err) => {
+            this.$notify({
+              group: 'auth',
+              text: err.message,
+              type: 'error',
+            });
+          },
+        );
       }
 
       this.errors.forEach((error) => {

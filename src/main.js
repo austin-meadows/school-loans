@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import VueFire from 'vuefire';
-import firebase from 'firebase/app';
-import { auth } from 'firebase';
+import * as firebase from 'firebase/app';
+import 'firebase/auth';
 import 'firebase/firestore';
 import Notifications from 'vue-notification';
 
@@ -41,7 +41,9 @@ Vue.config.productionTip = false;
 
 firebase.initializeApp(config);
 
-auth().onAuthStateChanged((user) => {
+export const auth = firebase.auth();
+
+auth.onAuthStateChanged((user) => {
   new Vue({
     data: {
       user,
