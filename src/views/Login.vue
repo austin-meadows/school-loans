@@ -38,7 +38,7 @@ export default {
           this.errors.push("Emails don't match.");
         }
       }
-      if (this.formKind === 'signUpForm' && !this.errors.length) {
+      if (!this.errors.length && this.formKind === 'signUpForm') {
         auth()
           .createUserWithEmailAndPassword(this.email, this.password)
           .then(
@@ -59,7 +59,7 @@ export default {
           );
       }
 
-      if (this.formKind === 'loginForm' && !this.errors.length) {
+      if (!this.errors.length && this.formKind === 'loginForm') {
         auth()
           .signInWithEmailAndPassword(this.email, this.password)
           .then(
