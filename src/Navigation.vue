@@ -2,6 +2,12 @@
 import firebase from 'firebase';
 
 export default {
+  data() {
+    return {
+      isSignedIn: this.$root.$data.isSignedIn,
+    };
+  },
+
   methods: {
     onClickMenu() {
       this.$refs.menu.classList.toggle('closed');
@@ -12,11 +18,6 @@ export default {
     onClickSignOut() {
       firebase.auth().signOut();
     },
-  },
-  data() {
-    return {
-      isSignedIn: this.$root.$data.isSignedIn,
-    };
   },
 };
 </script>
@@ -39,7 +40,7 @@ export default {
       <router-link v-if="!isSignedIn" v-on:click.native="onClickMenuLink" to="/login">
         <fa icon="sign-in-alt" /> Login
       </router-link>
-      <router-link v-if="isSignedIn" v-on:click.native="onClickSignOut" to="/login">
+      <router-link v-else v-on:click.native="onClickSignOut" to="/login">
         <fa icon="sign-out-alt" /> Sign Out
       </router-link>
     </div>

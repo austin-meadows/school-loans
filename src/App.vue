@@ -36,9 +36,5 @@ body {
 
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
-
-  // & > *:last-child {
-  //   background-image: linear-gradient(to right, $color2, $color3);
-  // }
 }
 </style>

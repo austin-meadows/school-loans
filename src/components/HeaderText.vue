@@ -18,6 +18,7 @@ export default {
 @import '../styles/sizes';
 
 h1 {
+  font-size: $sizes-l;
   margin: 0;
 }
 </style>

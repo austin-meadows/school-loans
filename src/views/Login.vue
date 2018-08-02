@@ -96,8 +96,8 @@ export default {
       e.target.parentNode.classList.add('active');
       const selectedForm = e.target.parentNode.id;
       this.formKind = selectedForm;
-      const confirmEmail = document.getElementById('input-email-confirm');
-      const confirmPassword = document.getElementById('input-password-confirm');
+      const confirmEmail = this.$refs.emailConfirm;
+      const confirmPassword = this.$refs.passwordConfirm;
       if (selectedForm === 'signUpForm') {
         confirmEmail.classList.remove('hidden');
         confirmPassword.classList.remove('hidden');
@@ -130,11 +130,16 @@ export default {
           </label>
           <input type="email" v-model="email" id="email" placeholder="Email">
         </div>
-        <div class="input-block hidden" id="input-email-confirm">
+        <div ref="emailConfirm" class="input-block hidden" id="input-email-confirm">
           <label for="emailConfirm">
             <fa icon="envelope" />
           </label>
-          <input type="email" v-model="emailConfirm" id="emailConfirm" placeholder="Confirm Email">
+          <input
+            type="email"
+            v-model="emailConfirm"
+            id="emailConfirm"
+            placeholder="Confirm Email"
+          >
         </div>
         <div class="input-block">
           <label for="password">
@@ -142,7 +147,7 @@ export default {
           </label>
           <input type="password" v-model="password" id="password" placeholder="Password">
         </div>
-        <div class="input-block hidden" id="input-password-confirm">
+        <div ref="passwordConfirm" class="input-block hidden" id="input-password-confirm">
           <label for="passwordConfirm">
             <fa icon="key" />
           </label>
