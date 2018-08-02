@@ -28,19 +28,19 @@ export default {
       <fa icon="bars" /> Menu
     </a>
     <div ref="menu" class="menu closed">
-      <router-link v-on:click.native="onClickMenuLink" to="/">
+      <router-link @click.native="onClickMenuLink" to="/">
         <fa icon="home" /> Home
       </router-link>
-      <router-link v-on:click.native="onClickMenuLink" to="/give">
+      <router-link @click.native="onClickMenuLink" to="/give">
         <fa icon="piggy-bank" /> Give
       </router-link>
-      <router-link v-on:click.native="onClickMenuLink" to="/stats">
+      <router-link @click.native="onClickMenuLink" to="/stats">
         <fa icon="chart-bar" /> Statistics
       </router-link>
-      <router-link v-if="!isSignedIn" v-on:click.native="onClickMenuLink" to="/login">
+      <router-link v-if="!isSignedIn" @click.native="onClickMenuLink" to="/login">
         <fa icon="sign-in-alt" /> Login
       </router-link>
-      <router-link v-else v-on:click.native="onClickSignOut" to="/login">
+      <router-link v-else @click.native="onClickSignOut" to="/login">
         <fa icon="sign-out-alt" /> Sign Out
       </router-link>
     </div>
