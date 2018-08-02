@@ -57,7 +57,6 @@ export default {
               });
             },
           );
-        // return true;
       }
 
       if (this.formKind === 'loginForm' && !this.errors.length) {
@@ -75,7 +74,6 @@ export default {
               });
             },
           );
-        // return true;
       }
 
       this.errors.forEach((error) => {
