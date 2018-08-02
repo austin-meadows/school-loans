@@ -116,7 +116,7 @@ export default {
         <a @click="onClickSwitcher">Login</a>
       </HeaderText>
       <HeaderText ref="signUp" id="signUpForm">
-        <a @click=" onClickSwitcher">Sign up</a>
+        <a @click="onClickSwitcher">Sign up</a>
       </HeaderText>
     </div>
     <Section>
@@ -153,7 +153,7 @@ export default {
           type="password"
           v-model="passwordConfirm"
         />
-        <input type="submit" value="Submit">
+        <Input type="submit" value="Submit" />
       </form>
     </Section>
   </div>
@@ -162,8 +162,6 @@ export default {
 <style lang="scss">
 @import '../utils/styles/sizes';
 @import '../utils/styles/palette.scss';
-
-$label-font-size: $sizes-m;
 
 #login {
   align-items: center;
@@ -193,48 +191,5 @@ form {
   display: flex;
   flex-direction: column;
   position: relative;
-
-  .input-block {
-    align-items: center;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    position: relative;
-
-    &.hidden {
-      display: none;
-    }
-  }
-
-  label {
-    align-items: center;
-    display: flex;
-    font-size: $label-font-size;
-    left: 0;
-    padding: 0 ($label-font-size / 2);
-    position: absolute;
-  }
-
-  input {
-    border: 1px solid $text;
-    border-radius: $label-font-size / 2;
-    font-size: $label-font-size;
-    height: $label-font-size * 2;
-    margin: $sizes-s 0;
-    min-width: 200px;
-    padding: 0 $sizes-s 0 $label-font-size * 2;
-
-    &::placeholder {
-      color: $text;
-      line-height: normal;
-      opacity: 0.5;
-    }
-
-    &[type='submit'] {
-      background: $color1;
-      border: 0;
-      padding: 0 $label-font-size * 2;
-    }
-  }
 }
 </style>
