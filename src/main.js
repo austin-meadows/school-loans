@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import VueFire from 'vuefire';
 import firebase from 'firebase/app';
-import firebaseAuth from 'firebase';
+import { auth } from 'firebase';
 import 'firebase/firestore';
 import Notifications from 'vue-notification';
 
@@ -19,7 +19,7 @@ import { faSignOutAlt } from '@fortawesome/free-solid-svg-icons/faSignOutAlt';
 
 import App from './App.vue';
 import router from './router';
-import config from '../.firebase.config';
+import { config } from '../firebase.json';
 
 Vue.use(VueFire);
 Vue.use(Notifications);
@@ -41,7 +41,7 @@ Vue.config.productionTip = false;
 
 firebase.initializeApp(config);
 
-firebaseAuth.auth().onAuthStateChanged((user) => {
+auth().onAuthStateChanged((user) => {
   new Vue({
     data: {
       user,

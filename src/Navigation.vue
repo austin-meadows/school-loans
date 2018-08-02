@@ -1,5 +1,5 @@
 <script>
-import firebase from 'firebase';
+import { auth } from 'firebase';
 
 export default {
   data() {
@@ -16,7 +16,7 @@ export default {
       this.$refs.menu.classList.add('closed');
     },
     onClickSignOut() {
-      firebase.auth().signOut();
+      auth().signOut();
     },
   },
 };

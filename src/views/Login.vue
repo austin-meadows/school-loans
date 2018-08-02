@@ -1,5 +1,5 @@
 <script>
-import firebase from 'firebase';
+import { auth } from 'firebase';
 
 import Section from '@/components/Section.vue';
 import HeaderText from '@/components/HeaderText.vue';
@@ -38,8 +38,7 @@ export default {
         }
       }
       if (this.formKind === 'signUpForm' && !this.errors.length) {
-        firebase
-          .auth()
+        auth()
           .createUserWithEmailAndPassword(this.email, this.password)
           .then(
             () => {
@@ -61,8 +60,7 @@ export default {
       }
 
       if (this.formKind === 'loginForm' && !this.errors.length) {
-        firebase
-          .auth()
+        auth()
           .signInWithEmailAndPassword(this.email, this.password)
           .then(
             () => {
