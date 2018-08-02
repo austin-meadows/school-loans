@@ -73,7 +73,7 @@ input {
   }
 
   &[type='submit'] {
-    background: $color1;
+    background: $primary;
     border: 0;
     padding: 0 $label-font-size * 2;
   }

@@ -55,15 +55,12 @@ export default {
 $screenSizeSmPlusOne: $screen-size-s + 1;
 
 #nav {
-  background: white;
-
   .menu {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
 
     @media screen and (max-width: $screen-size-s) {
-      background: white;
       flex-direction: column;
       position: absolute;
       width: 100%;
@@ -93,11 +90,11 @@ $screenSizeSmPlusOne: $screen-size-s + 1;
     white-space: nowrap;
 
     &.router-link-exact-active {
-      color: $color1;
+      color: $primary;
     }
 
     &:hover {
-      color: $color1;
+      color: $primary;
     }
   }
 

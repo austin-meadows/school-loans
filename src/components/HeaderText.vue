@@ -17,12 +17,12 @@ export default {
 @import '../utils/styles/sizes';
 
 h1 {
-  color: $color1;
+  color: $primary;
   font-size: $sizes-l;
   margin: 0;
 
   &.primary {
-    color: $color1;
+    color: $primary;
   }
 
   &.secondary {
