@@ -1,14 +1,15 @@
 <script>
 import { auth } from 'firebase';
 
-import Section from '@/components/Section.vue';
 import HeaderText from '@/components/HeaderText.vue';
+import Input from '@/components/Input.vue';
+import Section from '@/components/Section.vue';
 import validate from '@/utils/js/validate';
 
 export default {
-  name: 'login',
   components: {
     HeaderText,
+    Input,
     Section,
   },
   data() {
@@ -94,8 +95,8 @@ export default {
       e.target.parentNode.classList.add('active');
       const selectedForm = e.target.parentNode.id;
       this.formKind = selectedForm;
-      const confirmEmail = this.$refs.emailConfirm;
-      const confirmPassword = this.$refs.passwordConfirm;
+      const confirmEmail = this.$refs.emailConfirm.$el;
+      const confirmPassword = this.$refs.passwordConfirm.$el;
       if (selectedForm === 'signUpForm') {
         confirmEmail.classList.remove('hidden');
         confirmPassword.classList.remove('hidden');
@@ -122,40 +123,38 @@ export default {
     </div>
     <Section>
       <form @submit="checkForm" novalidate="true">
-        <div class="input-block">
-          <label for="email">
-            <fa icon="envelope" />
-          </label>
-          <input type="email" v-model="email" id="email" placeholder="Email">
-        </div>
-        <div ref="emailConfirm" class="input-block hidden" id="input-email-confirm">
-          <label for="emailConfirm">
-            <fa icon="envelope" />
-          </label>
-          <input
-            type="email"
-            v-model="emailConfirm"
-            id="emailConfirm"
-            placeholder="Confirm Email"
-          >
-        </div>
-        <div class="input-block">
-          <label for="password">
-            <fa icon="key" />
-          </label>
-          <input type="password" v-model="password" id="password" placeholder="Password">
-        </div>
-        <div ref="passwordConfirm" class="input-block hidden" id="input-password-confirm">
-          <label for="passwordConfirm">
-            <fa icon="key" />
-          </label>
-          <input
-            type="password"
-            v-model="passwordConfirm"
-            id="passwordConfirm"
-            placeholder="Confirm Password"
-          >
-        </div>
+        <Input
+          icon="envelope"
+          name="email"
+          placeholder="Email"
+          type="email"
+          v-model="email"
+        />
+        <Input
+          class="hidden"
+          icon="envelope"
+          name="emailConfirm"
+          placeholder="Email"
+          ref="emailConfirm"
+          type="email"
+          v-model="emailConfirm"
+        />
+        <Input
+          icon="key"
+          name="password"
+          placeholder="Password"
+          type="password"
+          v-model="password"
+        />
+        <Input
+          class="hidden"
+          icon="key"
+          name="passwordConfirm"
+          placeholder="Password"
+          ref="passwordConfirm"
+          type="password"
+          v-model="passwordConfirm"
+        />
         <input type="submit" value="Submit">
       </form>
     </Section>
@@ -182,13 +181,12 @@ $label-font-size: $sizes-m;
   text-align: center;
 
   h1 {
-    color: $color1;
     cursor: pointer;
     padding: 0 10px;
   }
+
   h1:not(.active) {
     color: $text;
-    opacity: 0.25;
     font-weight: normal;
   }
 }
@@ -229,8 +227,9 @@ form {
     padding: 0 $sizes-s 0 $label-font-size * 2;
 
     &::placeholder {
-      color: #bbb;
+      color: $text;
       line-height: normal;
+      opacity: 0.5;
     }
 
     &[type='submit'] {

@@ -1,9 +1,3 @@
-<script>
-export default {
-  name: 'content-section',
-};
-</script>
-
 <template>
   <section>
     <slot></slot>

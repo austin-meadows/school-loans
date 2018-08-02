@@ -4,7 +4,6 @@ import Section from '@/components/Section.vue';
 import Slide from '@/components/Home/Slide.vue';
 
 export default {
-  name: 'home',
   data() {
     return {
       isSignedIn: this.$root.$data.isSignedIn,

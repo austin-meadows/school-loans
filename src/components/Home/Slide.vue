@@ -2,7 +2,6 @@
 import HeaderText from '@/components/HeaderText.vue';
 
 export default {
-  name: 'Slide',
   props: {
     msg: String,
     title: String,
@@ -26,7 +25,6 @@ export default {
 
 <style lang="scss">
 @import '../../utils/styles/sizes';
-@import '../../utils/styles/palette';
 
 .slide {
   display: flex;

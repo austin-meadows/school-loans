@@ -1,15 +1,13 @@
 <script>
 export default {
-  name: 'header-text',
   props: {
-    msg: String,
-    title: String,
+    type: String,
   },
 };
 </script>
 
 <template>
-  <h1>
+  <h1 :class="{'primary': !type, [type]: type}">
     <slot></slot>
   </h1>
 </template>
@@ -22,5 +20,13 @@ h1 {
   color: $color1;
   font-size: $sizes-l;
   margin: 0;
+
+  &.primary {
+    color: $color1;
+  }
+
+  &.secondary {
+    color: $text;
+  }
 }
 </style>
