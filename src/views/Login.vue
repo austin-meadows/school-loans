@@ -99,8 +99,6 @@ export default {
         confirmEmail.classList.remove('hidden');
         confirmPassword.classList.remove('hidden');
       } else {
-        this.passwordConfirm = null;
-        this.emailConfirm = null;
         confirmEmail.classList.add('hidden');
         confirmPassword.classList.add('hidden');
       }
