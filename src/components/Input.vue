@@ -58,7 +58,7 @@ label {
 }
 
 input {
-  border: 1px solid $text;
+  border: 1px solid $whiteish;
   border-radius: $label-font-size / 2;
   font-size: $label-font-size;
   height: $label-font-size * 2;

@@ -56,6 +56,7 @@ $screenSizeSmPlusOne: $screen-size-s + 1;
 
 #nav {
   .menu {
+    background: linear-gradient(to bottom right, white, $whiteish);
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
