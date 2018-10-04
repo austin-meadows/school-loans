@@ -48,22 +48,50 @@ export default {
 </template>
 
 <style lang="scss">
-@import './utils/styles/breakpoints';
-@import './utils/styles/palette';
-@import './utils/styles/sizes';
+@import "./utils/styles/breakpoints";
+@import "./utils/styles/palette";
+@import "./utils/styles/sizes";
 
 $screenSizeSmPlusOne: $screen-size-s + 1;
+$numLinks: 4;
+$listItemHeight: ($base * 3) * $numLinks;
+
+@keyframes open {
+  from {
+    opacity: 0;
+    max-height: 0;
+  }
+  to {
+    max-height: $listItemHeight;
+    opacity: 1;
+  }
+}
+
+@keyframes close {
+  from {
+    max-height: $listItemHeight;
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    max-height: 0;
+  }
+}
 
 #nav {
+  background: linear-gradient(to bottom right, white, $whiteish);
   .menu {
-    background: linear-gradient(to bottom right, white, $whiteish);
+    animation-name: open;
+    animation-duration: 0.5s;
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
 
     @media screen and (max-width: $screen-size-s) {
       flex-direction: column;
-      position: absolute;
+      height: auto;
+      max-height: $listItemHeight;
+      opacity: 1;
       width: 100%;
     }
   }
@@ -89,6 +117,7 @@ $screenSizeSmPlusOne: $screen-size-s + 1;
     text-align: right;
     text-decoration: none;
     white-space: nowrap;
+    user-select: none;
 
     &.router-link-exact-active {
       color: $primary;
@@ -101,7 +130,11 @@ $screenSizeSmPlusOne: $screen-size-s + 1;
 
   .closed {
     @media screen and (max-width: $screen-size-s) {
+      animation-name: close;
+      animation-duration: 0.5s;
       display: none;
+      max-height: 0;
+      opacity: 0;
     }
   }
 }
