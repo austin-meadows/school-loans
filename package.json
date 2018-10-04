@@ -7,7 +7,7 @@
     "build": "vue-cli-service build --modern",
     "deploy": "yarn build && firebase deploy",
     "lint": "vue-cli-service lint",
-    "clean": "rm -rf node_modules"
+    "clean": "rm -rf node_modules & rm -rf dist"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.4",
