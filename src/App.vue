@@ -29,7 +29,6 @@ button {
 }
 
 body {
-  background: linear-gradient(to bottom right, white, $whiteish);
   color: $text;
   font-size: $base;
   min-width: 320px;
