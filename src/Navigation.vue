@@ -7,7 +7,31 @@ export default {
       isSignedIn: this.$root.$data.isSignedIn,
     };
   },
-
+  mounted() {
+    this.$refs.menu.addEventListener(
+      "animationend",
+      function () {
+        if (this.classList.contains('closed')) {
+          this.classList.remove('closed');
+        }
+      },
+      false);
+    this.$refs.menu.addEventListener(
+      "webkitAnimationEnd",
+      function () {
+        if (this.classList.contains('closed')) {
+          this.classList.remove('closed');
+        }
+      },
+      false);
+    this.$refs.menu.addEventListener(
+      "oanimationend",
+      function () {
+        if (this.classList.contains('closed')) {
+          this.classList.remove('closed');
+        }
+      }, false);
+  },
   methods: {
     show() {
       this.$refs.menu.classList.remove('closed');
