@@ -12,27 +12,16 @@ export default {
 <template>
   <div v-if="icon" class="input-block">
     <label v-if="name" :for="name">
+      <input :id="name" @input="$emit('input', $event.target.value)" :placeholder="placeholder" :type="type">
       <fa :icon="icon" />
     </label>
-    <input
-      :id="name"
-      @input="$emit('input', $event.target.value)"
-      :placeholder="placeholder"
-      :type="type"
-    >
   </div>
-  <input
-    v-else
-    :id="name"
-    @input="$emit('input', $event.target.value)"
-    :placeholder="placeholder"
-    :type="type"
-  >
+  <input v-else :id="name" @input="$emit('input', $event.target.value)" :placeholder="placeholder" :type="type">
 </template>
 
 <style lang="scss">
-@import '../utils/styles/sizes';
-@import '../utils/styles/palette';
+@import "../utils/styles/sizes";
+@import "../utils/styles/palette";
 
 $label-font-size: $sizes-m;
 
@@ -51,19 +40,24 @@ $label-font-size: $sizes-m;
 label {
   align-items: center;
   display: flex;
-  font-size: $label-font-size;
-  left: 0;
-  padding: 0 ($label-font-size / 2);
-  position: absolute;
+
+  :last-child {
+    font-size: $label-font-size;
+    left: 0;
+    padding: 0 ($label-font-size / 2);
+    position: absolute;
+  }
+}
+
+input,
+button {
+  border-radius: $sizes-s;
 }
 
 input {
-  border: 1px solid $whiteish;
-  border-radius: $label-font-size / 2;
   font-size: $label-font-size;
   height: $label-font-size * 2;
   margin: $sizes-s 0;
-  min-width: 200px;
   padding: 0 $sizes-s 0 $label-font-size * 2;
 
   &::placeholder {
@@ -72,10 +66,91 @@ input {
     opacity: 0.5;
   }
 
-  &[type='submit'] {
+  &[type="text"],
+  &[type="email"],
+  &[type="password"] {
+    border: 1px solid $whiteish;
+    min-width: 200px;
+    &:focus {
+      + svg {
+        left: -2em;
+      }
+    }
+  }
+
+  &[type="submit"] {
     background: $primary;
     border: 0;
     padding: 0 $label-font-size * 2;
+  }
+
+  &[type="checkbox"] {
+    cursor: pointer;
+    margin: 0 1rem 0 0;
+    position: relative;
+    top: rem(-6);
+
+    &:before {
+      border: 2px solid $whiteish;
+      content: "";
+      height: $base;
+      left: 0;
+      position: absolute;
+      transition: all 0.3s ease-in-out;
+      width: $base;
+      z-index: 1;
+    }
+
+    &:checked {
+      &:before {
+        height: 0.5rem;
+        border-color: $primary;
+        border-right-style: none;
+        border-top-style: none;
+        transform: rotate(-45deg);
+      }
+    }
+
+    &:after {
+      content: "";
+
+      position: absolute;
+      top: rem(-2);
+      left: 0;
+
+      width: 1.1rem;
+      height: 1.1rem;
+
+      background: #fff;
+
+      cursor: pointer;
+    }
+  }
+}
+
+$baseFontSize: 16;
+
+$green: #009688;
+$blue: #5677fc;
+$blueDark: #3b50ce;
+
+$slideDistance: 100;
+$slideDuration: 0.4s;
+
+%slide-up {
+  animation-duration: $slideDuration;
+  animation-fill-mode: both;
+  animation-name: slideUp;
+  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes slideUp {
+  0% {
+    transform: translateY(rem($slideDistance));
+  }
+
+  100% {
+    transform: translateY(0);
   }
 }
 </style>

@@ -10,5 +10,9 @@
 section {
   margin: $base $base 0 $base;
   text-align: center;
+
+  p {
+    margin: $base 0;
+  }
 }
 </style>

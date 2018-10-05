@@ -133,7 +133,7 @@ $listItemHeight: ($base * 3);
     &.open {
       @media screen and (max-width: $screen-size-s) {
         animation-name: open;
-        animation-duration: 0.5s;
+        animation-duration: 0.33s;
         left: 0px;
         pointer-events: auto;
       }
@@ -142,7 +142,7 @@ $listItemHeight: ($base * 3);
     &.closed {
       @media screen and (max-width: $screen-size-s) {
         animation-name: close;
-        animation-duration: 0.5s;
+        animation-duration: 0.33s;
         left: -400px;
         pointer-events: none;
       }
