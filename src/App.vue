@@ -10,16 +10,16 @@ export default {
 
 <template>
   <div id="app">
-    <notifications group="auth" position="bottom center" width="75%"/>
+    <notifications group="auth" position="bottom center" width="75%" />
     <Navigation />
     <router-view />
   </div>
 </template>
 
 <style lang="scss">
-@import '../node_modules/normalize.css/normalize';
-@import './utils/styles/sizes';
-@import './utils/styles/palette';
+@import "../node_modules/normalize.css/normalize";
+@import "./utils/styles/sizes";
+@import "./utils/styles/palette";
 
 textarea,
 select,
@@ -31,10 +31,10 @@ button {
 body {
   color: $text;
   font-size: $base;
-  min-width: 320px;
+  min-width: 300px;
 }
 
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
 }
 </style>

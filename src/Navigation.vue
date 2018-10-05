@@ -15,7 +15,8 @@ export default {
           this.classList.remove('closed');
         }
       },
-      false);
+      false,
+    );
     this.$refs.menu.addEventListener(
       "webkitAnimationEnd",
       function () {
@@ -23,14 +24,17 @@ export default {
           this.classList.remove('closed');
         }
       },
-      false);
+      false,
+    );
     this.$refs.menu.addEventListener(
       "oanimationend",
       function () {
         if (this.classList.contains('closed')) {
           this.classList.remove('closed');
         }
-      }, false);
+      },
+      false,
+    );
   },
   methods: {
     show() {
@@ -43,9 +47,9 @@ export default {
     },
     onClickMenu() {
       if (this.$refs.menu.classList.contains('open')) {
-        this.hide()
+        this.hide();
       } else {
-        this.show()
+        this.show();
       }
     },
     onClickMenuLink() {
@@ -91,45 +95,47 @@ export default {
 
 $screenSizeSmPlusOne: $screen-size-s + 1;
 $numLinks: 4;
-$listItemHeight: ($base * 3) * $numLinks;
+$listItemHeight: ($base * 3);
 
 @keyframes open {
   from {
-    opacity: 0;
-    max-height: 0;
+    left: -400px;
   }
   to {
-    max-height: $listItemHeight;
-    opacity: 1;
+    left: 0px;
   }
 }
 
 @keyframes close {
   from {
-    max-height: $listItemHeight;
-    opacity: 1;
+    left: 0px;
   }
   to {
-    opacity: 0;
-    max-height: 0;
+    left: -400px;
   }
 }
 
 #nav {
   background: linear-gradient(to bottom right, white, $whiteish);
+  display: flex;
+  overflow: hidden;
+
   .menu {
     display: flex;
     flex-direction: row;
-    justify-content: flex-end;
+    height: $base * 3;
+    padding-bottom: $base * 3;
+    margin-bottom: -($base * 3);
+    position: relative;
+    overflow-x: scroll;
+    overflow-y: hidden;
 
     &.open {
       @media screen and (max-width: $screen-size-s) {
         animation-name: open;
         animation-duration: 0.5s;
-        max-height: $listItemHeight;
-        opacity: 1;
+        left: 0px;
         pointer-events: auto;
-        position: relative;
       }
     }
 
@@ -137,40 +143,36 @@ $listItemHeight: ($base * 3) * $numLinks;
       @media screen and (max-width: $screen-size-s) {
         animation-name: close;
         animation-duration: 0.5s;
-        max-height: 0;
-        opacity: 0;
+        left: -400px;
         pointer-events: none;
-        position: relative;
-        z-index: 1;
       }
     }
 
     @media screen and (max-width: $screen-size-s) {
-      flex-direction: column;
-      max-height: 0;
-      opacity: 0;
-      position: relative;
       pointer-events: none;
-      height: auto;
-      width: 100%;
+      left: -400px;
+      z-index: 1;
     }
   }
 
   #menuButton {
+    background: white;
     display: none;
 
     @media screen and (max-width: $screen-size-s) {
       display: inline-block;
-      float: right;
       position: relative;
       z-index: 2;
     }
   }
 
   a {
+    border-top-left-radius: $sizes-s;
+    border-top-right-radius: $sizes-s;
     color: $text;
     cursor: pointer;
     display: block;
+    height: $base;
     // The following fixes a quirk with how text is sized so we can
     // ensure this is consistent.
     // https://stackoverflow.com/questions/41336177/font-size-vs-line-height-vs-actual-height/41336458
@@ -183,6 +185,7 @@ $listItemHeight: ($base * 3) * $numLinks;
     user-select: none;
 
     &.router-link-exact-active {
+      background: white;
       color: $primary;
     }
 

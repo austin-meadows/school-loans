@@ -5,10 +5,10 @@
 </template>
 
 <style lang="scss">
-@import '../utils/styles/sizes';
+@import "../utils/styles/sizes";
 
 section {
-  padding: $base $base 0 $base;
+  margin: $base $base 0 $base;
   text-align: center;
 }
 </style>
