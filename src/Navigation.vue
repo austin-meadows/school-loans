@@ -9,10 +9,23 @@ export default {
   },
 
   methods: {
+    show() {
+      this.$refs.menu.classList.remove('closed');
+      this.$refs.menu.classList.add('open');
+    },
+    hide() {
+      this.$refs.menu.classList.remove('open');
+      this.$refs.menu.classList.add('closed');
+    },
     onClickMenu() {
-      this.$refs.menu.classList.toggle('closed');
+      if (this.$refs.menu.classList.contains('open')) {
+        this.hide()
+      } else {
+        this.show()
+      }
     },
     onClickMenuLink() {
+      this.$refs.menu.classList.remove('open');
       this.$refs.menu.classList.add('closed');
     },
     onClickSignOut() {
@@ -27,7 +40,7 @@ export default {
     <a id="menuButton" @click="onClickMenu">
       <fa icon="bars" /> Menu
     </a>
-    <div ref="menu" class="menu closed">
+    <div ref="menu" class="menu">
       <router-link @click.native="onClickMenuLink" to="/">
         <fa icon="home" /> Home
       </router-link>
@@ -81,17 +94,40 @@ $listItemHeight: ($base * 3) * $numLinks;
 #nav {
   background: linear-gradient(to bottom right, white, $whiteish);
   .menu {
-    animation-name: open;
-    animation-duration: 0.5s;
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
 
+    &.open {
+      @media screen and (max-width: $screen-size-s) {
+        animation-name: open;
+        animation-duration: 0.5s;
+        max-height: $listItemHeight;
+        opacity: 1;
+        pointer-events: auto;
+        position: relative;
+      }
+    }
+
+    &.closed {
+      @media screen and (max-width: $screen-size-s) {
+        animation-name: close;
+        animation-duration: 0.5s;
+        max-height: 0;
+        opacity: 0;
+        pointer-events: none;
+        position: relative;
+        z-index: 1;
+      }
+    }
+
     @media screen and (max-width: $screen-size-s) {
       flex-direction: column;
+      max-height: 0;
+      opacity: 0;
+      position: relative;
+      pointer-events: none;
       height: auto;
-      max-height: $listItemHeight;
-      opacity: 1;
       width: 100%;
     }
   }
@@ -100,7 +136,10 @@ $listItemHeight: ($base * 3) * $numLinks;
     display: none;
 
     @media screen and (max-width: $screen-size-s) {
-      display: block;
+      display: inline-block;
+      float: right;
+      position: relative;
+      z-index: 2;
     }
   }
 
@@ -125,16 +164,6 @@ $listItemHeight: ($base * 3) * $numLinks;
 
     &:hover {
       color: $primary;
-    }
-  }
-
-  .closed {
-    @media screen and (max-width: $screen-size-s) {
-      animation-name: close;
-      animation-duration: 0.5s;
-      display: none;
-      max-height: 0;
-      opacity: 0;
     }
   }
 }
