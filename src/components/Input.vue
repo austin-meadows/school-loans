@@ -40,6 +40,7 @@ $label-font-size: $sizes-m;
 label {
   align-items: center;
   display: flex;
+  width: 100%;
 
   :last-child {
     font-size: $label-font-size;
@@ -113,26 +114,16 @@ input {
 
     &:after {
       content: "";
-
       position: absolute;
       top: rem(-2);
       left: 0;
-
-      width: 1.1rem;
-      height: 1.1rem;
-
+      width: $sizes-l;
+      height: $sizes-l;
       background: #fff;
-
       cursor: pointer;
     }
   }
 }
-
-$baseFontSize: 16;
-
-$green: #009688;
-$blue: #5677fc;
-$blueDark: #3b50ce;
 
 $slideDistance: 100;
 $slideDuration: 0.4s;

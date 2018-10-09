@@ -3,26 +3,26 @@ import Slide from '@/components/Home/Slide.vue';
 import Section from '@/components/Section.vue';
 
 export default {
-  data() {
+  data () {
     return {
       slides: [
         {
-          title: 'Student Loans are a problem',
+          title: 'Text',
           msg:
-            'It is estimated the current total student loan debt is close to $2 trillion.',
+            'Text',
         },
         {
-          title: 'We are the solution',
-          msg: 'Together, we can eliminate this problem.',
+          title: 'Text',
+          msg: 'Text',
         },
         {
-          title: 'Post your student loan',
+          title: 'Text',
           msg:
-            'Track your student loan. Get money to pay off your loan directly.',
+            'Text',
         },
         {
-          title: 'Or help out students like you',
-          msg: "Help pay off other student's loans.",
+          title: 'Text',
+          msg: 'Text.',
         },
       ],
     };
@@ -37,12 +37,7 @@ export default {
 <template>
   <div id="onboarding">
     <Section>
-      <Slide
-        v-for="(slide, index) in slides"
-        :key="index"
-        :title="slide.title"
-        :msg="slide.msg"
-      />
+      <Slide v-for="(slide, index) in slides" :key="index" :title="slide.title" :msg="slide.msg" />
     </Section>
   </div>
 </template>

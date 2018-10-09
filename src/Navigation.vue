@@ -2,14 +2,14 @@
 import { auth } from '@/main';
 
 export default {
-  data() {
+  data () {
     return {
       isSignedIn: this.$root.$data.isSignedIn,
     };
   },
-  mounted() {
+  mounted () {
     this.$refs.menu.addEventListener(
-      "animationend",
+      'animationend',
       function () {
         if (this.classList.contains('closed')) {
           this.classList.remove('closed');
@@ -18,7 +18,7 @@ export default {
       false,
     );
     this.$refs.menu.addEventListener(
-      "webkitAnimationEnd",
+      'webkitAnimationEnd',
       function () {
         if (this.classList.contains('closed')) {
           this.classList.remove('closed');
@@ -27,7 +27,7 @@ export default {
       false,
     );
     this.$refs.menu.addEventListener(
-      "oanimationend",
+      'oanimationend',
       function () {
         if (this.classList.contains('closed')) {
           this.classList.remove('closed');
@@ -37,26 +37,26 @@ export default {
     );
   },
   methods: {
-    show() {
+    show () {
       this.$refs.menu.classList.remove('closed');
       this.$refs.menu.classList.add('open');
     },
-    hide() {
+    hide () {
       this.$refs.menu.classList.remove('open');
       this.$refs.menu.classList.add('closed');
     },
-    onClickMenu() {
+    onClickMenu () {
       if (this.$refs.menu.classList.contains('open')) {
         this.hide();
       } else {
         this.show();
       }
     },
-    onClickMenuLink() {
+    onClickMenuLink () {
       this.$refs.menu.classList.remove('open');
       this.$refs.menu.classList.add('closed');
     },
-    onClickSignOut() {
+    onClickSignOut () {
       auth.signOut();
     },
   },
