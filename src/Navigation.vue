@@ -177,6 +177,10 @@ $listItemHeight: ($base * 3);
     white-space: nowrap;
     user-select: none;
 
+    > :first-child {
+      margin-right: $sizes-s;
+    }
+
     &.router-link-exact-active {
       background: white;
       color: $primary;
