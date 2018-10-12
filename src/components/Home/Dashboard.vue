@@ -1,10 +1,10 @@
 <script>
-import Input from '@/components/Input.vue';
+import CustomInput from '@/components/CustomInput.vue';
 import Section from '@/components/Section.vue';
 
 export default {
   components: {
-    Input,
+    CustomInput,
     Section,
   },
 };
@@ -15,7 +15,7 @@ export default {
     <Section>
       <p>Welcome to our platform! Let's get you started.</p>
       <p>fuck:</p>
-      <Input icon="envelope" name="student" placeholder="Student" type="checkbox">
+      <CustomInput icon="envelope" name="student" placeholder="Student" type="checkbox"/>
     </Section>
   </div>
 </template>

@@ -1,15 +1,15 @@
 <script>
 import { auth } from '@/main';
 
+import CustomInput from '@/components/CustomInput.vue';
 import HeaderText from '@/components/HeaderText.vue';
-import Input from '@/components/Input.vue';
 import Section from '@/components/Section.vue';
 import validate from '@/utils/js/validate';
 
 export default {
   components: {
     HeaderText,
-    Input,
+    CustomInput,
     Section,
   },
   data() {
@@ -115,14 +115,14 @@ export default {
     </div>
     <Section>
       <form @submit="checkForm" novalidate="true">
-        <Input
+        <CustomInput
           icon="envelope"
           name="email"
           placeholder="Email"
           type="email"
           v-model="email"
         />
-        <Input
+        <CustomInput
           class="hidden"
           icon="envelope"
           name="emailConfirm"
@@ -131,14 +131,14 @@ export default {
           type="email"
           v-model="emailConfirm"
         />
-        <Input
+        <CustomInput
           icon="key"
           name="password"
           placeholder="Password"
           type="password"
           v-model="password"
         />
-        <Input
+        <CustomInput
           class="hidden"
           icon="key"
           name="passwordConfirm"
@@ -147,7 +147,7 @@ export default {
           type="password"
           v-model="passwordConfirm"
         />
-        <Input type="submit" value="Submit" />
+        <CustomInput type="submit" value="Submit" />
       </form>
     </Section>
   </div>
