@@ -91,8 +91,8 @@ export default {
       this.formKind = selectedForm;
       const confirmEmail = this.$refs.emailConfirm.$el;
       const confirmPassword = this.$refs.passwordConfirm.$el;
-      const confirmEmailInput = document.getElementById("emailConfirm");
-      const confirmPasswordInput = document.getElementById("passwordConfirm");
+      const confirmEmailInput = document.getElementById('emailConfirm');
+      const confirmPasswordInput = document.getElementById('passwordConfirm');
       if (selectedForm === 'signUpForm') {
         confirmEmail.classList.remove('hidden');
         confirmEmailInput.disabled = false;
