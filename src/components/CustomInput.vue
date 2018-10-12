@@ -1,6 +1,7 @@
 <script>
 export default {
   props: {
+    disabled: Boolean,
     icon: String,
     name: String,
     placeholder: String,
@@ -13,6 +14,7 @@ export default {
   <div v-if="icon" class="input-block">
     <label v-if="name" :for="name">
       <input
+        :disabled="disabled"
         :id="name"
         @input="$emit('input', $event.target.value)"
         :placeholder="placeholder"
@@ -23,6 +25,7 @@ export default {
   </div>
   <input
     v-else
+    :disabled="disabled"
     :id="name"
     @input="$emit('input', $event.target.value)"
     :placeholder="placeholder"
@@ -43,10 +46,6 @@ $label-font-size: $sizes-m;
   justify-content: center;
   overflow-x: hidden;
   position: relative;
-
-  &.hidden {
-    display: none;
-  }
 }
 
 label {

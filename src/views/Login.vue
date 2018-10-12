@@ -91,12 +91,18 @@ export default {
       this.formKind = selectedForm;
       const confirmEmail = this.$refs.emailConfirm.$el;
       const confirmPassword = this.$refs.passwordConfirm.$el;
+      const confirmEmailInput = document.getElementById("emailConfirm");
+      const confirmPasswordInput = document.getElementById("passwordConfirm");
       if (selectedForm === 'signUpForm') {
         confirmEmail.classList.remove('hidden');
+        confirmEmailInput.disabled = false;
         confirmPassword.classList.remove('hidden');
+        confirmPasswordInput.disabled = false;
       } else {
         confirmEmail.classList.add('hidden');
+        confirmEmailInput.disabled = true;
         confirmPassword.classList.add('hidden');
+        confirmPasswordInput.disabled = true;
       }
     },
   },
@@ -123,7 +129,8 @@ export default {
           v-model="email"
         />
         <CustomInput
-          class="hidden"
+          disabled
+          class="hidden hideable"
           icon="envelope"
           name="emailConfirm"
           placeholder="Confirm Email"
@@ -139,7 +146,8 @@ export default {
           v-model="password"
         />
         <CustomInput
-          class="hidden"
+          disabled
+          class="hidden hideable"
           icon="key"
           name="passwordConfirm"
           placeholder="Confirm Password"
@@ -166,9 +174,21 @@ export default {
   padding-bottom: $base * 3;
 }
 
+.hideable {
+  animation-name: showInput;
+  animation-duration: 0.33s;
+  max-height: 3em;
+  &.hidden {
+    animation-name: hideInput;
+    animation-duration: 0.33s;
+    max-height: 0;
+  }
+}
+
 .login-switcher {
   display: flex;
   text-align: center;
+  user-select: none;
 
   h1 {
     cursor: pointer;
@@ -185,5 +205,27 @@ form {
   display: flex;
   flex-direction: column;
   position: relative;
+}
+
+@keyframes showInput {
+  from {
+    max-height: 0;
+    opacity: 0;
+  }
+  to {
+    max-height: 3em;
+    opacity: 100%;
+  }
+}
+
+@keyframes hideInput {
+  from {
+    max-height: 3em;
+    opacity: 100%;
+  }
+  to {
+    max-height: 0;
+    opacity: 0;
+  }
 }
 </style>
