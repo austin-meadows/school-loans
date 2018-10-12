@@ -3,7 +3,7 @@ import Slide from '@/components/Home/Slide.vue';
 import Section from '@/components/Section.vue';
 
 export default {
-  data () {
+  data() {
     return {
       slides: [
         {
@@ -37,7 +37,7 @@ export default {
 <template>
   <div id="onboarding">
     <Section>
-      <Slide v-for="(slide, index) in slides" :key="index" :title="slide.title" :msg="slide.msg" />
+      <Slide v-for="(slide, index) in slides" :key="index" :title="slide.title" :msg="slide.msg"/>
     </Section>
   </div>
 </template>

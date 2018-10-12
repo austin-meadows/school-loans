@@ -2,61 +2,54 @@
 import { auth } from '@/main';
 
 export default {
-  data () {
+  data() {
     return {
       isSignedIn: this.$root.$data.isSignedIn,
     };
   },
-  mounted () {
+  mounted() {
     this.$refs.menu.addEventListener(
       'animationend',
-      function () {
-        if (this.classList.contains('closed')) {
-          this.classList.remove('closed');
-        }
-      },
+      () => this.removeClosed(),
       false,
     );
     this.$refs.menu.addEventListener(
       'webkitAnimationEnd',
-      function () {
-        if (this.classList.contains('closed')) {
-          this.classList.remove('closed');
-        }
-      },
+      () => this.removeClosed(),
       false,
     );
     this.$refs.menu.addEventListener(
       'oanimationend',
-      function () {
-        if (this.classList.contains('closed')) {
-          this.classList.remove('closed');
-        }
-      },
+      () => this.removeClosed(),
       false,
     );
   },
   methods: {
-    show () {
+    removeClosed() {
+      if (this.$refs.menu.classList.contains('closed')) {
+        this.$refs.menu.classList.remove('closed');
+      }
+    },
+    show() {
       this.$refs.menu.classList.remove('closed');
       this.$refs.menu.classList.add('open');
     },
-    hide () {
+    hide() {
       this.$refs.menu.classList.remove('open');
       this.$refs.menu.classList.add('closed');
     },
-    onClickMenu () {
+    onClickMenu() {
       if (this.$refs.menu.classList.contains('open')) {
         this.hide();
       } else {
         this.show();
       }
     },
-    onClickMenuLink () {
+    onClickMenuLink() {
       this.$refs.menu.classList.remove('open');
       this.$refs.menu.classList.add('closed');
     },
-    onClickSignOut () {
+    onClickSignOut() {
       auth.signOut();
     },
   },
@@ -66,23 +59,23 @@ export default {
 <template>
   <div id="nav">
     <a id="menuButton" @click="onClickMenu">
-      <fa icon="bars" /> Menu
+      <fa icon="bars"/>Menu
     </a>
     <div ref="menu" class="menu">
       <router-link @click.native="onClickMenuLink" to="/">
-        <fa icon="home" /> Home
+        <fa icon="home"/>Home
       </router-link>
       <router-link @click.native="onClickMenuLink" to="/give">
-        <fa icon="piggy-bank" /> Give
+        <fa icon="piggy-bank"/>Give
       </router-link>
       <router-link @click.native="onClickMenuLink" to="/stats">
-        <fa icon="chart-bar" /> Statistics
+        <fa icon="chart-bar"/>Statistics
       </router-link>
       <router-link v-if="!isSignedIn" @click.native="onClickMenuLink" to="/login">
-        <fa icon="sign-in-alt" /> Login
+        <fa icon="sign-in-alt"/>Login
       </router-link>
       <router-link v-else @click.native="onClickSignOut" to="/login">
-        <fa icon="sign-out-alt" /> Sign Out
+        <fa icon="sign-out-alt"/>Sign Out
       </router-link>
     </div>
   </div>

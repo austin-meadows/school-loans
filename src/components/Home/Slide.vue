@@ -14,12 +14,8 @@ export default {
 
 <template>
   <div class="slide">
-    <HeaderText>
-      {{ title }}
-    </HeaderText>
-    <div class="msg">
-      {{ msg }}
-    </div>
+    <HeaderText>{{ title }}</HeaderText>
+    <div class="msg">{{ msg }}</div>
   </div>
 </template>
 

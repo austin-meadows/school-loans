@@ -12,11 +12,22 @@ export default {
 <template>
   <div v-if="icon" class="input-block">
     <label v-if="name" :for="name">
-      <input :id="name" @input="$emit('input', $event.target.value)" :placeholder="placeholder" :type="type">
-      <fa :icon="icon" />
+      <input
+        :id="name"
+        @input="$emit('input', $event.target.value)"
+        :placeholder="placeholder"
+        :type="type"
+      >
+      <fa :icon="icon"/>
     </label>
   </div>
-  <input v-else :id="name" @input="$emit('input', $event.target.value)" :placeholder="placeholder" :type="type">
+  <input
+    v-else
+    :id="name"
+    @input="$emit('input', $event.target.value)"
+    :placeholder="placeholder"
+    :type="type"
+  >
 </template>
 
 <style lang="scss">
@@ -30,6 +41,7 @@ $label-font-size: $sizes-m;
   display: flex;
   flex-direction: row;
   justify-content: center;
+  overflow-x: hidden;
   position: relative;
 
   &.hidden {
@@ -43,6 +55,8 @@ label {
   width: 100%;
 
   :last-child {
+    animation-name: unfocusIcon;
+    animation-duration: 0.33s;
     font-size: $label-font-size;
     left: 0;
     padding: 0 ($label-font-size / 2);
@@ -70,10 +84,20 @@ input {
   &[type="text"],
   &[type="email"],
   &[type="password"] {
+    animation-name: unfocusInput;
+    animation-duration: 0.33s;
     border: 1px solid $whiteish;
     min-width: 200px;
+    &:not(:focus) {
+      padding: 0 $sizes-s 0 $label-font-size * 2;
+    }
     &:focus {
+      animation-name: focusInput;
+      animation-duration: 0.33s;
+      padding: 0 $label-font-size * 2 0 $sizes-s;
       + svg {
+        animation-name: focusInput;
+        animation-duration: 0.33s;
         left: -2em;
       }
     }
@@ -142,6 +166,42 @@ $slideDuration: 0.4s;
 
   100% {
     transform: translateY(0);
+  }
+}
+
+@keyframes focusInput {
+  from {
+    padding: 0 $sizes-s 0 $label-font-size * 2;
+  }
+  to {
+    padding: 0 $label-font-size * 2 0 $sizes-s;
+  }
+}
+
+@keyframes unfocusInput {
+  from {
+    padding: 0 $label-font-size * 2 0 $sizes-s;
+  }
+  to {
+    padding: 0 $sizes-s 0 $label-font-size * 2;
+  }
+}
+
+@keyframes focusIcon {
+  from {
+    left: 0;
+  }
+  to {
+    left: -2em;
+  }
+}
+
+@keyframes unfocusIcon {
+  from {
+    left: -2em;
+  }
+  to {
+    left: 0;
   }
 }
 </style>
