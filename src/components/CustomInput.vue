@@ -10,22 +10,6 @@ export default {
     placeholder: String,
     type: String,
   },
-  data() {
-    return {
-      noAnimation: true,
-    };
-  },
-  methods: {
-    allowAnimation() {
-      if (this.$refs.inputBlock) {
-        this.$refs.inputBlock.classList.remove('no-animation');
-        this.noAnimation = false;
-      }
-    },
-  },
-  mounted() {
-    setTimeout(() => this.allowAnimation(), 201);
-  },
 };
 </script>
 
@@ -35,7 +19,6 @@ export default {
     :class="
       ['input-block', { hidden: isHidden },
       { hideable: isHidden != null },
-      { 'no-animation': this.noAnimation }
     ]"
     ref="inputBlock">
     <label v-if="name" :for="name">
@@ -65,42 +48,16 @@ export default {
 
 $label-font-size: $sizes-m;
 
-.no-animation.hideable, .no-animation * {
-  animation-duration: 0s !important;
-}
-
-@keyframes showInput {
-  from {
-    max-height: 0;
-    opacity: 0;
-  }
-  to {
-    max-height: 3em;
-    opacity: 100%;
-  }
-}
-
-@keyframes hideInput {
-  from {
-    max-height: 3em;
-    opacity: 100%;
-  }
-  to {
-    max-height: 0;
-    opacity: 0;
-  }
-}
-
 .input-block.hideable:not(.hidden) {
-  animation-name: showInput;
-  animation-duration: 0.2s;
+  transition: all 0.25s ease-in-out;
   max-height: 3em;
+  opacity: 1;
 }
 
 .hidden {
-  animation-name: hideInput;
-  animation-duration: 0.2s;
-  max-height: 0;
+  opacity: 0;
+  max-height: 0em;
+  transition: all 0.25s ease-in-out;
   user-select: none;
 }
 
@@ -120,7 +77,7 @@ label {
 
   :last-child {
     animation-name: unfocusIcon;
-    animation-duration: 0.2s;
+    animation-duration: 0.33s;
     font-size: $label-font-size;
     left: 0;
     padding: 0 ($label-font-size / 2);
@@ -149,7 +106,7 @@ input {
   &[type="email"],
   &[type="password"] {
     animation-name: unfocusInput;
-    animation-duration: 0.2s;
+    animation-duration: 0.33s;
     border: 1px solid $whiteish;
     min-width: 200px;
     &:not(:focus) {
@@ -157,11 +114,11 @@ input {
     }
     &:focus {
       animation-name: focusInput;
-      animation-duration: 0.2s;
+      animation-duration: 0.33s;
       padding: 0 $label-font-size * 2 0 $sizes-s;
       + svg {
         animation-name: focusInput;
-        animation-duration: 0.2s;
+        animation-duration: 0.33s;
         left: -2em;
       }
     }
