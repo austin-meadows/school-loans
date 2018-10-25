@@ -13,12 +13,14 @@ export default {
   data() {
     return {
       noAnimation: true,
-    }
+    };
   },
   methods: {
     allowAnimation() {
-      this.$refs.inputBlock.classList.remove('no-animation');
-      this.noAnimation = false;
+      if (this.$refs.inputBlock) {
+        this.$refs.inputBlock.classList.remove('no-animation');
+        this.noAnimation = false;
+      }
     },
   },
   mounted() {
@@ -28,7 +30,14 @@ export default {
 </script>
 
 <template>
-  <div v-if="icon" :class="['input-block', { hidden: isHidden }, { hideable: isHidden != null }, { 'no-animation': this.noAnimation }]" ref="inputBlock">
+  <div
+    v-if="icon"
+    :class="
+      ['input-block', { hidden: isHidden },
+      { hideable: isHidden != null },
+      { 'no-animation': this.noAnimation }
+    ]"
+    ref="inputBlock">
     <label v-if="name" :for="name">
       <input
         :disabled="isHidden"

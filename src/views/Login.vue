@@ -90,7 +90,7 @@ export default {
       e.target.parentNode.classList.add('active');
       const selectedForm = e.target.parentNode.id;
       this.formKind = selectedForm;
-      this.isHidden = this.isHidden ? false : true;
+      this.isHidden = !this.isHidden;
     },
   },
 };
