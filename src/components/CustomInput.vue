@@ -105,20 +105,18 @@ input {
   &[type="text"],
   &[type="email"],
   &[type="password"] {
-    animation-name: unfocusInput;
-    animation-duration: 0.33s;
     border: 1px solid $whiteish;
+    transition: all 0.25s ease-in-out;
     min-width: 200px;
+    + svg {
+      transition: left 0.25s ease-in-out;
+    }
     &:not(:focus) {
       padding: 0 $sizes-s 0 $label-font-size * 2;
     }
     &:focus {
-      animation-name: focusInput;
-      animation-duration: 0.33s;
       padding: 0 $label-font-size * 2 0 $sizes-s;
       + svg {
-        animation-name: focusInput;
-        animation-duration: 0.33s;
         left: -2em;
       }
     }
@@ -205,24 +203,6 @@ $slideDuration: 0.4s;
   }
   to {
     padding: 0 $sizes-s 0 $label-font-size * 2;
-  }
-}
-
-@keyframes focusIcon {
-  from {
-    left: 0;
-  }
-  to {
-    left: -2em;
-  }
-}
-
-@keyframes unfocusIcon {
-  from {
-    left: -2em;
-  }
-  to {
-    left: 0;
   }
 }
 </style>
