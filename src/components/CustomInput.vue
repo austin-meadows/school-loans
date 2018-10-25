@@ -1,20 +1,37 @@
 <script>
 export default {
   props: {
-    disabled: Boolean,
     icon: String,
+    isHidden: {
+      default: null,
+      type: Boolean,
+    },
     name: String,
     placeholder: String,
     type: String,
+  },
+  data() {
+    return {
+      noAnimation: true,
+    }
+  },
+  methods: {
+    allowAnimation() {
+      this.$refs.inputBlock.classList.remove('no-animation');
+      this.noAnimation = false;
+    },
+  },
+  mounted() {
+    setTimeout(() => this.allowAnimation(), 201);
   },
 };
 </script>
 
 <template>
-  <div v-if="icon" class="input-block">
+  <div v-if="icon" :class="['input-block', { hidden: isHidden }, { hideable: isHidden != null }, { 'no-animation': this.noAnimation }]" ref="inputBlock">
     <label v-if="name" :for="name">
       <input
-        :disabled="disabled"
+        :disabled="isHidden"
         :id="name"
         @input="$emit('input', $event.target.value)"
         :placeholder="placeholder"
@@ -25,7 +42,7 @@ export default {
   </div>
   <input
     v-else
-    :disabled="disabled"
+    :disabled="isHidden"
     :id="name"
     @input="$emit('input', $event.target.value)"
     :placeholder="placeholder"
@@ -38,6 +55,45 @@ export default {
 @import "../utils/styles/palette";
 
 $label-font-size: $sizes-m;
+
+.no-animation.hideable, .no-animation * {
+  animation-duration: 0s !important;
+}
+
+@keyframes showInput {
+  from {
+    max-height: 0;
+    opacity: 0;
+  }
+  to {
+    max-height: 3em;
+    opacity: 100%;
+  }
+}
+
+@keyframes hideInput {
+  from {
+    max-height: 3em;
+    opacity: 100%;
+  }
+  to {
+    max-height: 0;
+    opacity: 0;
+  }
+}
+
+.input-block.hideable:not(.hidden) {
+  animation-name: showInput;
+  animation-duration: 0.2s;
+  max-height: 3em;
+}
+
+.hidden {
+  animation-name: hideInput;
+  animation-duration: 0.2s;
+  max-height: 0;
+  user-select: none;
+}
 
 .input-block {
   align-items: center;
@@ -55,7 +111,7 @@ label {
 
   :last-child {
     animation-name: unfocusIcon;
-    animation-duration: 0.33s;
+    animation-duration: 0.2s;
     font-size: $label-font-size;
     left: 0;
     padding: 0 ($label-font-size / 2);
@@ -84,7 +140,7 @@ input {
   &[type="email"],
   &[type="password"] {
     animation-name: unfocusInput;
-    animation-duration: 0.33s;
+    animation-duration: 0.2s;
     border: 1px solid $whiteish;
     min-width: 200px;
     &:not(:focus) {
@@ -92,11 +148,11 @@ input {
     }
     &:focus {
       animation-name: focusInput;
-      animation-duration: 0.33s;
+      animation-duration: 0.2s;
       padding: 0 $label-font-size * 2 0 $sizes-s;
       + svg {
         animation-name: focusInput;
-        animation-duration: 0.33s;
+        animation-duration: 0.2s;
         left: -2em;
       }
     }
