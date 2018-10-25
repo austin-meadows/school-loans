@@ -167,42 +167,4 @@ input {
     }
   }
 }
-
-$slideDistance: 100;
-$slideDuration: 0.4s;
-
-%slide-up {
-  animation-duration: $slideDuration;
-  animation-fill-mode: both;
-  animation-name: slideUp;
-  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-@keyframes slideUp {
-  0% {
-    transform: translateY(rem($slideDistance));
-  }
-
-  100% {
-    transform: translateY(0);
-  }
-}
-
-@keyframes focusInput {
-  from {
-    padding: 0 $sizes-s 0 $label-font-size * 2;
-  }
-  to {
-    padding: 0 $label-font-size * 2 0 $sizes-s;
-  }
-}
-
-@keyframes unfocusInput {
-  from {
-    padding: 0 $label-font-size * 2 0 $sizes-s;
-  }
-  to {
-    padding: 0 $sizes-s 0 $label-font-size * 2;
-  }
-}
 </style>
