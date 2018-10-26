@@ -129,13 +129,31 @@ $listItemHeight: ($base * 3);
     white-space: nowrap;
     user-select: none;
 
+    &:before {
+      background: white;
+      content: "";
+      display: block;
+      height: 100%;
+      left: 0;
+      position: absolute;
+      top: $base * 3;
+      transition: all 0.33s ease-in-out;
+      width: 100%;
+      z-index: -1;
+    }
+
     > :first-child {
       margin-right: $sizes-s;
     }
 
     &.router-link-exact-active {
-      background: white;
       color: $primary;
+      position: relative;
+      z-index: 1;
+
+      &:before {
+        top: 0;
+      }
     }
 
     &:hover {
