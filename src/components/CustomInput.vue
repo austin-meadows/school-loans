@@ -132,7 +132,6 @@ input {
     cursor: pointer;
     margin: 0 1rem 0 0;
     position: relative;
-    top: rem(-6);
 
     &:before {
       border: 2px solid $whiteish;
@@ -158,11 +157,9 @@ input {
     &:after {
       content: "";
       position: absolute;
-      top: rem(-2);
       left: 0;
       width: $sizes-l;
       height: $sizes-l;
-      background: #fff;
       cursor: pointer;
     }
   }
