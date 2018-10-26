@@ -60,6 +60,7 @@ export default {
 </template>
 
 <style lang="scss">
+@import "./utils/styles/animations";
 @import "./utils/styles/breakpoints";
 @import "./utils/styles/palette";
 @import "./utils/styles/sizes";
@@ -82,7 +83,7 @@ $listItemHeight: ($base * 3);
     position: relative;
     overflow-x: scroll;
     overflow-y: hidden;
-    transition: right 0.3s ease-in-out;
+    transition: $default-transition;
 
     &.open {
       @media screen and (max-width: $screen-size-s) {
@@ -125,7 +126,7 @@ $listItemHeight: ($base * 3);
     padding: $base;
     text-align: right;
     text-decoration: none;
-    transition: all 0.33s ease-in-out;
+    transition: $default-transition;
     white-space: nowrap;
     user-select: none;
 
@@ -137,7 +138,7 @@ $listItemHeight: ($base * 3);
       left: 0;
       position: absolute;
       top: $base * 3;
-      transition: all 0.33s ease-in-out;
+      transition: $default-transition;
       width: 100%;
       z-index: -1;
     }

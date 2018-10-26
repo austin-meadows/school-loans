@@ -43,12 +43,11 @@ export default {
 </template>
 
 <style lang="scss">
+@import "../utils/styles/animations";
 @import "../utils/styles/sizes";
 @import "../utils/styles/palette";
 
 $label-font-size: $sizes-m;
-
-
 
 .input-block {
   align-items: center;
@@ -59,7 +58,7 @@ $label-font-size: $sizes-m;
   opacity: 1;
   overflow: hidden;
   position: relative;
-  transition: all 0.33s ease-in-out;
+  transition: $default-transition;
 
   &.hidden {
     opacity: 0;
@@ -102,10 +101,10 @@ input {
   &[type="email"],
   &[type="password"] {
     border: 1px solid $whiteish;
-    transition: all 0.33s ease-in-out;
+    transition: $default-transition;
     min-width: 200px;
     + svg {
-      transition: left 0.33s ease-in-out;
+      transition: $default-transition;
     }
     &:not(:focus) {
       padding: 0 $sizes-s 0 $label-font-size * 2;
@@ -136,7 +135,7 @@ input {
       height: $base;
       left: 0;
       position: absolute;
-      transition: all 0.3s ease-in-out;
+      transition: $default-transition;
       width: $base;
       z-index: 1;
     }

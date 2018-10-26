@@ -149,6 +149,7 @@ export default {
 </template>
 
 <style lang="scss">
+@import '../utils/styles/animations.scss';
 @import '../utils/styles/sizes';
 @import '../utils/styles/palette.scss';
 
@@ -169,7 +170,7 @@ export default {
   h1 {
     cursor: pointer;
     padding: 0 10px;
-    transition: all 0.33s ease-in-out;
+    transition: $default-transition;
   }
 
   h1:not(.active) {
