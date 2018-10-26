@@ -89,8 +89,10 @@ export default {
       this.$refs.signUp.$el.classList.remove('active');
       e.target.parentNode.classList.add('active');
       const selectedForm = e.target.parentNode.id;
-      this.formKind = selectedForm;
-      this.isHidden = !this.isHidden;
+      if (this.formKind !== selectedForm) {
+        this.isHidden = !this.isHidden;
+        this.formKind = selectedForm;
+      }
     },
   },
 };
@@ -167,6 +169,7 @@ export default {
   h1 {
     cursor: pointer;
     padding: 0 10px;
+    transition: all 0.33s ease-in-out;
   }
 
   h1:not(.active) {

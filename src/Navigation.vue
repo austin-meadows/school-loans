@@ -125,6 +125,7 @@ $listItemHeight: ($base * 3);
     padding: $base;
     text-align: right;
     text-decoration: none;
+    transition: all 0.33s ease-in-out;
     white-space: nowrap;
     user-select: none;
 

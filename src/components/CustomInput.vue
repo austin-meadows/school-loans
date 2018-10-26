@@ -17,8 +17,8 @@ export default {
   <div
     v-if="icon"
     :class="
-      ['input-block', { hidden: isHidden },
-      { hideable: isHidden != null },
+      ['input-block',
+      { hidden: isHidden },
     ]"
     ref="inputBlock">
     <label v-if="name" :for="name">
@@ -48,25 +48,24 @@ export default {
 
 $label-font-size: $sizes-m;
 
-.input-block.hideable:not(.hidden) {
-  max-height: 4em;
-  opacity: 1;
-}
 
-.hidden {
-  opacity: 0;
-  max-height: 0;
-  user-select: none;
-}
 
 .input-block {
   align-items: center;
   display: flex;
   flex-direction: row;
   justify-content: center;
+  max-height: 4em;
+  opacity: 1;
   overflow: hidden;
   position: relative;
-  transition: all 0.25s ease-in-out;
+  transition: all 0.33s ease-in-out;
+
+  &.hidden {
+    opacity: 0;
+    max-height: 0;
+    user-select: none;
+  }
 }
 
 label {
@@ -103,10 +102,10 @@ input {
   &[type="email"],
   &[type="password"] {
     border: 1px solid $whiteish;
-    transition: all 0.25s ease-in-out;
+    transition: all 0.33s ease-in-out;
     min-width: 200px;
     + svg {
-      transition: left 0.25s ease-in-out;
+      transition: left 0.33s ease-in-out;
     }
     &:not(:focus) {
       padding: 0 $sizes-s 0 $label-font-size * 2;
