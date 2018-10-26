@@ -7,29 +7,7 @@ export default {
       isSignedIn: this.$root.$data.isSignedIn,
     };
   },
-  mounted() {
-    this.$refs.menu.addEventListener(
-      'animationend',
-      () => this.removeClosed(),
-      false,
-    );
-    this.$refs.menu.addEventListener(
-      'webkitAnimationEnd',
-      () => this.removeClosed(),
-      false,
-    );
-    this.$refs.menu.addEventListener(
-      'oanimationend',
-      () => this.removeClosed(),
-      false,
-    );
-  },
   methods: {
-    removeClosed() {
-      if (this.$refs.menu.classList.contains('closed')) {
-        this.$refs.menu.classList.remove('closed');
-      }
-    },
     show() {
       this.$refs.menu.classList.remove('closed');
       this.$refs.menu.classList.add('open');
@@ -61,7 +39,7 @@ export default {
     <a id="menuButton" @click="onClickMenu">
       <fa icon="bars"/>Menu
     </a>
-    <div ref="menu" class="menu">
+    <div ref="menu" class="menu closed">
       <router-link @click.native="onClickMenuLink" to="/">
         <fa icon="home"/>Home
       </router-link>
@@ -90,24 +68,6 @@ $screenSizeSmPlusOne: $screen-size-s + 1;
 $numLinks: 4;
 $listItemHeight: ($base * 3);
 
-@keyframes open {
-  from {
-    left: -400px;
-  }
-  to {
-    left: 0px;
-  }
-}
-
-@keyframes close {
-  from {
-    left: 0px;
-  }
-  to {
-    left: -400px;
-  }
-}
-
 #nav {
   background: linear-gradient(to bottom right, white, $whiteish);
   display: flex;
@@ -122,29 +82,20 @@ $listItemHeight: ($base * 3);
     position: relative;
     overflow-x: scroll;
     overflow-y: hidden;
+    transition: right 0.3s ease-in-out;
 
     &.open {
       @media screen and (max-width: $screen-size-s) {
-        animation-name: open;
-        animation-duration: 0.33s;
-        left: 0px;
+        right: 0px;
         pointer-events: auto;
       }
     }
 
     &.closed {
       @media screen and (max-width: $screen-size-s) {
-        animation-name: close;
-        animation-duration: 0.33s;
-        left: -400px;
+        right: 100%;
         pointer-events: none;
       }
-    }
-
-    @media screen and (max-width: $screen-size-s) {
-      pointer-events: none;
-      left: -400px;
-      z-index: 1;
     }
   }
 

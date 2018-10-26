@@ -49,15 +49,13 @@ export default {
 $label-font-size: $sizes-m;
 
 .input-block.hideable:not(.hidden) {
-  transition: all 0.25s ease-in-out;
-  max-height: 3em;
+  max-height: 4em;
   opacity: 1;
 }
 
 .hidden {
   opacity: 0;
-  max-height: 0em;
-  transition: all 0.25s ease-in-out;
+  max-height: 0;
   user-select: none;
 }
 
@@ -66,8 +64,9 @@ $label-font-size: $sizes-m;
   display: flex;
   flex-direction: row;
   justify-content: center;
-  overflow-x: hidden;
+  overflow: hidden;
   position: relative;
+  transition: all 0.25s ease-in-out;
 }
 
 label {
@@ -76,8 +75,6 @@ label {
   width: 100%;
 
   :last-child {
-    animation-name: unfocusIcon;
-    animation-duration: 0.33s;
     font-size: $label-font-size;
     left: 0;
     padding: 0 ($label-font-size / 2);
@@ -123,6 +120,7 @@ input {
   }
 
   &[type="submit"] {
+    color: $whiteish;
     background: $primary;
     border: 0;
     padding: 0 $label-font-size * 2;
