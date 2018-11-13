@@ -124,6 +124,7 @@ $listItemHeight: ($base * 3);
     line-height: $base;
     max-height: $base;
     padding: $base;
+    position: relative;
     text-align: right;
     text-decoration: none;
     transition: $default-transition;
