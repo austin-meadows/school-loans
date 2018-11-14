@@ -154,6 +154,7 @@ input {
     background: $primary;
     border: 0;
     padding: 0 $label-font-size * 2;
+    width: 100%;
   }
 
   &[type="checkbox"] {
