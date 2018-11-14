@@ -87,7 +87,9 @@ $label-font-size: $sizes-m;
       position: initial;
     }
     span {
+      flex: 1;
       order: 2;
+      text-align: left;
     }
     input {
       order: 3;
@@ -99,6 +101,7 @@ label {
   align-items: center;
   display: flex;
   position: relative;
+  width: 100%;
 
   :last-child {
     font-size: $label-font-size;
@@ -147,6 +150,7 @@ input {
 
   &[type="submit"] {
     color: $whiteish;
+    cursor: pointer;
     background: $primary;
     border: 0;
     padding: 0 $label-font-size * 2;
