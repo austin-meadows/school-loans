@@ -167,6 +167,8 @@ input {
       content: "";
       display: block;
       height: $base;
+      position: relative;
+      top: 0;
       transition: $default-transition;
       visibility: visible;
       width: $base;
