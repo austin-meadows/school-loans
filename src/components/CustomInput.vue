@@ -10,18 +10,27 @@ export default {
     placeholder: String,
     type: String,
   },
+  data() {
+    return {
+      dynamicClass: {
+        type
+      }
+    }
+  }
 };
 </script>
 
 <template>
   <div
     v-if="icon"
-    :class="
-      ['input-block',
+    :class="[
+      'input-block',
       { hidden: isHidden },
+      type
     ]"
     ref="inputBlock">
     <label v-if="name" :for="name">
+      <span v-if="placeholder && type === 'checkbox' && icon">{{placeholder}}</span>
       <input
         :disabled="isHidden"
         :id="name"
@@ -65,17 +74,36 @@ $label-font-size: $sizes-m;
     max-height: 0;
     user-select: none;
   }
+
+  &.checkbox {
+    span, svg {
+      cursor: pointer;
+      user-select: none;
+    }
+    svg {
+      margin: 0;
+      margin-right: $sizes-s;
+      order: 1;
+      position: initial;
+    }
+    span {
+      order: 2;
+    }
+    input {
+      order: 3;
+    }
+  }
 }
 
 label {
   align-items: center;
   display: flex;
-  width: 100%;
+  position: relative;
 
   :last-child {
     font-size: $label-font-size;
     left: 0;
-    padding: 0 ($label-font-size / 2);
+    margin: 0 $sizes-s;
     position: absolute;
   }
 }
@@ -125,17 +153,22 @@ input {
   }
 
   &[type="checkbox"] {
+    align-items: center;
     cursor: pointer;
-    margin: 0 1rem 0 0;
+    display: flex;
+    margin: 0;
+    margin-left: $sizes-s;
     position: relative;
+    visibility: hidden;
+    width: calc(1em + 4px);
 
     &:before {
       border: 2px solid $whiteish;
       content: "";
+      display: block;
       height: $base;
-      left: 0;
-      position: absolute;
       transition: $default-transition;
+      visibility: visible;
       width: $base;
       z-index: 1;
     }
@@ -146,17 +179,10 @@ input {
         border-color: $primary;
         border-right-style: none;
         border-top-style: none;
+        position: relative;
+        top: -4px;
         transform: rotate(-45deg);
       }
-    }
-
-    &:after {
-      content: "";
-      position: absolute;
-      left: 0;
-      width: $sizes-l;
-      height: $sizes-l;
-      cursor: pointer;
     }
   }
 }

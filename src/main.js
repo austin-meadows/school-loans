@@ -10,12 +10,14 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 // font awesome icons
 import { faBars } from '@fortawesome/free-solid-svg-icons/faBars';
 import { faChartBar } from '@fortawesome/free-solid-svg-icons/faChartBar';
+import { faDonate } from '@fortawesome/free-solid-svg-icons/faDonate'
 import { faHome } from '@fortawesome/free-solid-svg-icons/faHome';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons/faEnvelope';
 import { faKey } from '@fortawesome/free-solid-svg-icons/faKey';
 import { faPiggyBank } from '@fortawesome/free-solid-svg-icons/faPiggyBank';
 import { faSignInAlt } from '@fortawesome/free-solid-svg-icons/faSignInAlt';
 import { faSignOutAlt } from '@fortawesome/free-solid-svg-icons/faSignOutAlt';
+import { faUserGraduate } from '@fortawesome/free-solid-svg-icons/faUserGraduate';
 
 import App from './App.vue';
 import router from './router';
@@ -27,12 +29,14 @@ Vue.use(Notifications);
 library.add(
   faBars,
   faChartBar,
+  faDonate,
   faEnvelope,
   faHome,
   faKey,
   faPiggyBank,
   faSignInAlt,
   faSignOutAlt,
+  faUserGraduate,
 );
 
 Vue.component('fa', FontAwesomeIcon);
