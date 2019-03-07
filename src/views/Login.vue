@@ -142,7 +142,7 @@ export default {
           type="password"
           v-model="passwordConfirm"
         />
-        <CustomInput type="submit" value="Submit" />
+        <CustomInput icon="sign-in-alt" type="submit" value="Login" />
       </form>
     </Section>
   </div>

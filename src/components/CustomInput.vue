@@ -34,11 +34,11 @@ export default {
     :class="[
       'input-block',
       { hidden: isHidden },
-      type
+      type,
     ]"
     ref="inputBlock">
-    <label v-if="name" :for="name">
-      <span v-if="placeholder && type === 'checkbox' && icon">{{placeholder}}</span>
+    <label :for="name">
+      <span v-if="type === 'checkbox'">{{placeholder}}</span>
       <input
         :disabled="isHidden"
         :id="name"
@@ -131,9 +131,8 @@ input {
   padding: 0 $sizes-s 0 $label-font-size * 2;
 
   &::placeholder {
-    color: $text;
+    color: lighten($text, 40%);
     line-height: normal;
-    opacity: 0.5;
   }
 
   &[type="text"],
@@ -157,12 +156,16 @@ input {
   }
 
   &[type="submit"] {
-    color: $whiteish;
+    color: lighten($primary, 40%);
     cursor: pointer;
     background: $primary;
     border: 0;
     padding: 0 $label-font-size * 2;
     width: 100%;
+
+    ~ svg {
+      color: lighten($primary, 40%);
+    }
   }
 
   &[type="checkbox"] {
