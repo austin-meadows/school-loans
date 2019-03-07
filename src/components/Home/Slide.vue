@@ -20,7 +20,7 @@ export default {
 </template>
 
 <style lang="scss">
-@import "../../utils/styles/sizes";
+@import "../../includes/styles/sizes";
 
 .slide {
   display: flex;

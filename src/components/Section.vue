@@ -5,7 +5,7 @@
 </template>
 
 <style lang="scss">
-@import "../utils/styles/sizes";
+@import "../includes/styles/sizes";
 
 section {
   margin: $base $base 0 $base;

@@ -4,7 +4,7 @@ import { auth } from '@/main';
 import CustomInput from '@/components/CustomInput.vue';
 import HeaderText from '@/components/HeaderText.vue';
 import Section from '@/components/Section.vue';
-import validate from '@/utils/js/validate';
+import validate from '@/includes/js/validate';
 
 export default {
   components: {
@@ -149,9 +149,9 @@ export default {
 </template>
 
 <style lang="scss">
-@import '../utils/styles/animations.scss';
-@import '../utils/styles/sizes';
-@import '../utils/styles/palette.scss';
+@import '../includes/styles/animations.scss';
+@import '../includes/styles/sizes';
+@import '../includes/styles/palette.scss';
 
 #login {
   align-items: center;

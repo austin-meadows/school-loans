@@ -60,10 +60,10 @@ export default {
 </template>
 
 <style lang="scss">
-@import "./utils/styles/animations";
-@import "./utils/styles/breakpoints";
-@import "./utils/styles/palette";
-@import "./utils/styles/sizes";
+@import "./includes/styles/animations";
+@import "./includes/styles/breakpoints";
+@import "./includes/styles/palette";
+@import "./includes/styles/sizes";
 
 $screenSizeSmPlusOne: $screen-size-s + 1;
 $numLinks: 4;

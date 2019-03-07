@@ -1,22 +1,30 @@
 <script>
 export default {
   props: {
+    /*
+      name of font-awesome icon to use
+    */
     icon: String,
+    /*
+      if the input is hidden or not.
+    */
     isHidden: {
-      default: null,
+      default: false,
       type: Boolean,
     },
+    /*
+      the unique name given to the input
+    */
     name: String,
+    /*
+      placeholder text in the text input
+    */
     placeholder: String,
+    /*
+      type of input
+    */
     type: String,
   },
-  data() {
-    return {
-      dynamicClass: {
-        type
-      }
-    }
-  }
 };
 </script>
 
@@ -52,9 +60,9 @@ export default {
 </template>
 
 <style lang="scss">
-@import "../utils/styles/animations";
-@import "../utils/styles/sizes";
-@import "../utils/styles/palette";
+@import "../includes/styles/animations";
+@import "../includes/styles/sizes";
+@import "../includes/styles/palette";
 
 $label-font-size: $sizes-m;
 
