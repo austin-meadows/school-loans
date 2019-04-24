@@ -10,31 +10,31 @@
     "clean": "rm -rf node_modules & rm -rf dist"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^1.2.15",
-    "@fortawesome/free-solid-svg-icons": "^5.7.2",
-    "@fortawesome/vue-fontawesome": "^0.1.5",
-    "chart.js": "^2.7.3",
-    "firebase": "^5.8.5",
-    "firebase-tools": "^6.4.0",
+    "@fortawesome/fontawesome-svg-core": "^1.2.17",
+    "@fortawesome/free-solid-svg-icons": "^5.8.1",
+    "@fortawesome/vue-fontawesome": "^0.1.6",
+    "chart.js": "^2.8.0",
+    "firebase": "^5.10.0",
+    "firebase-tools": "^6.7.1",
     "normalize.css": "^8.0.1",
-    "vue": "^2.6.8",
+    "vue": "^2.6.10",
     "vue-notification": "^1.3.16",
-    "vue-router": "^3.0.2",
+    "vue-router": "^3.0.6",
     "vuefire": "^1.4.5"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "^3.4.0",
-    "@vue/cli-plugin-eslint": "^3.4.0",
-    "@vue/cli-service": "^3.4.0",
+    "@vue/cli-plugin-babel": "^3.6.0",
+    "@vue/cli-plugin-eslint": "^3.6.0",
+    "@vue/cli-service": "^3.6.0",
     "@vue/eslint-config-airbnb": "^4.0.0",
     "babel-eslint": "^10.0.1",
-    "eslint": "^5.8.0",
+    "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.0.0",
     "fibers": "^3.1.1",
     "lint-staged": "^8.1.0",
-    "sass": "^1.16.0",
+    "sass": "^1.19.0",
     "sass-loader": "^7.1.0",
-    "vue-template-compiler": "^2.5.21"
+    "vue-template-compiler": "^2.6.10"
   },
   "gitHooks": {
     "pre-commit": "lint-staged"
