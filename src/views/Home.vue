@@ -17,7 +17,7 @@ export default {
 
 <template>
   <div id="home">
-    <Dashboard v-if="isSignedIn" />
-    <Onboarding v-else />
+    <Dashboard v-if="isSignedIn"/>
+    <Onboarding v-else/>
   </div>
 </template>

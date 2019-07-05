@@ -1,15 +1,15 @@
 <script>
 import { auth } from '@/main';
 
+import CustomInput from '@/components/CustomInput.vue';
 import HeaderText from '@/components/HeaderText.vue';
-import Input from '@/components/Input.vue';
 import Section from '@/components/Section.vue';
-import validate from '@/utils/js/validate';
+import validate from '@/includes/js/validate';
 
 export default {
   components: {
     HeaderText,
-    Input,
+    CustomInput,
     Section,
   },
   data() {
@@ -17,9 +17,10 @@ export default {
       email: '',
       emailConfirm: '',
       errors: [],
+      formKind: 'loginForm',
+      isHidden: true,
       password: '',
       passwordConfirm: '',
-      formKind: 'loginForm',
     };
   },
   methods: {
@@ -88,15 +89,9 @@ export default {
       this.$refs.signUp.$el.classList.remove('active');
       e.target.parentNode.classList.add('active');
       const selectedForm = e.target.parentNode.id;
-      this.formKind = selectedForm;
-      const confirmEmail = this.$refs.emailConfirm.$el;
-      const confirmPassword = this.$refs.passwordConfirm.$el;
-      if (selectedForm === 'signUpForm') {
-        confirmEmail.classList.remove('hidden');
-        confirmPassword.classList.remove('hidden');
-      } else {
-        confirmEmail.classList.add('hidden');
-        confirmPassword.classList.add('hidden');
+      if (this.formKind !== selectedForm) {
+        this.isHidden = !this.isHidden;
+        this.formKind = selectedForm;
       }
     },
   },
@@ -114,16 +109,16 @@ export default {
       </HeaderText>
     </div>
     <Section>
-      <form @submit="checkForm" novalidate="true">
-        <Input
+      <form ref="form" @submit="checkForm" novalidate="true">
+        <CustomInput
           icon="envelope"
           name="email"
           placeholder="Email"
           type="email"
           v-model="email"
         />
-        <Input
-          class="hidden"
+        <CustomInput
+          :isHidden="isHidden"
           icon="envelope"
           name="emailConfirm"
           placeholder="Confirm Email"
@@ -131,15 +126,15 @@ export default {
           type="email"
           v-model="emailConfirm"
         />
-        <Input
+        <CustomInput
           icon="key"
           name="password"
           placeholder="Password"
           type="password"
           v-model="password"
         />
-        <Input
-          class="hidden"
+        <CustomInput
+          :isHidden="isHidden"
           icon="key"
           name="passwordConfirm"
           placeholder="Confirm Password"
@@ -147,15 +142,16 @@ export default {
           type="password"
           v-model="passwordConfirm"
         />
-        <Input type="submit" value="Submit" />
+        <CustomInput icon="sign-in-alt" type="submit" value="Login" />
       </form>
     </Section>
   </div>
 </template>
 
 <style lang="scss">
-@import '../utils/styles/sizes';
-@import '../utils/styles/palette.scss';
+@import '../includes/styles/animations.scss';
+@import '../includes/styles/sizes';
+@import '../includes/styles/palette.scss';
 
 #login {
   align-items: center;
@@ -169,10 +165,12 @@ export default {
 .login-switcher {
   display: flex;
   text-align: center;
+  user-select: none;
 
   h1 {
     cursor: pointer;
     padding: 0 10px;
+    transition: $default-transition;
   }
 
   h1:not(.active) {

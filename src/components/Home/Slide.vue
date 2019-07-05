@@ -14,17 +14,13 @@ export default {
 
 <template>
   <div class="slide">
-    <HeaderText>
-      {{ title }}
-    </HeaderText>
-    <div class="msg">
-      {{ msg }}
-    </div>
+    <HeaderText>{{ title }}</HeaderText>
+    <div class="msg">{{ msg }}</div>
   </div>
 </template>
 
 <style lang="scss">
-@import '../../utils/styles/sizes';
+@import "../../includes/styles/sizes";
 
 .slide {
   display: flex;
