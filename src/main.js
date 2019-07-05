@@ -1,4 +1,4 @@
-import * as firebase from 'firebase/app';
+import { firebase } from 'firebase/app';
 import 'firebase/auth';
 import 'firebase/firestore';
 import { firestorePlugin } from 'vuefire';
@@ -6,13 +6,13 @@ import { firestorePlugin } from 'vuefire';
 import Vue from 'vue';
 import Notifications from 'vue-notification';
 
-import { library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
+import { library } from '@fortawesome/fontawesome-svg-core';
 import { faBars } from '@fortawesome/free-solid-svg-icons/faBars';
 import { faChartBar } from '@fortawesome/free-solid-svg-icons/faChartBar';
 import { faDonate } from '@fortawesome/free-solid-svg-icons/faDonate';
-import { faHome } from '@fortawesome/free-solid-svg-icons/faHome';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons/faEnvelope';
+import { faHome } from '@fortawesome/free-solid-svg-icons/faHome';
 import { faKey } from '@fortawesome/free-solid-svg-icons/faKey';
 import { faPiggyBank } from '@fortawesome/free-solid-svg-icons/faPiggyBank';
 import { faSignInAlt } from '@fortawesome/free-solid-svg-icons/faSignInAlt';
