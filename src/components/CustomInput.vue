@@ -78,7 +78,7 @@ $label-font-size: $sizes-m;
   display: flex;
   flex-direction: row;
   justify-content: center;
-  max-height: 4em;
+  max-height: $sizes-xl;
   opacity: 1;
   overflow: hidden;
   position: relative;
@@ -159,7 +159,7 @@ input {
       padding: 0 $label-font-size * 2 0 $sizes-s;
       padding-right: $sizes-s;
       + svg {
-        left: -2em;
+        left: -$sizes-l;
       }
     }
   }
@@ -185,29 +185,28 @@ input {
     margin-left: $sizes-s;
     position: relative;
     visibility: hidden;
-    width: calc(1em + 4px);
+    width: calc(#{$sizes-m} + 4px);
 
     &:before {
-      border: 2px solid $whiteish;
+      border: 1px solid $whiteish;
       content: "";
       display: block;
-      height: $base;
+      height: $sizes-m;
       position: relative;
       top: 0;
       transition: $default-transition;
       visibility: visible;
-      width: $base;
+      width: $sizes-m;
       z-index: 1;
     }
 
     &:checked {
       &:before {
-        height: 0.5rem;
+        height: $sizes-s;
         border-color: $primary;
         border-right-style: none;
         border-top-style: none;
         position: relative;
-        top: -4px;
         transform: rotate(-45deg);
       }
     }

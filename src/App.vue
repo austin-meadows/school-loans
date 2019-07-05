@@ -27,9 +27,12 @@ button {
   outline: none;
 }
 
+html, body {
+  font-size: $base
+}
+
 body {
   color: $text;
-  font-size: $base;
   min-width: 300px;
 }
 
