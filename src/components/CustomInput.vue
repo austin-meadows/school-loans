@@ -73,16 +73,14 @@ export default {
 @import "../includes/styles/palette";
 
 $label-font-size: $sizes-m;
+$checkbox-size: $label-font-size * 0.75;
 
 .input-block {
-  align-items: center;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  max-height: $sizes-xl;
+  // this should just be large, it doesnt matter.
+  // used for transition
+  max-height: $label-font-size * 10;
   opacity: 1;
   overflow: hidden;
-  position: relative;
   transition: $default-transition;
 
   &.hidden {
@@ -111,6 +109,9 @@ $label-font-size: $sizes-m;
     input {
       order: 3;
     }
+    label {
+      height: calc(#{$label-font-size} * 3 + 2px);
+    }
   }
 }
 
@@ -118,7 +119,6 @@ label {
   align-items: center;
   display: flex;
   position: relative;
-  width: 100%;
 
   :last-child {
     font-size: $label-font-size;
@@ -128,12 +128,9 @@ label {
   }
 }
 
-input,
-button {
-  border-radius: $sizes-s;
-}
-
 input {
+  border: 0;
+  border-radius: $label-font-size;
   font-size: $label-font-size;
   margin: $sizes-s 0;
   padding: $label-font-size $label-font-size $label-font-size $label-font-size +
@@ -160,7 +157,7 @@ input {
       padding-right: $label-font-size;
 
       + svg {
-        left: -$sizes-l;
+        left: -$label-font-size * 3;
       }
     }
   }
@@ -169,7 +166,6 @@ input {
     color: lighten($primary, 40%);
     cursor: pointer;
     background: $primary;
-    border: 0;
     padding: $label-font-size;
 
     ~ svg {
@@ -178,34 +174,28 @@ input {
   }
 
   &[type="checkbox"] {
-    align-items: center;
     cursor: pointer;
-    margin: 0;
-    margin-left: $sizes-s;
     position: relative;
     visibility: hidden;
-    width: calc(#{$label-font-size} + 4px);
+    height: calc(50% + #{$border-m * 2});
+    width: calc(#{$checkbox-size * 2} + #{$border-m * 2});
 
     &:before {
       border: $border-m solid $whiteish;
       content: "";
       display: block;
-      height: $label-font-size;
-      position: relative;
-      top: 0;
+      padding: $checkbox-size;
       transition: $default-transition;
       visibility: visible;
-      width: $label-font-size;
       z-index: 1;
     }
 
     &:checked {
       &:before {
-        height: $sizes-s;
         border-color: $primary;
         border-right-style: none;
         border-top-style: none;
-        position: relative;
+        padding-top: $checkbox-size * 0.1;
         transform: rotate(-45deg);
       }
     }

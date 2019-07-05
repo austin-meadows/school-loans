@@ -86,7 +86,7 @@ export default {
 
     &.closed {
       @media screen and (max-width: $screen-size-s) {
-        right: 100%;
+        right: 150%;
         pointer-events: none;
       }
     }
