@@ -147,7 +147,6 @@ input {
   &[type="password"] {
     border: $border-m solid $whiteish;
     transition: $default-transition;
-    min-width: 200px;
     width: 100%;
     + svg {
       transition: $default-transition;

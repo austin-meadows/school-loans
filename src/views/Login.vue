@@ -100,15 +100,15 @@ export default {
 
 <template>
   <div id="login">
-    <div class="login-switcher">
-      <HeaderText class="active" ref="login" id="loginForm">
-        <a @click="onClickSwitcher">Login</a>
-      </HeaderText>
-      <HeaderText ref="signUp" id="signUpForm">
-        <a @click="onClickSwitcher">Sign up</a>
-      </HeaderText>
-    </div>
     <Section>
+      <div class="login-switcher">
+        <HeaderText class="active" ref="login" id="loginForm">
+          <a @click="onClickSwitcher">Login</a>
+        </HeaderText>
+        <HeaderText ref="signUp" id="signUpForm">
+          <a @click="onClickSwitcher">Sign up</a>
+        </HeaderText>
+      </div>
       <form ref="form" @submit="checkForm" novalidate="true">
         <CustomInput
           autocomplete="email"
@@ -157,18 +157,9 @@ export default {
 @import '../includes/styles/sizes';
 @import '../includes/styles/palette.scss';
 
-#login {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  height: calc(100vh - #{$navHeight * 2});
-  justify-content: center;
-  padding-bottom: $base * 3;
-}
-
 .login-switcher {
   display: flex;
-  text-align: center;
+  justify-content: center;
   user-select: none;
 
   h1 {
@@ -181,11 +172,5 @@ export default {
     color: $text;
     font-weight: normal;
   }
-}
-
-form {
-  display: flex;
-  flex-direction: column;
-  position: relative;
 }
 </style>
