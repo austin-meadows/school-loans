@@ -10,9 +10,9 @@ export default {
 
 <template>
   <div id="app">
-    <notifications group="auth" position="bottom center" width="75%"/>
-    <Navigation/>
-    <router-view/>
+    <notifications group="auth" position="bottom center" width="75%" />
+    <Navigation />
+    <router-view />
   </div>
 </template>
 
@@ -29,8 +29,9 @@ button {
   outline: none;
 }
 
-html, body {
-  font-size: $base
+html,
+body {
+  font-size: $base;
 }
 
 body {

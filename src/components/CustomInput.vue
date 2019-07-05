@@ -41,7 +41,8 @@ export default {
       { hidden: isHidden },
       type,
     ]"
-    ref="inputBlock">
+    ref="inputBlock"
+  >
     <label :for="name">
       <span v-if="type === 'checkbox'">{{placeholder}}</span>
       <input
@@ -51,8 +52,8 @@ export default {
         @input="$emit('input', $event.target.value)"
         :placeholder="placeholder"
         :type="type"
-      >
-      <fa :icon="icon"/>
+      />
+      <fa :icon="icon" />
     </label>
   </div>
   <input
@@ -63,7 +64,7 @@ export default {
     @input="$emit('input', $event.target.value)"
     :placeholder="placeholder"
     :type="type"
-  >
+  />
 </template>
 
 <style lang="scss">
@@ -91,7 +92,8 @@ $label-font-size: $sizes-m;
   }
 
   &.checkbox {
-    span, svg {
+    span,
+    svg {
       cursor: pointer;
       user-select: none;
     }
@@ -134,7 +136,8 @@ button {
 input {
   font-size: $label-font-size;
   margin: $sizes-s 0;
-  padding: $label-font-size $label-font-size $label-font-size $label-font-size + (2 * $label-font-size);
+  padding: $label-font-size $label-font-size $label-font-size $label-font-size +
+    (2 * $label-font-size);
   width: 100%;
 
   &::placeholder {
@@ -152,7 +155,8 @@ input {
       transition: $default-transition;
     }
     &:focus {
-      padding: $label-font-size $label-font-size * 2 $label-font-size $label-font-size;
+      padding: $label-font-size $label-font-size * 2 $label-font-size
+        $label-font-size;
       padding-right: $label-font-size;
 
       + svg {

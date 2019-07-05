@@ -14,8 +14,8 @@ export default {
   <div id="dashboard">
     <Section>
       <p>Welcome to our platform! Let's get you started.</p>
-      <CustomInput icon="user-graduate" name="student" placeholder="Student" type="checkbox"/>
-      <CustomInput icon="donate" name="donor" placeholder="Donor" type="checkbox"/>
+      <CustomInput icon="user-graduate" name="student" placeholder="Student" type="checkbox" />
+      <CustomInput icon="donate" name="donor" placeholder="Donor" type="checkbox" />
       <CustomInput type="submit" value="Continue" />
     </Section>
   </div>
