@@ -1,13 +1,13 @@
-import Vue from 'vue';
-import VueFire from 'vuefire';
 import * as firebase from 'firebase/app';
 import 'firebase/auth';
 import 'firebase/firestore';
+import { firestorePlugin } from 'vuefire';
+
+import Vue from 'vue';
 import Notifications from 'vue-notification';
 
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
-// font awesome icons
 import { faBars } from '@fortawesome/free-solid-svg-icons/faBars';
 import { faChartBar } from '@fortawesome/free-solid-svg-icons/faChartBar';
 import { faDonate } from '@fortawesome/free-solid-svg-icons/faDonate';
@@ -23,7 +23,7 @@ import App from './App.vue';
 import router from './router';
 import { config } from '../firebase.json';
 
-Vue.use(VueFire);
+Vue.use(firestorePlugin);
 Vue.use(Notifications);
 
 library.add(
