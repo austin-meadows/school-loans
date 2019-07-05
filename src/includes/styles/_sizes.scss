@@ -6,3 +6,10 @@ $sizes-l: $base * 2;
 $sizes-xl: $base * 4;
 
 $navHeight: $base * 3;
+
+$base-border: 2px;
+$border-xs: $base-border * 0.25;
+$border-s: $base-border * 0.5;
+$border-m: $base-border;
+$border-l: $base-border * 2;
+$border-xl: $base-border * 4;

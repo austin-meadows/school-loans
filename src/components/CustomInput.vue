@@ -145,7 +145,7 @@ input {
   &[type="text"],
   &[type="email"],
   &[type="password"] {
-    border: 1px solid $whiteish;
+    border: $border-m solid $whiteish;
     transition: $default-transition;
     min-width: 200px;
     width: 100%;
@@ -188,7 +188,7 @@ input {
     width: calc(#{$sizes-m} + 4px);
 
     &:before {
-      border: 1px solid $whiteish;
+      border: $border-m solid $whiteish;
       content: "";
       display: block;
       height: $sizes-m;

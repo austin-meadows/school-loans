@@ -33,10 +33,13 @@ html, body {
 
 body {
   color: $text;
-  min-width: 300px;
+  // probably not necessary to be here,
+  // but spiritually, the smallest the webpage we support is
+  // 320px.
+  min-width: 320px;
 }
 
 #app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
 </style>
