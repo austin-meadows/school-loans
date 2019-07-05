@@ -74,8 +74,6 @@ export default {
     display: flex;
     flex-direction: row;
     position: relative;
-    overflow-x: scroll;
-    overflow-y: hidden;
     transition: $default-transition;
 
     &.open {
