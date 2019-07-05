@@ -49,9 +49,11 @@ export const auth = firebase.auth();
 
 auth.onAuthStateChanged((user) => {
   new Vue({
-    data: {
-      user,
-      isSignedIn: !!user,
+    data() {
+      return {
+        user,
+        isSignedIn: !!user,
+      };
     },
     router,
     render: h => h(App),
