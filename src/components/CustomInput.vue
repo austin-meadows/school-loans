@@ -170,6 +170,7 @@ input {
     cursor: pointer;
     background: $primary;
     border: 0;
+    padding: $label-font-size;
 
     ~ svg {
       color: lighten($primary, 40%);

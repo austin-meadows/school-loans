@@ -78,8 +78,9 @@ export default {
 
     &.open {
       @media screen and (max-width: $screen-size-s) {
-        right: 0px;
         pointer-events: auto;
+        overflow-x: scroll;
+        right: 0px;
       }
     }
 
@@ -116,7 +117,6 @@ export default {
     &:before {
       background: white;
       content: "";
-      height: 100%;
       left: 0;
       position: absolute;
       top: $base * 3;
@@ -135,6 +135,7 @@ export default {
       z-index: 1;
 
       &:before {
+        height: 100%;
         top: 0;
       }
     }
