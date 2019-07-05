@@ -2,6 +2,11 @@
 export default {
   props: {
     /*
+      autcomplete attribute, if necessary
+      see https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#autofilling-form-controls:-the-autocomplete-attribute
+    */
+    autocomplete: String,
+    /*
       name of font-awesome icon to use
     */
     icon: String,
@@ -40,6 +45,7 @@ export default {
     <label :for="name">
       <span v-if="type === 'checkbox'">{{placeholder}}</span>
       <input
+        :autocomplete="autocomplete"
         :disabled="isHidden"
         :id="name"
         @input="$emit('input', $event.target.value)"
@@ -51,6 +57,7 @@ export default {
   </div>
   <input
     v-else
+    :autocomplete="autocomplete"
     :disabled="isHidden"
     :id="name"
     @input="$emit('input', $event.target.value)"
@@ -141,6 +148,7 @@ input {
     border: 1px solid $whiteish;
     transition: $default-transition;
     min-width: 200px;
+    width: 100%;
     + svg {
       transition: $default-transition;
     }
@@ -149,6 +157,7 @@ input {
     }
     &:focus {
       padding: 0 $label-font-size * 2 0 $sizes-s;
+      padding-right: $sizes-s;
       + svg {
         left: -2em;
       }

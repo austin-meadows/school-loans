@@ -111,6 +111,7 @@ export default {
     <Section>
       <form ref="form" @submit="checkForm" novalidate="true">
         <CustomInput
+          autocomplete="email"
           icon="envelope"
           name="email"
           placeholder="Email"
@@ -119,6 +120,7 @@ export default {
         />
         <CustomInput
           :isHidden="isHidden"
+          autocomplete="email"
           icon="envelope"
           name="emailConfirm"
           placeholder="Confirm Email"
@@ -127,6 +129,7 @@ export default {
           v-model="emailConfirm"
         />
         <CustomInput
+          autocomplete="current-password"
           icon="key"
           name="password"
           placeholder="Password"
@@ -135,6 +138,7 @@ export default {
         />
         <CustomInput
           :isHidden="isHidden"
+          autocomplete="new-password"
           icon="key"
           name="passwordConfirm"
           placeholder="Confirm Password"
