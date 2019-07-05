@@ -17,7 +17,6 @@ export default {
 </template>
 
 <style lang="scss">
-@import "../node_modules/normalize.css/normalize";
 @import "./includes/styles/sizes";
 @import "./includes/styles/palette";
 
