@@ -158,13 +158,13 @@ export default {
 @import '../includes/styles/palette.scss';
 
 .login-switcher {
-  display: flex;
-  justify-content: center;
+  margin: $sizes-s;
   user-select: none;
 
-  h1 {
+  > * {
     cursor: pointer;
-    padding: 0 10px;
+    display: inline-block;
+    padding: 0 $sizes-xs;
     transition: $default-transition;
   }
 

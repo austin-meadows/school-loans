@@ -121,7 +121,7 @@ label {
   :last-child {
     font-size: $label-font-size;
     left: 0;
-    margin: 0 $sizes-s;
+    margin: 0 $label-font-size;
     position: absolute;
   }
 }
@@ -133,9 +133,9 @@ button {
 
 input {
   font-size: $label-font-size;
-  height: $label-font-size * 2;
   margin: $sizes-s 0;
-  padding: 0 $sizes-s 0 $label-font-size * 2;
+  padding: $label-font-size $label-font-size $label-font-size $label-font-size + (2 * $label-font-size);
+  width: 100%;
 
   &::placeholder {
     color: lighten($text, 40%);
@@ -147,16 +147,14 @@ input {
   &[type="password"] {
     border: $border-m solid $whiteish;
     transition: $default-transition;
-    width: 100%;
+
     + svg {
       transition: $default-transition;
     }
-    &:not(:focus) {
-      padding: 0 $sizes-s 0 $label-font-size * 2;
-    }
     &:focus {
-      padding: 0 $label-font-size * 2 0 $sizes-s;
-      padding-right: $sizes-s;
+      padding: $label-font-size $label-font-size * 2 $label-font-size $label-font-size;
+      padding-right: $label-font-size;
+
       + svg {
         left: -$sizes-l;
       }
@@ -168,8 +166,6 @@ input {
     cursor: pointer;
     background: $primary;
     border: 0;
-    padding: 0 $label-font-size * 2;
-    width: 100%;
 
     ~ svg {
       color: lighten($primary, 40%);
@@ -179,23 +175,22 @@ input {
   &[type="checkbox"] {
     align-items: center;
     cursor: pointer;
-    display: flex;
     margin: 0;
     margin-left: $sizes-s;
     position: relative;
     visibility: hidden;
-    width: calc(#{$sizes-m} + 4px);
+    width: calc(#{$label-font-size} + 4px);
 
     &:before {
       border: $border-m solid $whiteish;
       content: "";
       display: block;
-      height: $sizes-m;
+      height: $label-font-size;
       position: relative;
       top: 0;
       transition: $default-transition;
       visibility: visible;
-      width: $sizes-m;
+      width: $label-font-size;
       z-index: 1;
     }
 

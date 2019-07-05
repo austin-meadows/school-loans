@@ -17,6 +17,8 @@ export default {
 </template>
 
 <style lang="scss">
+@import "normalize.css/opinionated.css";
+@import "sanitize.css";
 @import "./includes/styles/sizes";
 @import "./includes/styles/palette";
 

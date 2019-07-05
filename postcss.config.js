@@ -1,5 +1,11 @@
+/* eslint-disable global-require */
+/* eslint-disable import/no-extraneous-dependencies */
 module.exports = {
-  plugins: {
-    autoprefixer: {},
-  },
+  plugins: [
+    require('autoprefixer'),
+    require('postcss-normalize'),
+    require('cssnano')({
+      preset: 'default',
+    }),
+  ],
 };

@@ -65,10 +65,6 @@ export default {
 @import "./includes/styles/palette";
 @import "./includes/styles/sizes";
 
-$screenSizeSmPlusOne: $screen-size-s + 1;
-$numLinks: 4;
-$listItemHeight: ($base * 3);
-
 #nav {
   background: linear-gradient(to bottom right, white, $whiteish);
   display: flex;
@@ -77,9 +73,6 @@ $listItemHeight: ($base * 3);
   .menu {
     display: flex;
     flex-direction: row;
-    height: $base * 3;
-    padding-bottom: $base * 3;
-    margin-bottom: -($base * 3);
     position: relative;
     overflow-x: scroll;
     overflow-y: hidden;
@@ -116,16 +109,7 @@ $listItemHeight: ($base * 3);
     border-top-right-radius: $sizes-s;
     color: $text;
     cursor: pointer;
-    display: block;
-    height: $base;
-    // The following fixes a quirk with how text is sized so we can
-    // ensure this is consistent.
-    // https://stackoverflow.com/questions/41336177/font-size-vs-line-height-vs-actual-height/41336458
-    line-height: $base;
-    max-height: $base;
     padding: $base;
-    position: relative;
-    text-align: right;
     text-decoration: none;
     transition: $default-transition;
     white-space: nowrap;
@@ -134,7 +118,6 @@ $listItemHeight: ($base * 3);
     &:before {
       background: white;
       content: "";
-      display: block;
       height: 100%;
       left: 0;
       position: absolute;
