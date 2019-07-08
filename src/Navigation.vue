@@ -71,13 +71,13 @@ $nav-padding: $sizes-m;
   background: linear-gradient(to bottom right, white, $whiteish);
   display: flex;
   overflow: hidden;
+  width: 100%;
 
   .menu {
     display: flex;
     flex-direction: row;
     position: relative;
     transition: $default-transition;
-    width: 100%;
 
     &.open {
       @media (max-width: $screen-size-s) {
