@@ -29,6 +29,6 @@ body {
   // probably not necessary to be here,
   // but spiritually, the smallest the webpage we support is
   // 320px.
-  min-width: 320px;
+  min-width: $container-min-width;
 }
 </style>

@@ -77,7 +77,7 @@ export default {
     transition: $default-transition;
 
     &.open {
-      @media screen and (max-width: $screen-size-s) {
+      @media (max-width: $screen-size-s) {
         pointer-events: auto;
         overflow-x: scroll;
         right: 0px;
@@ -85,7 +85,7 @@ export default {
     }
 
     &.closed {
-      @media screen and (max-width: $screen-size-s) {
+      @media (max-width: $screen-size-s) {
         right: 150%;
         pointer-events: none;
       }
@@ -96,7 +96,7 @@ export default {
     background: white;
     display: none;
 
-    @media screen and (max-width: $screen-size-s) {
+    @media (max-width: $screen-size-s) {
       display: inline-block;
       position: relative;
       z-index: 2;
@@ -108,7 +108,7 @@ export default {
     border-top-right-radius: $sizes-s;
     color: $text;
     cursor: pointer;
-    padding: $base;
+    padding: $sizes-m;
     text-decoration: none;
     transition: $default-transition;
     white-space: nowrap;
@@ -119,7 +119,7 @@ export default {
       content: "";
       left: 0;
       position: absolute;
-      top: $base * 3;
+      top: $sizes-m * 3;
       transition: $default-transition;
       width: 100%;
       z-index: -1;
