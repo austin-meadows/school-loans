@@ -10,7 +10,6 @@ export default {
 
 <template>
   <div id="app">
-    <notifications group="auth" position="bottom center" width="75%" />
     <Navigation />
     <router-view />
   </div>

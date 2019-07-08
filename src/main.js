@@ -4,7 +4,6 @@ import 'firebase/firestore';
 import { firestorePlugin } from 'vuefire';
 
 import Vue from 'vue';
-import Notifications from 'vue-notification';
 
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
@@ -24,7 +23,6 @@ import router from './router';
 import { config } from '../firebase.json';
 
 Vue.use(firestorePlugin);
-Vue.use(Notifications);
 
 library.add(
   faBars,
