@@ -20,18 +20,4 @@ export default {
 </template>
 
 <style lang="scss">
-@import "../../includes/styles/sizes";
-
-.slide {
-  display: flex;
-  flex-direction: column;
-  height: 85vh;
-  justify-content: center;
-  margin: 0 - $sizes-m 0 - $sizes-m 0 0 - $sizes-m;
-  padding: 0 $sizes-m;
-}
-
-.msg {
-  font-weight: lighter;
-}
 </style>

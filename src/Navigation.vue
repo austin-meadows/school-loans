@@ -77,6 +77,7 @@ $nav-padding: $sizes-m;
     flex-direction: row;
     position: relative;
     transition: $default-transition;
+    width: 100%;
 
     &.open {
       @media (max-width: $screen-size-s) {
