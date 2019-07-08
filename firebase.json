@@ -1,18 +1,15 @@
 {
-  "config": {
-    "apiKey": "AIzaSyDmKH6QYew_UC3BRrIgzMlTYL8Kg--zwO8",
-    "authDomain": "owlfund-c6d77.firebaseapp.com",
-    "databaseURL": "https://owlfund-c6d77.firebaseio.com",
-    "projectId": "owlfund-c6d77",
-    "storageBucket": "owlfund-c6d77.appspot.com",
-    "messagingSenderId": "704130742417"
-  },
-  "database": {
-    "rules": "database.rules.json"
+  "firestore": {
+    "rules": "firestore.rules",
+    "indexes": "firestore.indexes.json"
   },
   "hosting": {
     "public": "dist",
-    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
     "rewrites": [
       {
         "source": "**",

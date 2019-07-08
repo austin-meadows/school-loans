@@ -1,6 +1,7 @@
 .DS_Store
+.firebase
+dist
 node_modules
-/dist
 
 # local env files
 .env.local
@@ -14,8 +15,8 @@ yarn-error.log*
 # Editor directories and files
 .idea
 .vscode
-*.suo
-*.ntvs*
 *.njsproj
+*.ntvs*
 *.sln
+*.suo
 *.sw?

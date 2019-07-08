@@ -20,9 +20,19 @@ import { faUserGraduate } from '@fortawesome/free-solid-svg-icons/faUserGraduate
 
 import App from './App.vue';
 import router from './router';
-import { config } from '../firebase.json';
+
+const config = {
+  apiKey: 'AIzaSyAU07mWfFhGyw7SXGFVc1ceYwLjjnJToNQ',
+  authDomain: 'student-loans-e6569.firebaseapp.com',
+  databaseURL: 'https://student-loans-e6569.firebaseio.com',
+  projectId: 'student-loans-e6569',
+  storageBucket: '',
+  messagingSenderId: '965857536415',
+  appId: '1:965857536415:web:28d241b7b22c8258',
+};
 
 Vue.use(firestorePlugin);
+Vue.component('fa', FontAwesomeIcon);
 
 library.add(
   faBars,
@@ -37,7 +47,6 @@ library.add(
   faUserGraduate,
 );
 
-Vue.component('fa', FontAwesomeIcon);
 
 Vue.config.productionTip = false;
 

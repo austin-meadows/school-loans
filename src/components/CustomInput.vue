@@ -123,7 +123,7 @@ label {
   :last-child {
     font-size: $label-font-size;
     left: 0;
-    margin: 0 $label-font-size;
+    margin-left: $label-font-size;
     position: absolute;
   }
 }
