@@ -1,6 +1,7 @@
 import * as firebase from 'firebase/app';
 import 'firebase/auth';
 import 'firebase/firestore';
+import 'firebase/performance';
 import { firestorePlugin } from 'vuefire';
 
 import Vue from 'vue';
@@ -53,6 +54,7 @@ Vue.config.productionTip = false;
 firebase.initializeApp(config);
 
 export const auth = firebase.auth();
+export const perf = firebase.performance();
 
 auth.onAuthStateChanged((user) => {
   new Vue({
