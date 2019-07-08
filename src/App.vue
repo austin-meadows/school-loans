@@ -35,7 +35,7 @@ body {
 
 #app {
   display: flex;
-  flex-flow: column wrap;
+  flex-flow: column nowrap;
   height: 100%;
 
   > :last-child:not(:only-child) {
