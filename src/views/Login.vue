@@ -158,7 +158,8 @@ export default {
 @import "../includes/styles/palette.scss";
 
 .login-switcher {
-  margin: $sizes-s;
+  margin-bottom: $sizes-m;
+  text-align: center;
   user-select: none;
 
   > * {

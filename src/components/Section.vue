@@ -10,8 +10,8 @@
 
 section {
   margin: auto;
+  margin-top: $sizes-m;
   max-width: $container-max-width;
-  text-align: center;
   width: 95%;
 
   @media (min-width: $screen-size-s) {

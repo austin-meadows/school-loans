@@ -65,6 +65,8 @@ export default {
 @import "./includes/styles/palette";
 @import "./includes/styles/sizes";
 
+$nav-padding: $sizes-m;
+
 #nav {
   background: linear-gradient(to bottom right, white, $whiteish);
   display: flex;
@@ -108,7 +110,7 @@ export default {
     border-top-right-radius: $sizes-s;
     color: $text;
     cursor: pointer;
-    padding: $sizes-m;
+    padding: $nav-padding;
     text-decoration: none;
     transition: $default-transition;
     white-space: nowrap;
@@ -119,7 +121,7 @@ export default {
       content: "";
       left: 0;
       position: absolute;
-      top: $sizes-m * 3;
+      top: $nav-padding * 3;
       transition: $default-transition;
       width: 100%;
       z-index: -1;
