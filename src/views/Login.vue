@@ -19,6 +19,7 @@ export default {
       errors: [],
       formKind: 'loginForm',
       isHidden: true,
+      isLoading: false,
       password: '',
       passwordConfirm: '',
     };
@@ -26,6 +27,7 @@ export default {
   methods: {
     checkForm(e) {
       e.preventDefault();
+      this.isLoading = true;
 
       this.errors = [];
       if (!validate('email', this.email)) {
@@ -83,6 +85,7 @@ export default {
         // });
       });
 
+      this.isLoading = false;
       return false;
     },
     onClickSwitcher(e) {
@@ -147,7 +150,7 @@ export default {
           type="password"
           v-model="passwordConfirm"
         />
-        <CustomInput icon="sign-in-alt" type="submit" value="Login" />
+        <CustomInput :isLoading="isLoading" icon="sign-in-alt" type="submit" value="Login" />
       </form>
     </Section>
   </div>

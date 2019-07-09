@@ -16,6 +16,7 @@ import { faEnvelope } from '@fortawesome/free-solid-svg-icons/faEnvelope';
 import { faHome } from '@fortawesome/free-solid-svg-icons/faHome';
 import { faKey } from '@fortawesome/free-solid-svg-icons/faKey';
 import { faPiggyBank } from '@fortawesome/free-solid-svg-icons/faPiggyBank';
+import { faSignature } from '@fortawesome/free-solid-svg-icons/faSignature';
 import { faSignInAlt } from '@fortawesome/free-solid-svg-icons/faSignInAlt';
 import { faSignOutAlt } from '@fortawesome/free-solid-svg-icons/faSignOutAlt';
 import { faUserGraduate } from '@fortawesome/free-solid-svg-icons/faUserGraduate';
@@ -45,6 +46,7 @@ library.add(
   faHome,
   faKey,
   faPiggyBank,
+  faSignature,
   faSignInAlt,
   faSignOutAlt,
   faUserGraduate,
@@ -58,12 +60,12 @@ firebase.initializeApp(config);
 export const auth = firebase.auth();
 export const perf = firebase.performance();
 
-auth.onAuthStateChanged(({ uid = null }) => {
+auth.onAuthStateChanged((user) => {
   new Vue({
     data() {
       return {
-        uid,
-        isSignedIn: !!uid,
+        uid: (user || {}).uid,
+        isSignedIn: !!user,
       };
     },
     router,

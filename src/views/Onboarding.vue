@@ -1,30 +1,37 @@
 <script>
 import db from '@/main';
 import CustomInput from '@/components/CustomInput.vue';
+import HeaderText from '@/components/HeaderText.vue';
 import Section from '@/components/Section.vue';
 
 export default {
   components: {
     CustomInput,
+    HeaderText,
     Section,
   },
   data() {
     return {
       donor: false,
+      isLoading: false,
+      name: '',
       student: false,
     };
   },
   methods: {
     submit(e) {
       e.preventDefault();
+      this.isLoading = true;
 
-      const { uid } = this.$root.$data;
-      const type = (this.donor ? 2 : 0) + (this.student ? 1 : 0);
-
-      db.collection('users').doc(uid)
+      return db.collection('users').doc(this.$root.$data.uid)
         .set({
-          type,
-        }, { merge: true });
+          name: this.name,
+          type: (this.donor ? 2 : 0) + (this.student ? 1 : 0),
+        }, { merge: true })
+        .then(() => {
+          this.isLoading = false;
+        })
+        .always(() => { this.isLoading = false; });
     },
   },
 };
@@ -34,6 +41,7 @@ export default {
   <Section>
     <p>Welcome to our platform! Let's get you started.</p>
     <form ref="form" @submit="submit" novalidate="true">
+      <HeaderText>I am a</HeaderText>
       <CustomInput
         icon="user-graduate"
         name="student"
@@ -42,7 +50,9 @@ export default {
         v-model="student"
       />
       <CustomInput icon="donate" name="donor" placeholder="Donor" type="checkbox" v-model="donor" />
-      <CustomInput icon="arrow-right" type="submit" value="Continue" />
+      <HeaderText>My name is</HeaderText>
+      <CustomInput icon="signature" name="name" placeholder="Name" type="text" v-model="name" />
+      <CustomInput icon="arrow-right" :isLoading="isLoading" type="submit" value="Continue" />
     </form>
   </Section>
 </template>

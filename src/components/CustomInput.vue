@@ -1,5 +1,11 @@
 <script>
+import Loading from 'vue-loading-overlay';
+import 'vue-loading-overlay/dist/vue-loading.css';
+
 export default {
+  components: {
+    Loading,
+  },
   props: {
     /*
       autcomplete attribute, if necessary
@@ -14,6 +20,13 @@ export default {
       if the input is hidden or not.
     */
     isHidden: {
+      default: false,
+      type: Boolean,
+    },
+    /*
+      (usually on a submit button) if an action is "loading" due to a button press
+    */
+    isLoading: {
       default: false,
       type: Boolean,
     },
@@ -44,6 +57,8 @@ export default {
     ref="inputBlock"
   >
     <label :for="name">
+      <loading :active.sync="isLoading" :is-full-page="false"></loading>
+
       <span v-if="type === 'checkbox'">{{placeholder}}</span>
       <input
         :autocomplete="autocomplete"
@@ -120,7 +135,7 @@ label {
   display: flex;
   position: relative;
 
-  :last-child {
+  > :last-child {
     font-size: $label-font-size;
     left: 0;
     margin-left: $label-font-size;
@@ -132,6 +147,8 @@ input {
   border: 0;
   border-radius: $label-font-size;
   font-size: $label-font-size;
+  // sanitize/normalize.css seems to reset what we select.
+  font-family: "Open Sans", sans-serif;
   margin: $sizes-s 0;
   padding: $label-font-size $label-font-size $label-font-size $label-font-size +
     (2 * $label-font-size);
