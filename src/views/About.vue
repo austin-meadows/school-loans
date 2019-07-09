@@ -1,5 +1,5 @@
 <script>
-import Slide from '@/components/Home/Slide.vue';
+import Slide from '@/components/About/Slide.vue';
 import Section from '@/components/Section.vue';
 
 export default {

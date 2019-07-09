@@ -8,6 +8,7 @@ import Vue from 'vue';
 
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons/faArrowRight';
 import { faBars } from '@fortawesome/free-solid-svg-icons/faBars';
 import { faChartBar } from '@fortawesome/free-solid-svg-icons/faChartBar';
 import { faDonate } from '@fortawesome/free-solid-svg-icons/faDonate';
@@ -36,6 +37,7 @@ Vue.use(firestorePlugin);
 Vue.component('fa', FontAwesomeIcon);
 
 library.add(
+  faArrowRight,
   faBars,
   faChartBar,
   faDonate,
@@ -56,12 +58,12 @@ firebase.initializeApp(config);
 export const auth = firebase.auth();
 export const perf = firebase.performance();
 
-auth.onAuthStateChanged((user) => {
+auth.onAuthStateChanged(({ uid = null }) => {
   new Vue({
     data() {
       return {
-        user,
-        isSignedIn: !!user,
+        uid,
+        isSignedIn: !!uid,
       };
     },
     router,

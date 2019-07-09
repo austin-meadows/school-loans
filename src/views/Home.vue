@@ -1,6 +1,6 @@
 <script>
-import Dashboard from '@/components/Home/Dashboard.vue';
-import Onboarding from '@/components/Home/Onboarding.vue';
+import About from '@/views/About.vue';
+import Dashboard from '@/views/Dashboard.vue';
 
 export default {
   data() {
@@ -9,8 +9,8 @@ export default {
     };
   },
   components: {
+    About,
     Dashboard,
-    Onboarding,
   },
 };
 </script>
@@ -18,6 +18,6 @@ export default {
 <template>
   <div id="home">
     <Dashboard v-if="isSignedIn" />
-    <Onboarding v-else />
+    <About v-else />
   </div>
 </template>

@@ -25,6 +25,8 @@ export default {
   },
   methods: {
     checkForm(e) {
+      e.preventDefault();
+
       this.errors = [];
       if (!validate('email', this.email)) {
         this.errors.push('Invalid email.');
@@ -81,7 +83,6 @@ export default {
         // });
       });
 
-      e.preventDefault();
       return false;
     },
     onClickSwitcher(e) {
