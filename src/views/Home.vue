@@ -14,19 +14,21 @@ export default {
 
     if (uid) {
       db.collection('users').doc(uid)
-        .get().then(async (doc) => {
+        .get()
+        .then(async (doc) => {
           if (doc.exists) {
             this.type = await doc.data().type;
           }
           this.isLoading = false;
-        });
+        })
+        .always(() => { this.isLoading = false; });
     } else {
       this.isLoading = false;
     }
   },
   data() {
     return {
-      isLoading: true,
+      isLoading: false,
       isSignedIn: this.$root.$data.isSignedIn,
       type: 0,
     };

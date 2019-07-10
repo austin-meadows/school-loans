@@ -6,14 +6,20 @@ module.exports = {
     plugins: [
       new WorkboxPlugin.GenerateSW({
         exclude: [/\.(?:png|jpg|jpeg|svg)$/],
-        runtimeCaching: [{
-          urlPattern: /\.(?:png|jpg|jpeg|svg)$/,
-          handler: 'CacheFirst',
+        runtimeCaching: [
+          {
+            urlPattern: /\.(?:png|jpg|jpeg|svg)$/,
+            handler: 'CacheFirst',
 
-          options: {
-            cacheName: 'images',
+            options: {
+              cacheName: 'images',
+            },
           },
-        }],
+          {
+            urlPattern: /.*/,
+            handler: 'CacheFirst',
+          },
+        ],
       }),
     ],
     optimization: {
