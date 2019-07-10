@@ -9,7 +9,7 @@ service cloud.firestore {
     }
   }
 }
-x
+
 service firebase.storage {
   match /b/{bucket}/o {
     // Files look like: "user/<UID>/path/to/file.txt"
