@@ -24,9 +24,7 @@ module.exports = {
           terserOptions: {
             compress: {
               arguments: true,
-              booleans_as_integers: true,
               drop_console: true,
-              ecma: 8,
               hoist_funs: true,
               module: true,
               passes: 1,
