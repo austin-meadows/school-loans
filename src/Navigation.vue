@@ -29,6 +29,10 @@ export default {
     },
     onClickSignOut() {
       auth.signOut();
+      this.$toasted.show('You have signed out!', {
+        type: 'success',
+        icon: 'fa-thumbs-up',
+      });
     },
   },
 };

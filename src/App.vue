@@ -18,8 +18,9 @@ export default {
 <style lang="scss">
 @import "normalize.css/opinionated.css";
 @import "sanitize.css";
-@import "./includes/styles/sizes";
+@import "./includes/styles/breakpoints";
 @import "./includes/styles/palette";
+@import "./includes/styles/sizes";
 
 html,
 body {
@@ -40,6 +41,28 @@ body {
 
   > :last-child:not(:only-child) {
     flex-grow: 1;
+  }
+}
+
+// style overrides for toasted
+.toasted-container.top-right {
+  font-family: "Open Sans", sans-serif;
+  top: 0;
+  right: 0;
+
+  .toasted {
+    font-size: initial;
+    line-height: initial;
+    margin-top: 0;
+    padding: $sizes-m;
+
+    @media (max-width: $screen-size-s) {
+      justify-content: center;
+    }
+  }
+
+  svg {
+    margin-right: $sizes-s;
   }
 }
 

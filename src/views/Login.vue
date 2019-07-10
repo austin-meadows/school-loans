@@ -46,18 +46,10 @@ export default {
       if (!this.errors.length && this.formKind === 'signUpForm') {
         auth.createUserWithEmailAndPassword(this.email, this.password).then(
           () => {
-            // this.$notify({
-            //   group: 'auth',
-            //   text: 'Your account has been created!',
-            //   type: 'success',
-            // });
+            this.$toasted.show('Your account has been created!', { type: 'success' });
           },
           (err) => {
-            // this.$notify({
-            //   group: 'auth',
-            //   text: err.message,
-            //   type: 'error',
-            // });
+            this.$toasted.show(err.message, { type: 'error' });
           },
         );
       }
@@ -66,23 +58,19 @@ export default {
         auth.signInWithEmailAndPassword(this.email, this.password).then(
           () => {
             this.$router.replace('/');
+            this.$toasted.show('You have signed in!', {
+              type: 'success',
+              icon: 'fa-thumbs-up',
+            });
           },
           (err) => {
-            // this.$notify({
-            //   group: 'auth',
-            //   text: err.message,
-            //   type: 'error',
-            // });
+            this.$toasted.show(err.message, { type: 'error' });
           },
         );
       }
 
       this.errors.forEach((error) => {
-        // this.$notify({
-        //   group: 'auth',
-        //   text: error,
-        //   type: 'error',
-        // });
+        this.$toasted.show(error, { type: 'error' });
       });
 
       this.isLoading = false;

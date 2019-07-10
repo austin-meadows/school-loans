@@ -5,9 +5,10 @@ import 'firebase/performance';
 import { firestorePlugin } from 'vuefire';
 
 import Vue from 'vue';
+import Toasted from 'vue-toasted';
 
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
-import { library } from '@fortawesome/fontawesome-svg-core';
+import { library, dom } from '@fortawesome/fontawesome-svg-core';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons/faArrowRight';
 import { faBars } from '@fortawesome/free-solid-svg-icons/faBars';
 import { faChartBar } from '@fortawesome/free-solid-svg-icons/faChartBar';
@@ -19,10 +20,16 @@ import { faPiggyBank } from '@fortawesome/free-solid-svg-icons/faPiggyBank';
 import { faSignature } from '@fortawesome/free-solid-svg-icons/faSignature';
 import { faSignInAlt } from '@fortawesome/free-solid-svg-icons/faSignInAlt';
 import { faSignOutAlt } from '@fortawesome/free-solid-svg-icons/faSignOutAlt';
+import { faThumbsUp } from '@fortawesome/free-solid-svg-icons/faThumbsUp';
 import { faUserGraduate } from '@fortawesome/free-solid-svg-icons/faUserGraduate';
 
 import App from './App.vue';
 import router from './router';
+
+dom.watch({
+  autoReplaceSvgRoot: document.body,
+  observeMutationsRoot: document.body,
+});
 
 const config = {
   apiKey: 'AIzaSyAU07mWfFhGyw7SXGFVc1ceYwLjjnJToNQ',
@@ -34,6 +41,10 @@ const config = {
   appId: '1:965857536415:web:28d241b7b22c8258',
 };
 
+Vue.use(Toasted, {
+  duration: 1500,
+  iconPack: 'fontawesome',
+});
 Vue.use(firestorePlugin);
 Vue.component('fa', FontAwesomeIcon);
 
@@ -49,6 +60,7 @@ library.add(
   faSignature,
   faSignInAlt,
   faSignOutAlt,
+  faThumbsUp,
   faUserGraduate,
 );
 
