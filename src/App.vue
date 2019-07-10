@@ -45,7 +45,7 @@ body {
 }
 
 // style overrides for toasted
-.toasted-container.top-right {
+#app ~ .toasted-container.top-right {
   font-family: "Open Sans", sans-serif;
   top: 0;
   right: 0;
