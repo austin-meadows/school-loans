@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "build": "vue-cli-service build --modern && terser ./dist/*.js -c -m -o ./dist/*.js",
+    "build": "vue-cli-service build --modern && terser ./dist/*.js -c -o ./dist/*.js",
     "clean": "rm -rf node_modules & rm -rf dist",
     "deploy": "yarn build && firebase deploy",
     "lint": "vue-cli-service lint",
