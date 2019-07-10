@@ -31,6 +31,13 @@ dom.watch({
   observeMutationsRoot: document.body,
 });
 
+if ('serviceWorker' in navigator) {
+  // Use the window load event to keep the page load performant
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/service-worker.js');
+  });
+}
+
 const config = {
   apiKey: 'AIzaSyAU07mWfFhGyw7SXGFVc1ceYwLjjnJToNQ',
   authDomain: 'student-loans-e6569.firebaseapp.com',
@@ -63,7 +70,6 @@ library.add(
   faThumbsUp,
   faUserGraduate,
 );
-
 
 Vue.config.productionTip = false;
 
