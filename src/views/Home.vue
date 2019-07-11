@@ -21,14 +21,14 @@ export default {
           }
           this.isLoading = false;
         })
-        .always(() => { this.isLoading = false; });
+        .catch(() => { this.isLoading = false; });
     } else {
       this.isLoading = false;
     }
   },
   data() {
     return {
-      isLoading: false,
+      isLoading: true,
       isSignedIn: this.$root.$data.isSignedIn,
       type: 0,
     };
