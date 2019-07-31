@@ -1,6 +1,5 @@
 <script>
 import { auth } from '@/main';
-
 import CustomInput from '@/components/CustomInput.vue';
 import HeaderText from '@/components/HeaderText.vue';
 import Section from '@/components/Section.vue';
