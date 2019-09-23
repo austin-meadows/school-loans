@@ -7,7 +7,7 @@ export default {
 </script>
 
 <template>
-  <h1 :class="{'primary': !type, [type]: type}">
+  <h1 :class="{ primary: !type, [type]: type }">
     <slot></slot>
   </h1>
 </template>

@@ -47,19 +47,11 @@ export default {
 </script>
 
 <template>
-  <div
-    v-if="icon"
-    :class="[
-      'input-block',
-      { hidden: isHidden },
-      type,
-    ]"
-    ref="inputBlock"
-  >
+  <div v-if="icon" :class="['input-block', { hidden: isHidden }, type]" ref="inputBlock">
     <label :for="name">
       <loading :active.sync="isLoading" :is-full-page="false"></loading>
 
-      <span v-if="type === 'checkbox'">{{placeholder}}</span>
+      <span v-if="type === 'checkbox'">{{ placeholder }}</span>
       <input
         :autocomplete="autocomplete"
         :disabled="isHidden"
