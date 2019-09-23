@@ -35,12 +35,7 @@ export default {
 <template>
   <div id="onboarding">
     <Section>
-      <Slide
-        v-for="(slide, index) in slides"
-        :key="index"
-        :title="slide.title"
-        :msg="slide.msg"
-      />
+      <Slide v-for="(slide, index) in slides" :key="index" :title="slide.title" :msg="slide.msg" />
     </Section>
   </div>
 </template>

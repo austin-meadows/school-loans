@@ -1,7 +1,3 @@
 module.exports = {
-  plugins: [
-    require("autoprefixer"),
-    require("postcss-normalize"),
-    require("postcss-csso")
-  ]
+  plugins: { autoprefixer: {}, "postcss-normalize": {}, "postcss-csso": {} }
 };

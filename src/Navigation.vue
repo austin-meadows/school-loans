@@ -42,20 +42,14 @@ export default {
   <div id="nav">
     <a id="menuButton" @click="onClickMenu"> <fa icon="bars" />Menu</a>
     <div ref="menu" class="menu closed">
-      <router-link @click.native="onClickMenuLink" to="/"
-        ><fa icon="home" />Home</router-link
-      >
+      <router-link @click.native="onClickMenuLink" to="/"><fa icon="home" />Home</router-link>
       <router-link @click.native="onClickMenuLink" to="/give">
         <fa icon="piggy-bank" />Give
       </router-link>
       <router-link @click.native="onClickMenuLink" to="/stats">
         <fa icon="chart-bar" />Statistics
       </router-link>
-      <router-link
-        v-if="!isSignedIn"
-        @click.native="onClickMenuLink"
-        to="/login"
-      >
+      <router-link v-if="!isSignedIn" @click.native="onClickMenuLink" to="/login">
         <fa icon="sign-in-alt" />Login
       </router-link>
       <router-link v-else @click.native="onClickSignOut" to="/login">

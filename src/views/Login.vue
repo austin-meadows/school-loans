@@ -139,12 +139,7 @@ export default {
           type="password"
           v-model="passwordConfirm"
         />
-        <CustomInput
-          :isLoading="isLoading"
-          icon="sign-in-alt"
-          type="submit"
-          value="Login"
-        />
+        <CustomInput :isLoading="isLoading" icon="sign-in-alt" type="submit" value="Login" />
       </form>
     </Section>
   </div>

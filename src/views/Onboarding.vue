@@ -56,27 +56,10 @@ export default {
         type="checkbox"
         v-model="student"
       />
-      <CustomInput
-        icon="donate"
-        name="donor"
-        placeholder="Donor"
-        type="checkbox"
-        v-model="donor"
-      />
+      <CustomInput icon="donate" name="donor" placeholder="Donor" type="checkbox" v-model="donor" />
       <HeaderText>My name is</HeaderText>
-      <CustomInput
-        icon="signature"
-        name="name"
-        placeholder="Name"
-        type="text"
-        v-model="name"
-      />
-      <CustomInput
-        icon="arrow-right"
-        :isLoading="isLoading"
-        type="submit"
-        value="Continue"
-      />
+      <CustomInput icon="signature" name="name" placeholder="Name" type="text" v-model="name" />
+      <CustomInput icon="arrow-right" :isLoading="isLoading" type="submit" value="Continue" />
     </form>
   </Section>
 </template>

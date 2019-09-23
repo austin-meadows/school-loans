@@ -47,11 +47,7 @@ export default {
 </script>
 
 <template>
-  <div
-    v-if="icon"
-    :class="['input-block', { hidden: isHidden }, type]"
-    ref="inputBlock"
-  >
+  <div v-if="icon" :class="['input-block', { hidden: isHidden }, type]" ref="inputBlock">
     <label :for="name">
       <loading :active.sync="isLoading" :is-full-page="false"></loading>
 
@@ -60,12 +56,7 @@ export default {
         :autocomplete="autocomplete"
         :disabled="isHidden"
         :id="name"
-        @input="
-          $emit(
-            'input',
-            type === 'checkbox' ? $event.target.checked : $event.target.value
-          )
-        "
+        @input="$emit('input', type === 'checkbox' ? $event.target.checked : $event.target.value)"
         :placeholder="placeholder"
         :type="type"
       />
@@ -77,12 +68,7 @@ export default {
     :autocomplete="autocomplete"
     :disabled="isHidden"
     :id="name"
-    @input="
-      $emit(
-        'input',
-        type === 'checkbox' ? $event.target.checked : $event.target.value
-      )
-    "
+    @input="$emit('input', type === 'checkbox' ? $event.target.checked : $event.target.value)"
     :placeholder="placeholder"
     :type="type"
   />
@@ -175,8 +161,7 @@ input {
       transition: $default-transition;
     }
     &:focus {
-      padding: $label-font-size $label-font-size * 2 $label-font-size
-        $label-font-size;
+      padding: $label-font-size $label-font-size * 2 $label-font-size $label-font-size;
       padding-right: $label-font-size;
 
       + svg {
