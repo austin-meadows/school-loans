@@ -83,9 +83,9 @@ export default {
 </template>
 
 <style lang="scss">
-@import "../includes/styles/animations";
-@import "../includes/styles/sizes";
-@import "../includes/styles/palette";
+@import '../includes/styles/animations';
+@import '../includes/styles/sizes';
+@import '../includes/styles/palette';
 
 $label-font-size: $sizes-m;
 $checkbox-size: $label-font-size * 0.75;
@@ -148,7 +148,7 @@ input {
   border-radius: $label-font-size;
   font-size: $label-font-size;
   // sanitize/normalize.css seems to reset what we select.
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Open Sans', sans-serif;
   margin: $sizes-s 0;
   padding: $label-font-size $label-font-size $label-font-size $label-font-size +
     (2 * $label-font-size);
@@ -159,9 +159,9 @@ input {
     line-height: normal;
   }
 
-  &[type="text"],
-  &[type="email"],
-  &[type="password"] {
+  &[type='text'],
+  &[type='email'],
+  &[type='password'] {
     border: $border-m solid $whiteish;
     transition: $default-transition;
 
@@ -169,8 +169,7 @@ input {
       transition: $default-transition;
     }
     &:focus {
-      padding: $label-font-size $label-font-size * 2 $label-font-size
-        $label-font-size;
+      padding: $label-font-size $label-font-size * 2 $label-font-size $label-font-size;
       padding-right: $label-font-size;
 
       + svg {
@@ -179,7 +178,7 @@ input {
     }
   }
 
-  &[type="submit"] {
+  &[type='submit'] {
     color: lighten($primary, 40%);
     cursor: pointer;
     background: $primary;
@@ -190,7 +189,7 @@ input {
     }
   }
 
-  &[type="checkbox"] {
+  &[type='checkbox'] {
     cursor: pointer;
     position: relative;
     visibility: hidden;
@@ -199,7 +198,7 @@ input {
 
     &:before {
       border: $border-m solid $whiteish;
-      content: "";
+      content: '';
       display: block;
       padding: $checkbox-size;
       transition: $default-transition;

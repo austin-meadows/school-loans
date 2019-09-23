@@ -64,10 +64,10 @@ export default {
 </template>
 
 <style lang="scss">
-@import "./includes/styles/animations";
-@import "./includes/styles/breakpoints";
-@import "./includes/styles/palette";
-@import "./includes/styles/sizes";
+@import './includes/styles/animations';
+@import './includes/styles/breakpoints';
+@import './includes/styles/palette';
+@import './includes/styles/sizes';
 
 $nav-padding: $sizes-m;
 
@@ -123,7 +123,7 @@ $nav-padding: $sizes-m;
 
     &:before {
       background: white;
-      content: "";
+      content: '';
       left: 0;
       position: absolute;
       top: $nav-padding * 3;

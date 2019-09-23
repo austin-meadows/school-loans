@@ -7,13 +7,13 @@ import About from '@/views/About.vue';
 import Dashboard from '@/views/Dashboard.vue';
 import Onboarding from '@/views/Onboarding.vue';
 
-
 export default {
   created() {
     const { uid } = this.$root.$data;
 
     if (uid) {
-      db.collection('users').doc(uid)
+      db.collection('users')
+        .doc(uid)
         .get()
         .then(async (doc) => {
           if (doc.exists) {
@@ -21,7 +21,9 @@ export default {
           }
           this.isLoading = false;
         })
-        .catch(() => { this.isLoading = false; });
+        .catch(() => {
+          this.isLoading = false;
+        });
     } else {
       this.isLoading = false;
     }

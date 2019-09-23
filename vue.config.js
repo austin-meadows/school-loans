@@ -44,7 +44,8 @@ module.exports = {
               comments: false,
             },
           },
-        })],
+        })
+      ],
       splitChunks: {
         chunks: 'all',
         minSize: 30000,

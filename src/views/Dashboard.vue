@@ -1,7 +1,6 @@
 <script>
 export default {
-  components: {
-  },
+  components: {},
   props: {
     type: Number,
   },

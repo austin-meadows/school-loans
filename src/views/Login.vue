@@ -144,9 +144,9 @@ export default {
 </template>
 
 <style lang="scss">
-@import "../includes/styles/animations.scss";
-@import "../includes/styles/sizes";
-@import "../includes/styles/palette.scss";
+@import '../includes/styles/animations.scss';
+@import '../includes/styles/sizes';
+@import '../includes/styles/palette.scss';
 
 .login-switcher {
   margin-bottom: $sizes-m;

@@ -1,33 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="theme-color" content="#FFFFFF" />
+    <link rel="icon" href="<%= BASE_URL %>favicon.ico" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap"
+      rel="stylesheet"
+    />
+    <title>test</title>
+  </head>
 
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="manifest" href="/manifest.json" />
-  <meta name="theme-color" content="#FFFFFF" />
-  <link rel="icon" href="<%= BASE_URL %>favicon.ico">
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap" rel="stylesheet">
-  <title>test</title>
-</head>
-
-<body>
-  <noscript>
-    <strong>
-      We're sorry but test doesn't work properly without JavaScript enabled. Please enable it to
-      continue.
-    </strong>
-  </noscript>
-  <div id="app"></div>
-  <script type="text/javascript">
-    if ('serviceWorker' in navigator) {
-      window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/service-worker.js');
-      });
-    }
-  </script>
-
-</body>
-
+  <body>
+    <noscript>
+      <strong>
+        We're sorry but test doesn't work properly without JavaScript enabled. Please enable it to
+        continue.
+      </strong>
+    </noscript>
+    <div id="app"></div>
+    <script type="text/javascript">
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/service-worker.js');
+        });
+      }
+    </script>
+  </body>
 </html>

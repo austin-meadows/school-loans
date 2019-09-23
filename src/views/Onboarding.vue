@@ -23,15 +23,22 @@ export default {
       e.preventDefault();
       this.isLoading = true;
 
-      return db.collection('users').doc(this.$root.$data.uid)
-        .set({
-          name: this.name,
-          type: (this.donor ? 2 : 0) + (this.student ? 1 : 0),
-        }, { merge: true })
+      return db
+        .collection('users')
+        .doc(this.$root.$data.uid)
+        .set(
+          {
+            name: this.name,
+            type: (this.donor ? 2 : 0) + (this.student ? 1 : 0),
+          },
+          { merge: true },
+        )
         .then(() => {
           this.isLoading = false;
         })
-        .always(() => { this.isLoading = false; });
+        .always(() => {
+          this.isLoading = false;
+        });
     },
   },
 };

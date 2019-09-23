@@ -8,8 +8,7 @@ export default {
       slides: [
         {
           title: 'Text',
-          msg:
-            'Text',
+          msg: 'Text',
         },
         {
           title: 'Text',
@@ -17,8 +16,7 @@ export default {
         },
         {
           title: 'Text',
-          msg:
-            'Text',
+          msg: 'Text',
         },
         {
           title: 'Text',

@@ -16,17 +16,17 @@ export default {
 </template>
 
 <style lang="scss">
-@import "normalize.css/opinionated.css";
-@import "sanitize.css";
-@import "./includes/styles/breakpoints";
-@import "./includes/styles/palette";
-@import "./includes/styles/sizes";
+@import 'normalize.css/opinionated.css';
+@import 'sanitize.css';
+@import './includes/styles/breakpoints';
+@import './includes/styles/palette';
+@import './includes/styles/sizes';
 
 html,
 body {
   color: $text;
   font-size: $base;
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Open Sans', sans-serif;
   height: 100%;
   // probably not necessary to be here,
   // but spiritually, the smallest the webpage we support is
@@ -46,7 +46,7 @@ body {
 
 // style overrides for toasted
 #app ~ .toasted-container.top-right {
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Open Sans', sans-serif;
   top: 0;
   right: 0;
 
