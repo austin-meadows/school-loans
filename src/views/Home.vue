@@ -1,21 +1,21 @@
 <script>
-import Loading from 'vue-loading-overlay';
-import 'vue-loading-overlay/dist/vue-loading.css';
+import Loading from "vue-loading-overlay";
+import "vue-loading-overlay/dist/vue-loading.css";
 
-import db from '@/main';
-import About from '@/views/About.vue';
-import Dashboard from '@/views/Dashboard.vue';
-import Onboarding from '@/views/Onboarding.vue';
+import db from "@/main";
+import About from "@/views/About.vue";
+import Dashboard from "@/views/Dashboard.vue";
+import Onboarding from "@/views/Onboarding.vue";
 
 export default {
   created() {
     const { uid } = this.$root.$data;
 
     if (uid) {
-      db.collection('users')
+      db.collection("users")
         .doc(uid)
         .get()
-        .then(async (doc) => {
+        .then(async doc => {
           if (doc.exists) {
             this.type = await doc.data().type;
           }
@@ -32,15 +32,15 @@ export default {
     return {
       isLoading: true,
       isSignedIn: this.$root.$data.isSignedIn,
-      type: 0,
+      type: 0
     };
   },
   components: {
     About,
     Dashboard,
     Onboarding,
-    Loading,
-  },
+    Loading
+  }
 };
 </script>
 

@@ -1,26 +1,26 @@
 <script>
-import { auth } from '@/main';
-import CustomInput from '@/components/CustomInput.vue';
-import HeaderText from '@/components/HeaderText.vue';
-import Section from '@/components/Section.vue';
-import validate from '@/includes/js/validate';
+import { auth } from "@/main";
+import CustomInput from "@/components/CustomInput.vue";
+import HeaderText from "@/components/HeaderText.vue";
+import Section from "@/components/Section.vue";
+import validate from "@/includes/js/validate";
 
 export default {
   components: {
     HeaderText,
     CustomInput,
-    Section,
+    Section
   },
   data() {
     return {
-      email: '',
-      emailConfirm: '',
+      email: "",
+      emailConfirm: "",
       errors: [],
-      formKind: 'loginForm',
+      formKind: "loginForm",
       isHidden: true,
       isLoading: false,
-      password: '',
-      passwordConfirm: '',
+      password: "",
+      passwordConfirm: ""
     };
   },
   methods: {
@@ -29,12 +29,12 @@ export default {
       this.isLoading = true;
 
       this.errors = [];
-      if (!validate('email', this.email)) {
-        this.errors.push('Invalid email.');
+      if (!validate("email", this.email)) {
+        this.errors.push("Invalid email.");
       }
-      if (this.formKind === 'signUpForm') {
+      if (this.formKind === "signUpForm") {
         if (this.password.length < 8) {
-          this.errors.push('Passwords must be at least 8 characters long.');
+          this.errors.push("Passwords must be at least 8 characters long.");
         } else if (this.password !== this.passwordConfirm) {
           this.errors.push("Passwords don't match");
         }
@@ -42,50 +42,52 @@ export default {
           this.errors.push("Emails don't match.");
         }
       }
-      if (!this.errors.length && this.formKind === 'signUpForm') {
+      if (!this.errors.length && this.formKind === "signUpForm") {
         auth.createUserWithEmailAndPassword(this.email, this.password).then(
           () => {
-            this.$toasted.show('Your account has been created!', { type: 'success' });
-          },
-          (err) => {
-            this.$toasted.show(err.message, { type: 'error' });
-          },
-        );
-      }
-
-      if (!this.errors.length && this.formKind === 'loginForm') {
-        auth.signInWithEmailAndPassword(this.email, this.password).then(
-          () => {
-            this.$router.replace('/');
-            this.$toasted.show('You have signed in!', {
-              type: 'success',
-              icon: 'fa-thumbs-up',
+            this.$toasted.show("Your account has been created!", {
+              type: "success"
             });
           },
-          (err) => {
-            this.$toasted.show(err.message, { type: 'error' });
-          },
+          err => {
+            this.$toasted.show(err.message, { type: "error" });
+          }
         );
       }
 
-      this.errors.forEach((error) => {
-        this.$toasted.show(error, { type: 'error' });
+      if (!this.errors.length && this.formKind === "loginForm") {
+        auth.signInWithEmailAndPassword(this.email, this.password).then(
+          () => {
+            this.$router.replace("/");
+            this.$toasted.show("You have signed in!", {
+              type: "success",
+              icon: "fa-thumbs-up"
+            });
+          },
+          err => {
+            this.$toasted.show(err.message, { type: "error" });
+          }
+        );
+      }
+
+      this.errors.forEach(error => {
+        this.$toasted.show(error, { type: "error" });
       });
 
       this.isLoading = false;
       return false;
     },
     onClickSwitcher(e) {
-      this.$refs.login.$el.classList.remove('active');
-      this.$refs.signUp.$el.classList.remove('active');
-      e.target.parentNode.classList.add('active');
+      this.$refs.login.$el.classList.remove("active");
+      this.$refs.signUp.$el.classList.remove("active");
+      e.target.parentNode.classList.add("active");
       const selectedForm = e.target.parentNode.id;
       if (this.formKind !== selectedForm) {
         this.isHidden = !this.isHidden;
         this.formKind = selectedForm;
       }
-    },
-  },
+    }
+  }
 };
 </script>
 
@@ -137,16 +139,21 @@ export default {
           type="password"
           v-model="passwordConfirm"
         />
-        <CustomInput :isLoading="isLoading" icon="sign-in-alt" type="submit" value="Login" />
+        <CustomInput
+          :isLoading="isLoading"
+          icon="sign-in-alt"
+          type="submit"
+          value="Login"
+        />
       </form>
     </Section>
   </div>
 </template>
 
 <style lang="scss">
-@import '../includes/styles/animations.scss';
-@import '../includes/styles/sizes';
-@import '../includes/styles/palette.scss';
+@import "../includes/styles/animations.scss";
+@import "../includes/styles/sizes";
+@import "../includes/styles/palette.scss";
 
 .login-switcher {
   margin-bottom: $sizes-m;

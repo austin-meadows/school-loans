@@ -1,8 +1,8 @@
 <script>
 export default {
   props: {
-    type: String,
-  },
+    type: String
+  }
 };
 </script>
 
@@ -13,8 +13,8 @@ export default {
 </template>
 
 <style lang="scss">
-@import '../includes/styles/palette';
-@import '../includes/styles/sizes';
+@import "../includes/styles/palette";
+@import "../includes/styles/sizes";
 
 h1 {
   color: $primary;

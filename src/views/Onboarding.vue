@@ -1,21 +1,21 @@
 <script>
-import db from '@/main';
-import CustomInput from '@/components/CustomInput.vue';
-import HeaderText from '@/components/HeaderText.vue';
-import Section from '@/components/Section.vue';
+import db from "@/main";
+import CustomInput from "@/components/CustomInput.vue";
+import HeaderText from "@/components/HeaderText.vue";
+import Section from "@/components/Section.vue";
 
 export default {
   components: {
     CustomInput,
     HeaderText,
-    Section,
+    Section
   },
   data() {
     return {
       donor: false,
       isLoading: false,
-      name: '',
-      student: false,
+      name: "",
+      student: false
     };
   },
   methods: {
@@ -24,14 +24,14 @@ export default {
       this.isLoading = true;
 
       return db
-        .collection('users')
+        .collection("users")
         .doc(this.$root.$data.uid)
         .set(
           {
             name: this.name,
-            type: (this.donor ? 2 : 0) + (this.student ? 1 : 0),
+            type: (this.donor ? 2 : 0) + (this.student ? 1 : 0)
           },
-          { merge: true },
+          { merge: true }
         )
         .then(() => {
           this.isLoading = false;
@@ -39,8 +39,8 @@ export default {
         .always(() => {
           this.isLoading = false;
         });
-    },
-  },
+    }
+  }
 };
 </script>
 
@@ -56,10 +56,27 @@ export default {
         type="checkbox"
         v-model="student"
       />
-      <CustomInput icon="donate" name="donor" placeholder="Donor" type="checkbox" v-model="donor" />
+      <CustomInput
+        icon="donate"
+        name="donor"
+        placeholder="Donor"
+        type="checkbox"
+        v-model="donor"
+      />
       <HeaderText>My name is</HeaderText>
-      <CustomInput icon="signature" name="name" placeholder="Name" type="text" v-model="name" />
-      <CustomInput icon="arrow-right" :isLoading="isLoading" type="submit" value="Continue" />
+      <CustomInput
+        icon="signature"
+        name="name"
+        placeholder="Name"
+        type="text"
+        v-model="name"
+      />
+      <CustomInput
+        icon="arrow-right"
+        :isLoading="isLoading"
+        type="submit"
+        value="Continue"
+      />
     </form>
   </Section>
 </template>

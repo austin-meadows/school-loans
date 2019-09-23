@@ -1,29 +1,9 @@
-const TerserPlugin = require('terser-webpack-plugin');
-const WorkboxPlugin = require('workbox-webpack-plugin');
+const TerserPlugin = require("terser-webpack-plugin");
 
 module.exports = {
   configureWebpack: {
-    plugins: [
-      new WorkboxPlugin.GenerateSW({
-        exclude: [/\.(?:png|jpg|jpeg|svg)$/],
-        runtimeCaching: [
-          {
-            urlPattern: /\.(?:png|jpg|jpeg|svg)$/,
-            handler: 'CacheFirst',
-
-            options: {
-              cacheName: 'images',
-            },
-          },
-          {
-            urlPattern: /.*/,
-            handler: 'CacheFirst',
-          },
-        ],
-      }),
-    ],
     optimization: {
-      nodeEnv: 'production',
+      nodeEnv: "production",
       minimizer: [
         new TerserPlugin({
           parallel: true,
@@ -33,36 +13,36 @@ module.exports = {
               drop_console: true,
               hoist_funs: true,
               module: true,
-              passes: 1,
+              passes: 2,
               toplevel: true,
-              unsafe: true,
+              unsafe: true
             },
             mangle: {
-              toplevel: true,
+              toplevel: true
             },
             output: {
-              comments: false,
-            },
-          },
-        }),
+              comments: false
+            }
+          }
+        })
       ],
       splitChunks: {
-        chunks: 'all',
+        chunks: "all",
         minSize: 30000,
         maxSize: 0,
         cacheGroups: {
           vendors: {
             test: /[\\/]node_modules[\\/]/,
-            priority: -10,
+            priority: -10
           },
           default: {
             minChunks: 2,
             priority: -20,
-            reuseExistingChunk: true,
-          },
-        },
-      },
-    },
+            reuseExistingChunk: true
+          }
+        }
+      }
+    }
   },
-  productionSourceMap: false,
+  productionSourceMap: false
 };

@@ -1,14 +1,14 @@
 <script>
-import HeaderText from '@/components/HeaderText.vue';
+import HeaderText from "@/components/HeaderText.vue";
 
 export default {
   props: {
     msg: String,
-    title: String,
+    title: String
   },
   components: {
-    HeaderText,
-  },
+    HeaderText
+  }
 };
 </script>
 

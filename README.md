@@ -1,4 +1,4 @@
-# test
+# school-test
 
 ## Project setup
 ```

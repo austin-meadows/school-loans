@@ -2,8 +2,8 @@
 export default {
   components: {},
   props: {
-    type: Number,
-  },
+    type: Number
+  }
 };
 </script>
 

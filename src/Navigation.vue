@@ -1,40 +1,40 @@
 <script>
-import { auth } from '@/main';
+import { auth } from "@/main";
 
 export default {
   data() {
     return {
-      isSignedIn: this.$root.$data.isSignedIn,
+      isSignedIn: this.$root.$data.isSignedIn
     };
   },
   methods: {
     show() {
-      this.$refs.menu.classList.remove('closed');
-      this.$refs.menu.classList.add('open');
+      this.$refs.menu.classList.remove("closed");
+      this.$refs.menu.classList.add("open");
     },
     hide() {
-      this.$refs.menu.classList.remove('open');
-      this.$refs.menu.classList.add('closed');
+      this.$refs.menu.classList.remove("open");
+      this.$refs.menu.classList.add("closed");
     },
     onClickMenu() {
-      if (this.$refs.menu.classList.contains('open')) {
+      if (this.$refs.menu.classList.contains("open")) {
         this.hide();
       } else {
         this.show();
       }
     },
     onClickMenuLink() {
-      this.$refs.menu.classList.remove('open');
-      this.$refs.menu.classList.add('closed');
+      this.$refs.menu.classList.remove("open");
+      this.$refs.menu.classList.add("closed");
     },
     onClickSignOut() {
       auth.signOut();
-      this.$toasted.show('You have signed out!', {
-        type: 'success',
-        icon: 'fa-thumbs-up',
+      this.$toasted.show("You have signed out!", {
+        type: "success",
+        icon: "fa-thumbs-up"
       });
-    },
-  },
+    }
+  }
 };
 </script>
 
@@ -42,14 +42,20 @@ export default {
   <div id="nav">
     <a id="menuButton" @click="onClickMenu"> <fa icon="bars" />Menu</a>
     <div ref="menu" class="menu closed">
-      <router-link @click.native="onClickMenuLink" to="/"><fa icon="home" />Home</router-link>
+      <router-link @click.native="onClickMenuLink" to="/"
+        ><fa icon="home" />Home</router-link
+      >
       <router-link @click.native="onClickMenuLink" to="/give">
         <fa icon="piggy-bank" />Give
       </router-link>
       <router-link @click.native="onClickMenuLink" to="/stats">
         <fa icon="chart-bar" />Statistics
       </router-link>
-      <router-link v-if="!isSignedIn" @click.native="onClickMenuLink" to="/login">
+      <router-link
+        v-if="!isSignedIn"
+        @click.native="onClickMenuLink"
+        to="/login"
+      >
         <fa icon="sign-in-alt" />Login
       </router-link>
       <router-link v-else @click.native="onClickSignOut" to="/login">
@@ -60,10 +66,10 @@ export default {
 </template>
 
 <style lang="scss">
-@import './includes/styles/animations';
-@import './includes/styles/breakpoints';
-@import './includes/styles/palette';
-@import './includes/styles/sizes';
+@import "./includes/styles/animations";
+@import "./includes/styles/breakpoints";
+@import "./includes/styles/palette";
+@import "./includes/styles/sizes";
 
 $nav-padding: $sizes-m;
 
@@ -119,7 +125,7 @@ $nav-padding: $sizes-m;
 
     &:before {
       background: white;
-      content: '';
+      content: "";
       left: 0;
       position: absolute;
       top: $nav-padding * 3;
