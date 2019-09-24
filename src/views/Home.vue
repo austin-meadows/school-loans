@@ -3,9 +3,9 @@ import Loading from "vue-loading-overlay";
 import "vue-loading-overlay/dist/vue-loading.css";
 
 import db from "../main";
-import About from "../views/About.vue";
-import Dashboard from "../views/Dashboard.vue";
-import Onboarding from "../views/Onboarding.vue";
+import About from "./About.vue";
+import Dashboard from "./Dashboard.vue";
+import Onboarding from "./Onboarding.vue";
 
 export default {
   created() {

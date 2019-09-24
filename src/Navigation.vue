@@ -107,10 +107,10 @@ $nav-padding: $sizes-m;
   }
 
   a {
-    border-top-left-radius: $sizes-s;
-    border-top-right-radius: $sizes-s;
     color: $text;
     cursor: pointer;
+    font-size: $sizes-m;
+    line-height: $sizes-m;
     padding: $nav-padding;
     text-decoration: none;
     transition: $default-transition;
