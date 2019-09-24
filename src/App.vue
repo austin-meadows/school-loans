@@ -1,5 +1,5 @@
 <script>
-import Navigation from "@/Navigation.vue";
+import Navigation from "./Navigation.vue";
 
 export default {
   components: {
@@ -18,9 +18,9 @@ export default {
 <style lang="scss">
 @import "normalize.css/opinionated.css";
 @import "sanitize.css";
-@import "./includes/styles/breakpoints";
-@import "./includes/styles/palette";
-@import "./includes/styles/sizes";
+@import "./utils/styles/breakpoints";
+@import "./utils/styles/palette";
+@import "./utils/styles/sizes";
 
 html,
 body {

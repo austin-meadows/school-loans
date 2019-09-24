@@ -1,5 +1,5 @@
 <script>
-import { auth } from "@/main";
+import { auth } from "./main";
 
 export default {
   data() {
@@ -60,10 +60,10 @@ export default {
 </template>
 
 <style lang="scss">
-@import "./includes/styles/animations";
-@import "./includes/styles/breakpoints";
-@import "./includes/styles/palette";
-@import "./includes/styles/sizes";
+@import "./utils/styles/animations";
+@import "./utils/styles/breakpoints";
+@import "./utils/styles/palette";
+@import "./utils/styles/sizes";
 
 $nav-padding: $sizes-m;
 

@@ -13,8 +13,8 @@ export default {
 </template>
 
 <style lang="scss">
-@import "../includes/styles/palette";
-@import "../includes/styles/sizes";
+@import "../utils/styles/palette";
+@import "../utils/styles/sizes";
 
 h1 {
   color: $primary;

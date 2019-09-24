@@ -5,8 +5,8 @@
 </template>
 
 <style lang="scss">
-@import "../includes/styles/sizes";
-@import "../includes/styles/breakpoints";
+@import "../utils/styles/sizes";
+@import "../utils/styles/breakpoints";
 
 section {
   margin: auto;

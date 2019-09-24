@@ -75,9 +75,9 @@ export default {
 </template>
 
 <style lang="scss">
-@import "../includes/styles/animations";
-@import "../includes/styles/sizes";
-@import "../includes/styles/palette";
+@import "../utils/styles/animations";
+@import "../utils/styles/sizes";
+@import "../utils/styles/palette";
 
 $label-font-size: $sizes-m;
 $checkbox-size: $label-font-size * 0.75;

@@ -1,5 +1,5 @@
 <script>
-import HeaderText from "@/components/HeaderText.vue";
+import HeaderText from "../HeaderText.vue";
 
 export default {
   props: {
