@@ -28,6 +28,7 @@ body {
   font-size: $base;
   font-family: "Open Sans", sans-serif;
   height: 100%;
+  line-height: $base;
   // probably not necessary to be here,
   // but spiritually, the smallest the webpage we support is
   // 320px.

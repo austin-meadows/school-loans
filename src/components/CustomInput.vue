@@ -48,12 +48,13 @@ export default {
 
 <template>
   <div v-if="icon" :class="['input-block', { hidden: isHidden }, type]" ref="inputBlock">
-    <label :for="name">
+    <label class="input-label" :for="name">
       <loading :active.sync="isLoading" :is-full-page="false"></loading>
 
-      <span v-if="type === 'checkbox'">{{ placeholder }}</span>
+      <span class="input-placeholder" v-if="type === 'checkbox'">{{ placeholder }}</span>
       <input
         :autocomplete="autocomplete"
+        class="input"
         :disabled="isHidden"
         :id="name"
         @input="$emit('input', type === 'checkbox' ? $event.target.checked : $event.target.value)"
@@ -66,6 +67,7 @@ export default {
   <input
     v-else
     :autocomplete="autocomplete"
+    class="input"
     :disabled="isHidden"
     :id="name"
     @input="$emit('input', type === 'checkbox' ? $event.target.checked : $event.target.value)"
@@ -97,7 +99,7 @@ $checkbox-size: $label-font-size * 0.75;
   }
 
   &.checkbox {
-    span,
+    .input-placeholder,
     svg {
       cursor: pointer;
       user-select: none;
@@ -108,21 +110,21 @@ $checkbox-size: $label-font-size * 0.75;
       order: 1;
       position: initial;
     }
-    span {
+    .input-placeholder {
       flex: 1;
       order: 2;
       text-align: left;
     }
-    input {
+    .input {
       order: 3;
     }
-    label {
+    .input-label {
       height: calc(#{$label-font-size} * 3 + 2px);
     }
   }
 }
 
-label {
+.input-label {
   align-items: center;
   display: flex;
   position: relative;
@@ -130,17 +132,19 @@ label {
   > :last-child {
     font-size: $label-font-size;
     left: 0;
+    line-height: $label-font-size;
     margin-left: $label-font-size;
     position: absolute;
   }
 }
 
-input {
+.input {
   border: 0;
   border-radius: $label-font-size;
   font-size: $label-font-size;
   // sanitize/normalize.css seems to reset what we select.
   font-family: "Open Sans", sans-serif;
+  line-height: $label-font-size;
   margin: $sizes-s 0;
   padding: $label-font-size $label-font-size $label-font-size $label-font-size +
     (2 * $label-font-size);

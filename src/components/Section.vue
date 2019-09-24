@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section class="section">
     <slot></slot>
   </section>
 </template>
@@ -8,7 +8,7 @@
 @import "../utils/styles/sizes";
 @import "../utils/styles/breakpoints";
 
-section {
+.section {
   margin: auto;
   margin-top: $sizes-m;
   max-width: $container-max-width;

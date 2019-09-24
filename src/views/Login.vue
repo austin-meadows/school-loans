@@ -162,7 +162,7 @@ export default {
     transition: $default-transition;
   }
 
-  h1:not(.active) {
+  .header:not(.active) {
     color: $text;
     font-weight: normal;
   }

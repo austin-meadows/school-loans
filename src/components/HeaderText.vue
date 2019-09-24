@@ -7,18 +7,20 @@ export default {
 </script>
 
 <template>
-  <h1 :class="{ primary: !type, [type]: type }">
+  <span :class="['header', { primary: !type, [type]: type }]">
     <slot></slot>
-  </h1>
+  </span>
 </template>
 
 <style lang="scss">
 @import "../utils/styles/palette";
 @import "../utils/styles/sizes";
 
-h1 {
+.header {
   color: $primary;
   font-size: $sizes-l;
+  font-weight: bold;
+  line-height: $sizes-l;
   margin: 0;
 
   &.primary {
