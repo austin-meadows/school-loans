@@ -149,7 +149,6 @@ $checkbox-size: $label-font-size * 0.75;
   padding: $label-font-size $label-font-size $label-font-size $label-font-size +
     (2 * $label-font-size);
   width: 100%;
-
   &::placeholder {
     color: lighten($text, 40%);
     line-height: normal;
@@ -211,6 +210,11 @@ $checkbox-size: $label-font-size * 0.75;
         transform: rotate(-45deg);
       }
     }
+  }
+
+  // fix for mobile safari adding shadow
+  &:not([type="checkbox"]):not([type="radio"]) {
+    -webkit-appearance: none;
   }
 }
 </style>

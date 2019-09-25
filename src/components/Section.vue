@@ -43,24 +43,24 @@ export default {
     margin-bottom: 0;
   }
 
-  &.xs {
-    margin: $sizes-xs auto;
-  }
-  &.s {
-    margin: $sizes-s auto;
-  }
-  &.m {
-    margin: $sizes-m auto;
-  }
-  &.l {
-    margin: $sizes-l auto;
-  }
-  &.xl {
-    margin: $sizes-xl auto;
-  }
-
   @media (min-width: $screen-size-s) {
     width: 75%;
   }
+}
+
+.xs {
+  margin: $sizes-xs auto;
+}
+.s {
+  margin: $sizes-s auto;
+}
+.m {
+  margin: $sizes-m auto;
+}
+.l {
+  margin: $sizes-l auto;
+}
+.xl {
+  margin: $sizes-xl auto;
 }
 </style>
