@@ -24,13 +24,14 @@ Vue.use(firestorePlugin);
 
 let app = "";
 const config = {
-  apiKey: "AIzaSyAU07mWfFhGyw7SXGFVc1ceYwLjjnJToNQ",
-  authDomain: "student-loans-e6569.firebaseapp.com",
-  databaseURL: "https://student-loans-e6569.firebaseio.com",
-  projectId: "student-loans-e6569",
-  storageBucket: "",
-  messagingSenderId: "965857536415",
-  appId: "1:965857536415:web:28d241b7b22c8258"
+  apiKey: "AIzaSyDeCY8cfGRfgbE835G9brcsiNiQhkKhV4A",
+  appId: "1:431090940964:web:90c18035de7941e5e9acb1",
+  authDomain: "school-loans-59a5b.firebaseapp.com",
+  databaseURL: "https://school-loans-59a5b.firebaseio.com",
+  measurementId: "G-K9F6LMJJ2N",
+  messagingSenderId: "431090940964",
+  projectId: "school-loans-59a5b",
+  storageBucket: "school-loans-59a5b.appspot.com"
 };
 
 firebase.initializeApp(config);
