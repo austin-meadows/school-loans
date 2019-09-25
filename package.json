@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "deploy-prod": "run-s util-build-prod && util-deploy-firebase",
+    "deploy-prod": "run-s util-build-prod util-deploy-firebase",
     "lint": "vue-cli-service lint",
     "run-dev": "vue-cli-service serve",
     "run-prod": "run-s util-build-prod util-run-server",

@@ -1,5 +1,31 @@
+<script>
+import Loading from "vue-loading-overlay";
+import "vue-loading-overlay/dist/vue-loading.css";
+
+export default {
+  components: {
+    Loading
+  },
+  props: {
+    /*
+      (usually on a submit button) if an action is "loading" due to a button press
+    */
+    isLoading: {
+      default: false,
+      type: Boolean
+    },
+    spacing: {
+      default: "l",
+      type: String,
+      validator: value => ["xs", "s", "m", "l", "xl"].indexOf(value) > -1
+    }
+  }
+};
+</script>
+
 <template>
-  <section class="section">
+  <section :class="['section', spacing]">
+    <loading :active.sync="isLoading" :is-full-page="false"></loading>
     <slot></slot>
   </section>
 </template>
@@ -10,9 +36,28 @@
 
 .section {
   margin: auto;
-  margin-top: $sizes-m;
   max-width: $container-max-width;
   width: 95%;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &.xs {
+    margin: $sizes-xs auto;
+  }
+  &.s {
+    margin: $sizes-s auto;
+  }
+  &.m {
+    margin: $sizes-m auto;
+  }
+  &.l {
+    margin: $sizes-l auto;
+  }
+  &.xl {
+    margin: $sizes-xl auto;
+  }
 
   @media (min-width: $screen-size-s) {
     width: 75%;

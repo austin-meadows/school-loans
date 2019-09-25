@@ -57,6 +57,7 @@ export default {
         class="input"
         :disabled="isHidden"
         :id="name"
+        @input="$emit('input', type === 'checkbox' ? $event.target.checked : $event.target.value)"
         :placeholder="placeholder"
         :type="type"
       />
@@ -69,6 +70,7 @@ export default {
     class="input"
     :disabled="isHidden"
     :id="name"
+    @input="$emit('input', type === 'checkbox' ? $event.target.checked : $event.target.value)"
     :placeholder="placeholder"
     :type="type"
   />
