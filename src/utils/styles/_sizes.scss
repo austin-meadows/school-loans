@@ -1,18 +1,22 @@
-$base: 1em;
-$sizes-xs: $base * 0.25;
-$sizes-s: $base * 0.5;
-$sizes-m: $base;
-$sizes-l: $base * 2;
-$sizes-xl: $base * 4;
+@function scale($base-size, $scale-by: 1) {
+  @return $base-size * $scale-by;
+}
 
-$navHeight: $base * 3;
+$base: 1em;
+$sizes-xs: scale($base, 0.25);
+$sizes-s: scale($base, 0.5);
+$sizes-m: $base;
+$sizes-l: scale($base, 2);
+$sizes-xl: scale($base, 4);
+
+$navHeight: scale($base, 3);
 
 $base-border: 2px;
-$border-xs: $base-border * 0.25;
-$border-s: $base-border * 0.5;
+$border-xs: scale($base-border, 0.25);
+$border-s: scale($base-border, 0.5);
 $border-m: $base-border;
-$border-l: $base-border * 2;
-$border-xl: $base-border * 4;
+$border-l: scale($base-border, 2);
+$border-xl: scale($base-border, 4);
 
 $container-max-width: 700px;
 $container-min-width: 320px;
