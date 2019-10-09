@@ -3,14 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "deploy-prod": "run-s util-build-prod util-deploy-firebase",
+    "__util-build-prod": "vue-cli-service build",
+    "__util-deploy-firebase": "firebase deploy",
+    "__util-run-prod-server": "serve -s ./dist",
+    "deploy-prod": "run-s __util-build-prod __util-deploy-firebase",
     "lint": "vue-cli-service lint",
     "run-dev": "vue-cli-service serve",
-    "run-prod": "run-s util-build-prod util-run-server",
-    "test:unit": "vue-cli-service test:unit",
-    "util-build-prod": "vue-cli-service build",
-    "util-deploy-firebase": "firebase deploy",
-    "util-run-server": "serve -s ./dist"
+    "run-prod": "run-s __util-build-prod __util-run-prod-server",
+    "test:unit": "vue-cli-service test:unit"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.25",
