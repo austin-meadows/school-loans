@@ -4,9 +4,10 @@ module.exports = {
   configureWebpack: {
     optimization: {
       nodeEnv: "production",
+      minimize: true,
       minimizer: [
         new TerserPlugin({
-          parallel: true,
+          parallel: 4,
           terserOptions: {
             compress: {
               arguments: true,
