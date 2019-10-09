@@ -72,6 +72,6 @@ input:focus,
 select:focus,
 textarea:focus,
 button:focus {
-  outline: none;
+  outline: 0;
 }
 </style>

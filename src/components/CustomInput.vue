@@ -6,12 +6,23 @@ export default {
   components: {
     Loading
   },
+  data() {
+    return {
+      parsedAutocomplete() {
+        if (typeof this.autocomplete === "string") return this.autocomplete;
+        if (typeof this.autocomplete === "object" && this.autocomplete !== null) {
+          return Object.keys(this.autocomplete).filter(key => this.autocomplete[key])[0];
+        }
+        return null;
+      }
+    };
+  },
   props: {
     /*
       autcomplete attribute, if necessary
       see https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#autofilling-form-controls:-the-autocomplete-attribute
     */
-    autocomplete: String,
+    autocomplete: [Object, String],
     /*
       name of font-awesome icon to use
     */
@@ -53,7 +64,7 @@ export default {
 
       <span class="input-placeholder" v-if="type === 'checkbox'">{{ placeholder }}</span>
       <input
-        :autocomplete="autocomplete"
+        :autocomplete="this.parsedAutocomplete()"
         class="input"
         :disabled="isHidden"
         :id="name"
@@ -66,7 +77,7 @@ export default {
   </div>
   <input
     v-else
-    :autocomplete="autocomplete"
+    :autocomplete="this.parsedAutocomplete()"
     class="input"
     :disabled="isHidden"
     :id="name"

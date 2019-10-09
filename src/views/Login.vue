@@ -78,9 +78,6 @@ export default {
       return false;
     },
     onClickSwitcher(e) {
-      this.$refs.login.$el.classList.remove("active");
-      this.$refs.signUp.$el.classList.remove("active");
-      e.target.parentNode.classList.add("active");
       const selectedForm = e.target.parentNode.id;
       if (this.formKind !== selectedForm) {
         this.isHidden = !this.isHidden;
@@ -95,10 +92,10 @@ export default {
   <div id="login">
     <Section>
       <div class="login-switcher">
-        <HeaderText class="active" ref="login" id="loginForm">
+        <HeaderText :class="{ active: isHidden }" id="loginForm">
           <a @click="onClickSwitcher">Login</a>
         </HeaderText>
-        <HeaderText ref="signUp" id="signUpForm">
+        <HeaderText :class="{ active: !isHidden }" id="signUpForm">
           <a @click="onClickSwitcher">Sign up</a>
         </HeaderText>
       </div>
@@ -122,7 +119,7 @@ export default {
           v-model="emailConfirm"
         />
         <CustomInput
-          autocomplete="current-password"
+          :autocomplete="{ 'new-password': !isHidden, 'current-password': isHidden }"
           icon="key"
           name="password"
           placeholder="Password"
