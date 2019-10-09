@@ -16,8 +16,7 @@ export default {
 </template>
 
 <style lang="scss">
-@import "normalize.css/opinionated.css";
-@import "sanitize.css";
+@import-sanitize;
 @import "./utils/styles/breakpoints";
 @import "./utils/styles/palette";
 @import "./utils/styles/sizes";
@@ -25,7 +24,8 @@ export default {
 html,
 body {
   color: $text;
-  font-size: $base;
+  // Base the font size off of something absolute for use with EMs
+  font-size: 15px;
   font-family: "Open Sans", sans-serif;
   height: 100%;
   line-height: $base;
