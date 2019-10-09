@@ -48,6 +48,7 @@ export default {
             this.$toasted.show("Your account has been created!", {
               type: "success"
             });
+            this.login();
           },
           err => {
             this.$toasted.show(err.message, { type: "error" });
@@ -56,18 +57,7 @@ export default {
       }
 
       if (!this.errors.length && this.formKind === "loginForm") {
-        auth.signInWithEmailAndPassword(this.email, this.password).then(
-          () => {
-            this.$router.replace("/");
-            this.$toasted.show("You have signed in!", {
-              type: "success",
-              icon: "fa-thumbs-up"
-            });
-          },
-          err => {
-            this.$toasted.show(err.message, { type: "error" });
-          }
-        );
+        this.login();
       }
 
       this.errors.forEach(error => {
@@ -83,6 +73,20 @@ export default {
         this.isHidden = !this.isHidden;
         this.formKind = selectedForm;
       }
+    },
+    login() {
+      auth.signInWithEmailAndPassword(this.email, this.password).then(
+        () => {
+          this.$router.replace("/");
+          this.$toasted.show("You have signed in!", {
+            type: "success",
+            icon: "fa-thumbs-up"
+          });
+        },
+        err => {
+          this.$toasted.show(err.message, { type: "error" });
+        }
+      );
     }
   }
 };
@@ -99,7 +103,7 @@ export default {
           <a @click="onClickSwitcher">Sign up</a>
         </HeaderText>
       </div>
-      <form ref="form" @submit="checkForm" novalidate="true">
+      <form ref="form" @submit="checkForm" novalidate="true" autocomplete="true">
         <CustomInput
           autocomplete="email"
           icon="envelope"
