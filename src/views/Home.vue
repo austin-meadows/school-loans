@@ -2,12 +2,18 @@
 import Loading from "vue-loading-overlay";
 import "vue-loading-overlay/dist/vue-loading.css";
 
-import db from "../main";
+import { db } from "../includes/firebase";
 import About from "./About.vue";
 import Dashboard from "./Dashboard.vue";
 import Onboarding from "./Onboarding.vue";
 
 export default {
+  components: {
+    About,
+    Dashboard,
+    Onboarding,
+    Loading
+  },
   created() {
     const { uid } = this.$root.$data;
 
@@ -28,26 +34,24 @@ export default {
       this.isLoading = false;
     }
   },
+  computed: {
+    user() {
+      return this.$store.getters.user;
+    }
+  },
   data() {
     return {
       isLoading: true,
-      isSignedIn: this.$root.$data.isSignedIn,
       type: 0
     };
-  },
-  components: {
-    About,
-    Dashboard,
-    Onboarding,
-    Loading
   }
 };
 </script>
 
 <template>
   <div id="home">
-    <Onboarding v-if="isSignedIn && !isLoading && !type" :type="type" />
-    <Dashboard v-else-if="isSignedIn && !isLoading && type" />
+    <Onboarding v-if="user && !isLoading && !type" :type="type" />
+    <Dashboard v-else-if="user && !isLoading && type" />
     <About v-else-if="!isLoading" />
     <loading :active.sync="isLoading"></loading>
   </div>

@@ -1,11 +1,11 @@
 <script>
-import { auth } from "./main";
+import { auth } from "./includes/firebase";
 
 export default {
-  data() {
-    return {
-      isSignedIn: this.$root.$data.isSignedIn
-    };
+  computed: {
+    user() {
+      return this.$store.getters.user;
+    }
   },
   methods: {
     show() {
@@ -29,6 +29,7 @@ export default {
     },
     onClickSignOut() {
       auth.signOut();
+      this.$store.commit("user", null);
       this.$toasted.show("You have signed out!", {
         type: "success",
         icon: "fa-thumbs-up"
@@ -49,7 +50,7 @@ export default {
       <router-link @click.native="onClickMenuLink" to="/stats">
         <fa icon="chart-bar" />Statistics
       </router-link>
-      <router-link v-if="!isSignedIn" @click.native="onClickMenuLink" to="/login">
+      <router-link v-if="!user" @click.native="onClickMenuLink" to="/login">
         <fa icon="sign-in-alt" />Login
       </router-link>
       <router-link v-else @click.native="onClickSignOut" to="/login">

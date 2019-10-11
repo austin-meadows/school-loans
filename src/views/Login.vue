@@ -1,9 +1,7 @@
 <script>
-import { auth } from "../main";
-import CustomInput from "../components/CustomInput.vue";
-import HeaderText from "../components/HeaderText.vue";
-import Section from "../components/Section.vue";
-import validate from "../utils/js/validate";
+import { auth } from "../includes/firebase";
+import { CustomInput, HeaderText, Section } from "../components";
+import { validate } from "../utils/js";
 
 export default {
   components: {
@@ -147,9 +145,9 @@ export default {
 </template>
 
 <style lang="scss">
-@import "../utils/styles/animations.scss";
+@import "../utils/styles/animations";
+@import "../utils/styles/palette";
 @import "../utils/styles/sizes";
-@import "../utils/styles/palette.scss";
 
 .login-switcher {
   margin-bottom: $sizes-m;

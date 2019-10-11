@@ -1,8 +1,6 @@
 <script>
-import db from "../main";
-import CustomInput from "../components/CustomInput.vue";
-import HeaderText from "../components/HeaderText.vue";
-import Section from "../components/Section.vue";
+import { db } from "../includes/firebase";
+import { CustomInput, HeaderText, Section } from "../components";
 
 export default {
   components: {

@@ -7,9 +7,6 @@ export default {
     Loading
   },
   props: {
-    /*
-      (usually on a submit button) if an action is "loading" due to a button press
-    */
     isLoading: {
       default: false,
       type: Boolean

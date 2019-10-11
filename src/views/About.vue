@@ -1,6 +1,6 @@
 <script>
-import Slide from "../components/About/Slide.vue";
-import Section from "../components/Section.vue";
+import { Section } from "../components";
+import { Slide } from "../components/About";
 
 export default {
   data() {
