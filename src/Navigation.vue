@@ -7,25 +7,18 @@ export default {
       return this.$store.getters.user;
     }
   },
+  data() {
+    return {
+      menuState: "closed"
+    };
+  },
   methods: {
-    show() {
-      this.$refs.menu.classList.remove("closed");
-      this.$refs.menu.classList.add("open");
-    },
-    hide() {
-      this.$refs.menu.classList.remove("open");
-      this.$refs.menu.classList.add("closed");
-    },
     onClickMenu() {
-      if (this.$refs.menu.classList.contains("open")) {
-        this.hide();
-      } else {
-        this.show();
-      }
+      if (this.menuState === "open") this.menuState = "closed";
+      else this.menuState = "open";
     },
-    onClickMenuLink() {
-      this.$refs.menu.classList.remove("open");
-      this.$refs.menu.classList.add("closed");
+    closeMenu() {
+      this.menuState = "closed";
     },
     onClickSignOut() {
       auth.signOut();
@@ -42,15 +35,13 @@ export default {
 <template>
   <div id="nav">
     <a id="menuButton" @click="onClickMenu"> <fa icon="bars" />Menu</a>
-    <div ref="menu" class="menu closed">
-      <router-link @click.native="onClickMenuLink" to="/"><fa icon="home" />Home</router-link>
-      <router-link @click.native="onClickMenuLink" to="/give">
-        <fa icon="piggy-bank" />Give
-      </router-link>
-      <router-link @click.native="onClickMenuLink" to="/stats">
+    <div :class="['menu', menuState]">
+      <router-link @click.native="closeMenu" to="/"> <fa icon="home" />Home </router-link>
+      <router-link @click.native="closeMenu" to="/give"><fa icon="piggy-bank" />Give</router-link>
+      <router-link @click.native="closeMenu" to="/stats">
         <fa icon="chart-bar" />Statistics
       </router-link>
-      <router-link v-if="!user" @click.native="onClickMenuLink" to="/login">
+      <router-link v-if="!user" @click.native="closeMenu" to="/login">
         <fa icon="sign-in-alt" />Login
       </router-link>
       <router-link v-else @click.native="onClickSignOut" to="/login">
