@@ -12,12 +12,18 @@
     "run-prod": "run-s __util-build-prod __util-run-prod-server",
     "test:unit": "vue-cli-service test:unit"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "run-s lint"
+    }
+  },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.25",
     "@fortawesome/free-solid-svg-icons": "^5.11.2",
     "@fortawesome/vue-fontawesome": "^0.1.7",
     "core-js": "^3.2.1",
-    "firebase": "^7.1.0",
+    "firebase": "^7.2.0",
+    "husky": "^3.0.8",
     "register-service-worker": "^1.6.2",
     "secure-ls": "^1.2.5",
     "vue": "^2.6.10",
@@ -28,11 +34,11 @@
     "vuex-persistedstate": "^2.5.4"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "^3.11.0",
-    "@vue/cli-plugin-eslint": "^3.11.0",
-    "@vue/cli-plugin-pwa": "^3.11.0",
-    "@vue/cli-plugin-unit-mocha": "^3.11.0",
-    "@vue/cli-service": "^3.11.0",
+    "@vue/cli-plugin-babel": "^3.12.0",
+    "@vue/cli-plugin-eslint": "^3.12.0",
+    "@vue/cli-plugin-pwa": "^3.12.0",
+    "@vue/cli-plugin-unit-mocha": "^3.12.0",
+    "@vue/cli-service": "^3.12.0",
     "@vue/eslint-config-airbnb": "^4.0.1",
     "@vue/eslint-config-prettier": "^5.0.0",
     "@vue/test-utils": "1.0.0-beta.29",
@@ -49,7 +55,7 @@
     "sass": "^1.23.0",
     "sass-loader": "^8.0.0",
     "serve": "^11.2.0",
-    "terser-webpack-plugin": "^2.1.2",
+    "terser-webpack-plugin": "^2.1.3",
     "vue-template-compiler": "^2.6.10"
   }
 }
