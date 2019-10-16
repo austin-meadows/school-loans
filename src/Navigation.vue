@@ -36,7 +36,10 @@ export default {
   <div id="nav">
     <a id="menuButton" @click="onClickMenu"> <fa icon="bars" />Menu</a>
     <div :class="['menu', menuState]">
-      <router-link @click.native="closeMenu" to="/"> <fa icon="home" />Home </router-link>
+      <router-link @click.native="closeMenu" to="/"><fa icon="home" />Home</router-link>
+      <router-link v-if="!!user" @click.native="closeMenu" to="/dashboard">
+        <fa icon="tachometer-alt" /> Dashboard
+      </router-link>
       <router-link @click.native="closeMenu" to="/give"><fa icon="piggy-bank" />Give</router-link>
       <router-link @click.native="closeMenu" to="/stats">
         <fa icon="chart-bar" />Statistics

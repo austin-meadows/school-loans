@@ -4,22 +4,22 @@ import store from "./store";
 
 Vue.use(Router);
 
-const isAuthed = !!store.getters.user;
-
-export default new Router({
+const router = new Router({
   mode: "history",
   base: process.env.BASE_URL,
   routes: [
     {
       path: "/",
       name: "home",
-      component: () => {
-        if (!isAuthed) {
-          return import(/* webpackChunkName: "onboarding" */ "../views/About.vue");
-        }
-        // additional check to see if user has completed onboarding should be added...
-        return import(/* webpackChunkName: "dashboard" */ "../views/Onboarding.vue");
-      }
+      component: () => import(/* webpackChunkName: "onboarding" */ "../views/Home.vue")
+    },
+    {
+      path: "/dashboard",
+      name: "dashboard",
+      meta: {
+        requiresAuth: true
+      },
+      component: () => import(/* webpackChunkName: "dashboard" */ "../views/Dashboard.vue")
     },
     {
       path: "/login",
@@ -28,3 +28,19 @@ export default new Router({
     }
   ]
 });
+
+router.beforeEach((to, from, next) => {
+  const isAuthed = store.getters.user;
+
+  if (to.matched.some(record => record.meta.requiresAuth)) {
+    if (isAuthed) {
+      next();
+    } else {
+      next({ name: "login" });
+    }
+  } else {
+    next();
+  }
+});
+
+export default router;

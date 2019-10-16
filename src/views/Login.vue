@@ -74,12 +74,13 @@ export default {
     },
     login() {
       auth.signInWithEmailAndPassword(this.email, this.password).then(
-        () => {
-          this.$router.replace("/");
+        ({ user }) => {
+          this.$store.commit("user", user);
           this.$toasted.show("You have signed in!", {
             type: "success",
             icon: "fa-thumbs-up"
           });
+          this.$router.replace("/dashboard");
         },
         err => {
           this.$toasted.show(err.message, { type: "error" });
