@@ -3,13 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "__util-build-prod": "vue-cli-service build",
-    "__util-deploy-firebase": "firebase deploy",
-    "__util-run-prod-server": "serve -s ./dist",
-    "deploy-prod": "run-s __util-build-prod __util-deploy-firebase",
+    "__util-build:prod": "vue-cli-service build",
+    "__util-deploy:firebase": "firebase deploy",
+    "__util-run:prodserver": "serve -s ./dist",
+    "deploy:prod": "run-s __util-build:prod __util-deploy:firebase",
     "lint": "vue-cli-service lint",
-    "run-dev": "vue-cli-service serve",
-    "run-prod": "run-s __util-build-prod __util-run-prod-server",
+    "run:dev": "vue-cli-service serve",
+    "run:prod": "run-s __util-build:prod __util-run:prodserver",
     "test:unit": "vue-cli-service test:unit"
   },
   "husky": {

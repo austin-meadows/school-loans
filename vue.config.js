@@ -1,6 +1,11 @@
 const TerserPlugin = require("terser-webpack-plugin");
 
 module.exports = {
+  chainWebpack: config => {
+    if (process.env.NODE_ENV === "development") {
+      config.output.filename("[name].[hash].js").end();
+    }
+  },
   configureWebpack: {
     optimization: {
       nodeEnv: "production",
