@@ -1,6 +1,7 @@
 import Vue from "vue";
 import Router from "vue-router";
-import store from "./store";
+
+import { store } from ".";
 
 Vue.use(Router);
 
@@ -30,7 +31,7 @@ const router = new Router({
 });
 
 router.beforeEach((to, from, next) => {
-  const isAuthed = store.getters.auth;
+  const isAuthed = store.state.auth;
 
   if (to.matched.some(record => record.meta.requiresAuth)) {
     if (isAuthed) {

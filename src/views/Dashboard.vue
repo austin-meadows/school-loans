@@ -14,7 +14,7 @@ export default {
   },
   computed: {
     auth() {
-      return this.$store.getters.auth;
+      return this.$store.state.auth;
     }
   },
   data() {

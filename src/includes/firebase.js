@@ -1,4 +1,4 @@
-import firebase from "firebase/app";
+import * as firebase from "firebase/app";
 import "firebase/auth";
 import "firebase/firestore";
 import "firebase/performance";
@@ -16,8 +16,6 @@ const config = {
 
 firebase.initializeApp(config);
 
-const auth = firebase.auth();
-const db = firebase.firestore();
-const perf = firebase.performance();
-
-export { auth, db, perf };
+export const auth = firebase.auth();
+export const db = firebase.firestore();
+export const perf = firebase.performance();

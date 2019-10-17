@@ -1,11 +1,6 @@
 import Vue from "vue";
 
-import "./includes/icons";
-import "./includes/serviceWorker";
-import "./includes/toast";
-import { auth } from "./includes/firebase";
-import router from "./includes/router";
-import store from "./includes/store";
+import { auth, store, router } from "./includes";
 
 import App from "./App.vue";
 

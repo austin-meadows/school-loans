@@ -3,22 +3,16 @@ import Vuex from "vuex";
 import createPersistedState from "vuex-persistedstate";
 import SecureLS from "secure-ls";
 
+import * as actions from "./store/actions";
+import * as mutations from "./store/mutations";
+
 const ls = new SecureLS();
 
 Vue.use(Vuex);
 
 export default new Vuex.Store({
-  state: {
-    auth: null
-  },
-  getters: {
-    auth: state => state.auth
-  },
-  mutations: {
-    auth(state, auth) {
-      state.auth = auth;
-    }
-  },
+  actions: { ...actions },
+  mutations: { ...mutations },
   plugins: [
     createPersistedState({
       storage: {
@@ -27,5 +21,8 @@ export default new Vuex.Store({
         removeItem: key => ls.remove(key)
       }
     })
-  ]
+  ],
+  state: {
+    auth: null
+  }
 });

@@ -1,10 +1,8 @@
 <script>
-import { auth } from "./includes/firebase";
-
 export default {
   computed: {
     auth() {
-      return this.$store.getters.auth;
+      return this.$store.state.auth;
     }
   },
   data() {
@@ -21,12 +19,7 @@ export default {
       this.menuState = "closed";
     },
     onClickSignOut() {
-      auth.signOut();
-      this.$store.commit("auth", null);
-      this.$toasted.show("You have signed out!", {
-        type: "success",
-        icon: "fa-thumbs-up"
-      });
+      this.$store.dispatch("signOut");
     }
   }
 };

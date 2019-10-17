@@ -1,5 +1,4 @@
 <script>
-import { auth } from "../includes/firebase";
 import { CustomInput, HeaderText, Section } from "../components";
 import { validate } from "../utils/js";
 
@@ -13,7 +12,6 @@ export default {
     return {
       email: "",
       emailConfirm: "",
-      errors: [],
       formKind: "loginForm",
       isHidden: true,
       isLoading: false,
@@ -24,46 +22,47 @@ export default {
   methods: {
     checkForm(e) {
       e.preventDefault();
+
       this.isLoading = true;
 
-      this.errors = [];
-      if (!validate("email", this.email)) {
-        this.errors.push("Invalid email.");
-      }
-      if (this.formKind === "signUpForm") {
-        if (this.password.length < 8) {
-          this.errors.push("Passwords must be at least 8 characters long.");
-        } else if (this.password !== this.passwordConfirm) {
-          this.errors.push("Passwords don't match");
-        }
-        if (this.email !== this.emailConfirm) {
-          this.errors.push("Emails don't match.");
-        }
-      }
-      if (!this.errors.length && this.formKind === "signUpForm") {
-        auth.createUserWithEmailAndPassword(this.email, this.password).then(
-          () => {
-            this.$toasted.show("Your account has been created!", {
-              type: "success"
-            });
-            this.login();
-          },
-          err => {
-            this.$toasted.show(err.message, { type: "error" });
-          }
-        );
+      const { email, emailConfirm, formKind, password, passwordConfirm } = this;
+      const errors = [];
+
+      if (!validate("email", email)) {
+        errors.push("Invalid email.");
       }
 
-      if (!this.errors.length && this.formKind === "loginForm") {
-        this.login();
+      // Validation checks specific to the Sign Up form
+      if (formKind === "signUpForm") {
+        if (password.length < 8) {
+          errors.push("Passwords must be at least 8 characters long.");
+        } else if (password !== passwordConfirm) {
+          errors.push("Passwords don't match");
+        }
+        if (email !== emailConfirm) {
+          errors.push("Emails don't match.");
+        }
       }
 
-      this.errors.forEach(error => {
-        this.$toasted.show(error, { type: "error" });
-      });
+      // If there are no validation errors, attempt to sign in
+      if (!errors.length) {
+        // Signup form action
+        if (formKind === "signUpForm") {
+          this.$store.dispatch("signUp", { email, password });
+        }
+        // Login form action
+        if (formKind === "loginForm") {
+          this.$store.dispatch("signIn", { email, password });
+        }
+      }
+      // If there are errors, show each of them.
+      else {
+        errors.forEach(error => {
+          this.$toasted.show(error, { type: "error" });
+        });
+      }
 
       this.isLoading = false;
-      return false;
     },
     onClickSwitcher(e) {
       const selectedForm = e.target.parentNode.id;
@@ -71,21 +70,6 @@ export default {
         this.isHidden = !this.isHidden;
         this.formKind = selectedForm;
       }
-    },
-    login() {
-      auth.signInWithEmailAndPassword(this.email, this.password).then(
-        ({ user }) => {
-          this.$store.commit("auth", user);
-          this.$toasted.show("You have signed in!", {
-            type: "success",
-            icon: "fa-thumbs-up"
-          });
-          this.$router.replace("/dashboard");
-        },
-        err => {
-          this.$toasted.show(err.message, { type: "error" });
-        }
-      );
     }
   }
 };

@@ -1,5 +1,3 @@
-import CustomInput from "./CustomInput.vue";
-import HeaderText from "./HeaderText.vue";
-import Section from "./Section.vue";
-
-export { CustomInput, HeaderText, Section };
+export { default as CustomInput } from "./CustomInput.vue";
+export { default as HeaderText } from "./HeaderText.vue";
+export { default as Section } from "./Section.vue";
