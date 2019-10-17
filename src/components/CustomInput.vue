@@ -60,8 +60,7 @@ export default {
 <template>
   <div v-if="icon" :class="['input-block', { hidden: isHidden }, type]" ref="inputBlock">
     <label class="input-label" :for="name">
-      <loading :active.sync="isLoading" :is-full-page="false"></loading>
-
+      <loading loader="dots" :active.sync="isLoading" :is-full-page="false"></loading>
       <span class="input-placeholder" v-if="type === 'checkbox'">{{ placeholder }}</span>
       <input
         :autocomplete="this.parsedAutocomplete()"
@@ -131,6 +130,12 @@ $checkbox-size: $label-font-size * 0.75;
     }
     .input-label {
       height: calc(#{$label-font-size} * 3 + 2px);
+    }
+  }
+
+  .vld-overlay {
+    svg {
+      height: $label-font-size * 3;
     }
   }
 }

@@ -30,7 +30,7 @@ const router = new Router({
 });
 
 router.beforeEach((to, from, next) => {
-  const isAuthed = store.getters.user;
+  const isAuthed = store.getters.auth;
 
   if (to.matched.some(record => record.meta.requiresAuth)) {
     if (isAuthed) {

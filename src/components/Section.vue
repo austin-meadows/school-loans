@@ -22,7 +22,7 @@ export default {
 
 <template>
   <section :class="['section', spacing]">
-    <loading :active.sync="isLoading" :is-full-page="false"></loading>
+    <loading loader="dots" :active.sync="isLoading" :is-full-page="false"></loading>
     <slot></slot>
   </section>
 </template>

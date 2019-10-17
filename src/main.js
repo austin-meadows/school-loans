@@ -16,7 +16,7 @@ new Vue({
   router,
   created() {
     auth.onAuthStateChanged(user => {
-      if (user) store.commit("user", user);
+      if (user) store.commit("auth", user);
     });
   },
   render: h => h(App)

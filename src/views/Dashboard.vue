@@ -1,4 +1,7 @@
 <script>
+import Loading from "vue-loading-overlay";
+import "vue-loading-overlay/dist/vue-loading.css";
+
 import { db } from "../includes/firebase";
 import { CustomInput, HeaderText, Section } from "../components";
 
@@ -6,24 +9,42 @@ export default {
   components: {
     CustomInput,
     HeaderText,
+    Loading,
     Section
+  },
+  computed: {
+    auth() {
+      return this.$store.getters.auth;
+    }
   },
   data() {
     return {
       donor: false,
-      isLoading: false,
+      isLoadingPage: false,
+      isLoadingForm: false,
       name: "",
       student: false
     };
   },
+  created() {
+    this.isLoadingPage = true;
+    db.collection("users")
+      .doc(this.auth.uid)
+      .get()
+      .then(doc => {
+        if (doc.exists) {
+          this.isLoadingPage = false;
+        }
+      });
+  },
   methods: {
     submit(e) {
       e.preventDefault();
-      this.isLoading = true;
+      this.isLoadingForm = true;
 
       return db
         .collection("users")
-        .doc(this.$root.$data.uid)
+        .doc(this.auth.uid)
         .set(
           {
             name: this.name,
@@ -32,10 +53,10 @@ export default {
           { merge: true }
         )
         .then(() => {
-          this.isLoading = false;
+          this.isLoadingForm = false;
         })
-        .always(() => {
-          this.isLoading = false;
+        .catch(() => {
+          this.isLoadingForm = false;
         });
     }
   }
@@ -44,6 +65,7 @@ export default {
 
 <template>
   <Section>
+    <loading loader="dots" :active.sync="isLoadingPage"></loading>
     <p>Welcome to our platform! Let's get you started.</p>
     <form ref="form" @submit="submit" novalidate="true">
       <HeaderText>I am a</HeaderText>
@@ -57,7 +79,7 @@ export default {
       <CustomInput icon="donate" name="donor" placeholder="Donor" type="checkbox" v-model="donor" />
       <HeaderText>My name is</HeaderText>
       <CustomInput icon="signature" name="name" placeholder="Name" type="text" v-model="name" />
-      <CustomInput icon="arrow-right" :isLoading="isLoading" type="submit" value="Continue" />
+      <CustomInput icon="arrow-right" :isLoading="isLoadingForm" type="submit" value="Continue" />
     </form>
   </Section>
 </template>

@@ -9,14 +9,14 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-    user: null
+    auth: null
   },
   getters: {
-    user: state => state.user
+    auth: state => state.auth
   },
   mutations: {
-    user(state, user) {
-      state.user = user;
+    auth(state, auth) {
+      state.auth = auth;
     }
   },
   plugins: [

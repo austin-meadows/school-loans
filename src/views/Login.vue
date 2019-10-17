@@ -75,7 +75,7 @@ export default {
     login() {
       auth.signInWithEmailAndPassword(this.email, this.password).then(
         ({ user }) => {
-          this.$store.commit("user", user);
+          this.$store.commit("auth", user);
           this.$toasted.show("You have signed in!", {
             type: "success",
             icon: "fa-thumbs-up"
