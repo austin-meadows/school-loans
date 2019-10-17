@@ -52,8 +52,8 @@ body {
   right: 0;
 
   .toasted {
-    font-size: initial;
-    line-height: initial;
+    font-size: $sizes-m;
+    line-height: $sizes-m;
     margin-top: 0;
     padding: $sizes-m;
 
