@@ -34,11 +34,12 @@
     "vuexfire": "^3.2.0"
   },
   "devDependencies": {
-    "@vue/cli": "^4.0.1",
     "@vue/cli-plugin-babel": "^4.0.0",
     "@vue/cli-plugin-eslint": "^4.0.1",
     "@vue/cli-plugin-pwa": "^4.0.0",
+    "@vue/cli-plugin-router": "^4.0.1",
     "@vue/cli-plugin-unit-mocha": "^4.0.0",
+    "@vue/cli-plugin-vuex": "^4.0.1",
     "@vue/cli-service": "^4.0.0",
     "@vue/eslint-config-airbnb": "^4.0.1",
     "@vue/eslint-config-prettier": "^5.0.0",

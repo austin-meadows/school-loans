@@ -1,23 +1,14 @@
 .DS_Store
-.firebase
-dist
-node_modules
-
-# local env files
-.env.local
 .env.*.local
-
-# Log files
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-*.log
-
-# Editor directories and files
+.env.local
+.firebase
 .idea
 .vscode
+*.log
 *.njsproj
 *.ntvs*
 *.sln
 *.suo
 *.sw?
+/dist
+node_modules
