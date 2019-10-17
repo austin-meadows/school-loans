@@ -1,7 +1,8 @@
 import Vue from "vue";
 import Router from "vue-router";
 
-import { store } from ".";
+// preventing dependency cycle...
+import store from "./store";
 
 Vue.use(Router);
 
