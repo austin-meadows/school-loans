@@ -7,7 +7,7 @@ export default ({ commit }, { email, password }) => {
       Vue.toasted.show("Your account has been created!", {
         type: "success"
       });
-      commit("auth", user);
+      commit("auth", user.uid);
       router.replace("/dashboard");
     },
     err => {

@@ -29,7 +29,7 @@ export default {
   created() {
     this.isLoadingPage = true;
     db.collection("users")
-      .doc(this.auth.uid)
+      .doc(this.auth)
       .get()
       .then(doc => {
         if (doc.exists) {
@@ -44,7 +44,7 @@ export default {
 
       return db
         .collection("users")
-        .doc(this.auth.uid)
+        .doc(this.auth)
         .set(
           {
             name: this.name,

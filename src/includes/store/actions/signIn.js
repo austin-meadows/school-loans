@@ -8,7 +8,7 @@ export default ({ commit }, { email, password }) => {
         type: "success",
         icon: "fa-thumbs-up"
       });
-      commit("auth", user);
+      commit("auth", user.uid);
       router.replace("/dashboard");
     },
     err => {

@@ -1,9 +1,13 @@
 import Vue from "vue";
+import { auth, router } from "../..";
 
 export default ({ commit }) => {
-  commit("auth", undefined);
-  Vue.toasted.show("You have signed out!", {
-    type: "success",
-    icon: "fa-thumbs-up"
+  auth.signOut().then(() => {
+    Vue.toasted.show("You have signed out!", {
+      type: "success",
+      icon: "fa-thumbs-up"
+    });
+    commit("auth", undefined);
+    router.replace("/login");
   });
 };
