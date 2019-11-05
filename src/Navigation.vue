@@ -116,7 +116,8 @@ $nav-padding: $sizes-m;
       z-index: -1;
     }
 
-    > :first-child {
+    svg {
+      font-size: $sizes-m;
       margin-right: $sizes-s;
     }
 

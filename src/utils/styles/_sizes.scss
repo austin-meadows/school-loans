@@ -11,7 +11,7 @@ $sizes-xl: scale($base, 4);
 
 $navHeight: scale($base, 3);
 
-$base-border: 2px;
+$base-border: 0.1em;
 $border-xs: scale($base-border, 0.25);
 $border-s: scale($base-border, 0.5);
 $border-m: $base-border;

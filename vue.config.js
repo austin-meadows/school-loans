@@ -1,14 +1,12 @@
 const TerserPlugin = require("terser-webpack-plugin");
 
+const mode = process.env.NODE_ENV === "development" ? "development" : "production";
+
 module.exports = {
-  chainWebpack: config => {
-    if (process.env.NODE_ENV === "development") {
-      config.output.filename("[name].[hash].js").end();
-    }
-  },
   configureWebpack: {
+    mode,
     optimization: {
-      nodeEnv: process.env.NODE_ENV === "development" ? "development" : "production",
+      nodeEnv: mode,
       minimize: true,
       minimizer:
         process.env.NODE_ENV !== "development"
@@ -35,10 +33,11 @@ module.exports = {
               })
             ]
           : [],
+      moduleIds: "hashed",
+      runtimeChunk: "single",
+      concatenateModules: true,
       splitChunks: {
         chunks: "all",
-        minSize: 30000,
-        maxSize: 0,
         cacheGroups: {
           vendors: {
             test: /[\\/]node_modules[\\/]/,

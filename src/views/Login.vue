@@ -61,8 +61,6 @@ export default {
           this.$toasted.show(error, { type: "error" });
         });
       }
-
-      this.isLoading = false;
     },
     onClickSwitcher(e) {
       const selectedForm = e.target.parentNode.id;
@@ -123,7 +121,12 @@ export default {
           type="password"
           v-model="passwordConfirm"
         />
-        <CustomInput :isLoading="isLoading" icon="sign-in-alt" type="submit" value="Login" />
+        <CustomInput
+          :isLoading="isLoading"
+          icon="sign-in-alt"
+          type="submit"
+          :value="this.formKind === 'loginForm' ? 'Login' : 'Sign Up'"
+        />
       </form>
     </Section>
   </div>

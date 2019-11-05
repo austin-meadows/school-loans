@@ -2,12 +2,16 @@
   "name": "school-loans",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": "^12.13.0",
+    "yarn": "^1.19.1"
+  },
   "scripts": {
     "__util-build:minify-precache": "terser ./dist/precache-manifest.*.js -m -o ./dist/precache-manifest.*.js",
     "__util-build:minify-sw": "terser ./dist/service-worker.js -m -o ./dist/service-worker.js",
-    "__util-build:prod": "NODE_ENV=production vue-cli-service build",
+    "__util-build:prod": "cross-env NODE_ENV=production vue-cli-service build",
     "__util-deploy:firebase": "firebase deploy",
-    "__util-run:prodserver": "NODE_ENV=production serve -s ./dist",
+    "__util-run:prodserver": "cross-env NODE_ENV=production serve -s ./dist",
     "deploy:prod": "run-s __util-build:prod __util-build:* __util-deploy:firebase",
     "lint": "vue-cli-service lint",
     "run:dev": "vue-cli-service serve",
@@ -48,6 +52,7 @@
     "@vue/test-utils": "1.0.0-beta.29",
     "babel-eslint": "^10.0.1",
     "chai": "^4.1.2",
+    "cross-env": "^6.0.3",
     "eslint": "^6.6.0",
     "eslint-plugin-prettier": "^3.1.0",
     "eslint-plugin-vue": "^5.0.0",

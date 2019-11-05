@@ -52,24 +52,35 @@ export default {
     /*
       type of input
     */
-    type: String
+    type: String,
+    /*
+      any values put into the input
+      also useful for buttons.
+    */
+    value: [Boolean, String]
   }
 };
 </script>
 
 <template>
-  <div v-if="icon" :class="['input-block', { hidden: isHidden }, type]" ref="inputBlock">
+  <div v-if="icon" :class="['input-block', { hidden: isHidden }, type]">
     <label class="input-label" :for="name">
-      <loading loader="dots" :active.sync="isLoading" :is-full-page="false"></loading>
+      <loading
+        v-if="isLoading"
+        loader="dots"
+        :active.sync="isLoading"
+        :is-full-page="false"
+      ></loading>
       <span class="input-placeholder" v-if="type === 'checkbox'">{{ placeholder }}</span>
       <input
         :autocomplete="this.parsedAutocomplete()"
         class="input"
-        :disabled="isHidden"
+        :disabled="isHidden || isLoading"
         :id="name"
         @input="$emit('input', type === 'checkbox' ? $event.target.checked : $event.target.value)"
         :placeholder="placeholder"
         :type="type"
+        :value="value"
       />
       <fa :icon="icon" />
     </label>
@@ -78,11 +89,12 @@ export default {
     v-else
     :autocomplete="this.parsedAutocomplete()"
     class="input"
-    :disabled="isHidden"
+    :disabled="isHidden || isLoading"
     :id="name"
     @input="$emit('input', type === 'checkbox' ? $event.target.checked : $event.target.value)"
     :placeholder="placeholder"
     :type="type"
+    :value="value"
   />
 </template>
 
@@ -92,7 +104,6 @@ export default {
 @import "../utils/styles/palette";
 
 $label-font-size: $sizes-m;
-$checkbox-size: $label-font-size * 0.75;
 
 .input-block {
   // this should just be large, it doesnt matter.
@@ -129,11 +140,14 @@ $checkbox-size: $label-font-size * 0.75;
       order: 3;
     }
     .input-label {
-      height: calc(#{$label-font-size} * 3 + 2px);
+      height: $label-font-size * 3 + $border-m;
     }
   }
 
   .vld-overlay {
+    ~ .input {
+      pointer-events: none;
+    }
     svg {
       height: $label-font-size * 3;
     }
@@ -149,7 +163,7 @@ $checkbox-size: $label-font-size * 0.75;
     font-size: $label-font-size;
     left: 0;
     line-height: $label-font-size;
-    margin-left: $label-font-size;
+    margin-left: $label-font-size + $border-m;
     position: absolute;
   }
 }
@@ -184,7 +198,7 @@ $checkbox-size: $label-font-size * 0.75;
       padding-right: $label-font-size;
 
       + svg {
-        left: -$label-font-size * 3;
+        left: -$label-font-size * 2 - $border-m;
       }
     }
   }
@@ -202,16 +216,21 @@ $checkbox-size: $label-font-size * 0.75;
 
   &[type="checkbox"] {
     cursor: pointer;
+    height: $label-font-size * 3 - ($border-m * 5);
+    margin: 0;
+    padding: 1em;
     position: relative;
     visibility: hidden;
-    height: calc(50% + #{$border-m * 2});
-    width: calc(#{$checkbox-size * 2} + #{$border-m * 2});
+    width: $label-font-size * 2 + $border-m * 2;
 
     &:before {
       border: $border-m solid $whiteish;
       content: "";
       display: block;
-      padding: $checkbox-size;
+      padding: $label-font-size;
+      position: absolute;
+      right: 0;
+      top: $border-m;
       transition: $default-transition;
       visibility: visible;
       z-index: 1;
@@ -222,7 +241,8 @@ $checkbox-size: $label-font-size * 0.75;
         border-color: $primary;
         border-right-style: none;
         border-top-style: none;
-        padding-top: $checkbox-size * 0.1;
+        padding-top: $label-font-size * 0.1;
+        top: $border-m * 4;
         transform: rotate(-45deg);
       }
     }
