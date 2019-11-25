@@ -79,7 +79,12 @@ export default {
       <CustomInput icon="donate" name="donor" placeholder="Donor" type="checkbox" v-model="donor" />
       <HeaderText>My name is</HeaderText>
       <CustomInput icon="signature" name="name" placeholder="Name" type="text" v-model="name" />
-      <CustomInput icon="arrow-right" :isLoading="isLoadingForm" type="submit" value="Continue" />
+      <CustomInput
+        icon="arrow-right"
+        :isLoading="isLoadingForm"
+        placeholder="Continue"
+        type="submit"
+      />
     </form>
   </Section>
 </template>

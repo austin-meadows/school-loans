@@ -52,12 +52,7 @@ export default {
     /*
       type of input
     */
-    type: String,
-    /*
-      any values put into the input
-      also useful for buttons.
-    */
-    value: [Boolean, String]
+    type: String
   }
 };
 </script>
@@ -80,7 +75,6 @@ export default {
         @input="$emit('input', type === 'checkbox' ? $event.target.checked : $event.target.value)"
         :placeholder="placeholder"
         :type="type"
-        :value="value"
       />
       <fa :icon="icon" />
     </label>
@@ -94,7 +88,6 @@ export default {
     @input="$emit('input', type === 'checkbox' ? $event.target.checked : $event.target.value)"
     :placeholder="placeholder"
     :type="type"
-    :value="value"
   />
 </template>
 

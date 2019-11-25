@@ -124,8 +124,8 @@ export default {
         <CustomInput
           :isLoading="isLoading"
           icon="sign-in-alt"
+          :placeholder="this.formKind === 'loginForm' ? 'Login' : 'Sign Up'"
           type="submit"
-          :value="this.formKind === 'loginForm' ? 'Login' : 'Sign Up'"
         />
       </form>
     </Section>
