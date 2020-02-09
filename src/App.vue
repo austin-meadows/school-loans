@@ -11,7 +11,9 @@ export default {
 <template>
   <div id="app">
     <Navigation />
-    <router-view />
+    <main id="view">
+      <router-view />
+    </main>
   </div>
 </template>
 
