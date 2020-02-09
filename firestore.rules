@@ -1,3 +1,4 @@
+rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
     // Make sure the uid of the requesting user matches name of the user
@@ -6,20 +7,6 @@ service cloud.firestore {
     match /users/{userId} {
       allow read, update, delete: if request.auth.uid != null && request.auth.uid == userId;
       allow create: if request.auth.uid != null && request.auth.uid == userId;
-    }
-  }
-}
-
-service firebase.storage {
-  match /b/{bucket}/o {
-    // Files look like: "user/<UID>/path/to/file.txt"
-    match /user/{userId}/{allPaths=**} {
-      allow write: if request.auth.uid == userId
-      							&& request.resource.size < 0.75 * 1024 * 1024
-                    && request.resource.contentType.matches('image/.*')
-                    && request.resource.contentType == resource.contentType
-                    && imageId.size() < 32
-      allow read;
     }
   }
 }
