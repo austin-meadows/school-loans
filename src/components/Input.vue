@@ -181,7 +181,7 @@ $label-font-size: $sizes-m;
   &[type="text"],
   &[type="email"],
   &[type="password"] {
-    border: $border-m solid $whiteish;
+    border: $border-m solid $text;
     transition: $default-transition;
 
     + svg {
@@ -218,7 +218,7 @@ $label-font-size: $sizes-m;
     width: $label-font-size * 2 + $border-m * 2;
 
     &:before {
-      border: $border-m solid $whiteish;
+      border: $border-m solid $text;
       content: "";
       display: block;
       padding: $label-font-size;

@@ -56,7 +56,7 @@ export default {
 $nav-padding: $sizes-m;
 
 #nav {
-  background: linear-gradient(to bottom right, white, $whiteish);
+  background: $white;
   display: flex;
   overflow: hidden;
   width: 100%;

@@ -1,11 +1,11 @@
 <script>
-import { CustomInput, HeaderText, Section } from "../components";
+import { Heading, Input, Section } from "../components";
 import { validate } from "../utils/js";
 
 export default {
   components: {
-    HeaderText,
-    CustomInput,
+    Heading,
+    Input,
     Section
   },
   data() {
@@ -78,15 +78,15 @@ export default {
   <div id="login">
     <Section>
       <div class="login-switcher">
-        <HeaderText :class="{ active: isHidden }" id="loginForm">
+        <Heading :class="{ active: isHidden }" id="loginForm">
           <a @click="onClickSwitcher">Login</a>
-        </HeaderText>
-        <HeaderText :class="{ active: !isHidden }" id="signUpForm">
+        </Heading>
+        <Heading :class="{ active: !isHidden }" id="signUpForm">
           <a @click="onClickSwitcher">Sign up</a>
-        </HeaderText>
+        </Heading>
       </div>
       <form ref="form" @submit="checkForm" novalidate="true" autocomplete="true">
-        <CustomInput
+        <Input
           autocomplete="email"
           icon="envelope"
           name="email"
@@ -94,7 +94,7 @@ export default {
           type="email"
           v-model="email"
         />
-        <CustomInput
+        <Input
           :isHidden="isHidden"
           autocomplete="email"
           icon="envelope"
@@ -104,7 +104,7 @@ export default {
           type="email"
           v-model="emailConfirm"
         />
-        <CustomInput
+        <Input
           :autocomplete="{ 'new-password': !isHidden, 'current-password': isHidden }"
           icon="key"
           name="password"
@@ -112,7 +112,7 @@ export default {
           type="password"
           v-model="password"
         />
-        <CustomInput
+        <Input
           :isHidden="isHidden"
           autocomplete="new-password"
           icon="key"
@@ -122,7 +122,7 @@ export default {
           type="password"
           v-model="passwordConfirm"
         />
-        <CustomInput
+        <Input
           :isLoading="isLoading"
           icon="sign-in-alt"
           :placeholder="this.formKind === 'loginForm' ? 'Login' : 'Sign Up'"

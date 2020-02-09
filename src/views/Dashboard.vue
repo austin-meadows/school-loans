@@ -3,12 +3,12 @@ import Loading from "vue-loading-overlay";
 import "vue-loading-overlay/dist/vue-loading.css";
 
 import { db } from "../includes/firebase";
-import { CustomInput, HeaderText, Section } from "../components";
+import { Heading, Input, Section } from "../components";
 
 export default {
   components: {
-    CustomInput,
-    HeaderText,
+    Heading,
+    Input,
     Loading,
     Section
   },
@@ -70,23 +70,18 @@ export default {
     <loading loader="dots" :active.sync="isLoadingPage"></loading>
     <p>Welcome to our platform! Let's get you started.</p>
     <form ref="form" @submit="submit" novalidate="true">
-      <HeaderText>I am a</HeaderText>
-      <CustomInput
+      <Heading>I am a</Heading>
+      <Input
         icon="user-graduate"
         name="student"
         placeholder="Student"
         type="checkbox"
         v-model="student"
       />
-      <CustomInput icon="donate" name="donor" placeholder="Donor" type="checkbox" v-model="donor" />
-      <HeaderText>My name is</HeaderText>
-      <CustomInput icon="signature" name="name" placeholder="Name" type="text" v-model="name" />
-      <CustomInput
-        icon="arrow-right"
-        :isLoading="isLoadingForm"
-        placeholder="Continue"
-        type="submit"
-      />
+      <Input icon="donate" name="donor" placeholder="Donor" type="checkbox" v-model="donor" />
+      <Heading>My name is</Heading>
+      <Input icon="signature" name="name" placeholder="Name" type="text" v-model="name" />
+      <Input icon="arrow-right" :isLoading="isLoadingForm" placeholder="Continue" type="submit" />
     </form>
   </Section>
 </template>

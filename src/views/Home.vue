@@ -1,6 +1,6 @@
 <script>
 import { Section } from "../components";
-import { Slide } from "../components/Home";
+import { Slide } from "./components/Home";
 
 export default {
   data() {

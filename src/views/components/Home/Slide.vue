@@ -1,5 +1,5 @@
 <script>
-import HeaderText from "../HeaderText.vue";
+import Heading from "../../../components/Heading.vue";
 
 export default {
   props: {
@@ -7,14 +7,14 @@ export default {
     title: String
   },
   components: {
-    HeaderText
+    Heading
   }
 };
 </script>
 
 <template>
   <div class="slide">
-    <HeaderText>{{ title }}</HeaderText>
+    <Heading>{{ title }}</Heading>
     <div class="msg">{{ msg }}</div>
   </div>
 </template>
