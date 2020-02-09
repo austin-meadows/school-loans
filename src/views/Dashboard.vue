@@ -32,9 +32,11 @@ export default {
       .doc(this.auth)
       .get()
       .then(doc => {
-        if (doc.exists) {
-          this.isLoadingPage = false;
-        }
+        // if (doc.exists) {
+        // } else {
+        // }
+        this.isLoadingPage = false;
+        return doc.exists;
       });
   },
   methods: {

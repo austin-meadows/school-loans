@@ -149,6 +149,7 @@ $label-font-size: $sizes-m;
 
 .input-label {
   align-items: center;
+  cursor: pointer;
   display: flex;
   position: relative;
 
@@ -191,7 +192,7 @@ $label-font-size: $sizes-m;
       padding-right: $label-font-size;
 
       + svg {
-        left: -$label-font-size * 2 - $border-m;
+        left: -$label-font-size * 2 - ($border-m * 3);
       }
     }
   }

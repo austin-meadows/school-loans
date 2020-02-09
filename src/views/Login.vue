@@ -59,6 +59,7 @@ export default {
       else {
         errors.forEach(error => {
           this.$toasted.show(error, { type: "error" });
+          this.isLoading = false;
         });
       }
     },

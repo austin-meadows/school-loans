@@ -1,20 +1,22 @@
 import * as firebase from "firebase/app";
+import "firebase/analytics";
 import "firebase/auth";
 import "firebase/firestore";
 import "firebase/performance";
 
 const config = {
-  apiKey: "AIzaSyDeCY8cfGRfgbE835G9brcsiNiQhkKhV4A",
-  appId: "1:431090940964:web:90c18035de7941e5e9acb1",
-  authDomain: "school-loans-59a5b.firebaseapp.com",
-  databaseURL: "https://school-loans-59a5b.firebaseio.com",
-  measurementId: "G-K9F6LMJJ2N",
-  messagingSenderId: "431090940964",
-  projectId: "school-loans-59a5b",
-  storageBucket: "school-loans-59a5b.appspot.com"
+  apiKey: "AIzaSyDT5QHPzN9PqSJcS0t9IxVpUjxga--un6E",
+  appId: "1:440598924881:web:ead114616680ce10a1b270",
+  authDomain: "school-loans-a2f95.firebaseapp.com",
+  databaseURL: "https://school-loans-a2f95.firebaseio.com",
+  measurementId: "G-8N7TX6BQL6",
+  messagingSenderId: "440598924881",
+  projectId: "school-loans-a2f95",
+  storageBucket: "school-loans-a2f95.appspot.com"
 };
 
 firebase.initializeApp(config);
+firebase.analytics();
 
 export const auth = firebase.auth();
 export const db = firebase.firestore();
