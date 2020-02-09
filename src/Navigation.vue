@@ -26,7 +26,7 @@ export default {
 </script>
 
 <template>
-  <header>
+  <nav>
     <a id="menuButton" @click="onClickMenu"> <fa icon="bars" />Menu</a>
     <div :class="['menu', menuState]">
       <router-link @click.native="closeMenu" to="/"><fa icon="home" />Home</router-link>
@@ -44,7 +44,7 @@ export default {
         <fa icon="sign-out-alt" />Sign Out
       </router-link>
     </div>
-  </header>
+  </nav>
 </template>
 
 <style lang="scss">
