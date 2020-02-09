@@ -26,7 +26,7 @@ export default {
 </script>
 
 <template>
-  <header id="nav">
+  <header>
     <a id="menuButton" @click="onClickMenu"> <fa icon="bars" />Menu</a>
     <div :class="['menu', menuState]">
       <router-link @click.native="closeMenu" to="/"><fa icon="home" />Home</router-link>
