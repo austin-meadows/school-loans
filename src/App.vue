@@ -10,7 +10,9 @@ export default {
 
 <template>
   <div id="app">
-    <Navigation />
+    <header>
+      <Navigation />
+    </header>
     <main>
       <router-view />
     </main>
