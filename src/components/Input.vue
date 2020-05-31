@@ -4,17 +4,17 @@ import "vue-loading-overlay/dist/vue-loading.css";
 
 export default {
   components: {
-    Loading
+    Loading,
   },
   data() {
     return {
       parsedAutocomplete() {
         if (typeof this.autocomplete === "string") return this.autocomplete;
         if (typeof this.autocomplete === "object" && this.autocomplete !== null) {
-          return Object.keys(this.autocomplete).filter(key => this.autocomplete[key])[0];
+          return Object.keys(this.autocomplete).filter((key) => this.autocomplete[key])[0];
         }
         return null;
-      }
+      },
     };
   },
   props: {
@@ -32,14 +32,14 @@ export default {
     */
     isHidden: {
       default: false,
-      type: Boolean
+      type: Boolean,
     },
     /*
       (usually on a submit button) if an action is "loading" due to a button press
     */
     isLoading: {
       default: false,
-      type: Boolean
+      type: Boolean,
     },
     /*
       the unique name given to the input
@@ -52,8 +52,8 @@ export default {
     /*
       type of input
     */
-    type: String
-  }
+    type: String,
+  },
 };
 </script>
 

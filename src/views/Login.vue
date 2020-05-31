@@ -6,7 +6,7 @@ export default {
   components: {
     Heading,
     Input,
-    Section
+    Section,
   },
   data() {
     return {
@@ -16,7 +16,7 @@ export default {
       isHidden: true,
       isLoading: false,
       password: "",
-      passwordConfirm: ""
+      passwordConfirm: "",
     };
   },
   methods: {
@@ -57,7 +57,7 @@ export default {
       }
       // If there are errors, show each of them.
       else {
-        errors.forEach(error => {
+        errors.forEach((error) => {
           this.$toasted.show(error, { type: "error" });
           this.isLoading = false;
         });
@@ -69,8 +69,8 @@ export default {
         this.isHidden = !this.isHidden;
         this.formKind = selectedForm;
       }
-    }
-  }
+    },
+  },
 };
 </script>
 

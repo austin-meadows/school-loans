@@ -5,12 +5,12 @@ export default ({ commit }, { email, password }) => {
   auth.createUserWithEmailAndPassword(email, password).then(
     ({ user }) => {
       Vue.toasted.show("Your account has been created!", {
-        type: "success"
+        type: "success",
       });
       commit("auth", user.uid);
       router.replace("/dashboard");
     },
-    err => {
+    (err) => {
       Vue.toasted.show(err.message, { type: "error" });
     }
   );

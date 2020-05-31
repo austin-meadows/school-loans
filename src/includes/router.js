@@ -13,28 +13,28 @@ const router = new Router({
     {
       path: "/",
       name: "home",
-      component: () => import(/* webpackChunkName: "onboarding" */ "../views/Home.vue")
+      component: () => import(/* webpackChunkName: "onboarding" */ "../views/Home.vue"),
     },
     {
       path: "/dashboard",
       name: "dashboard",
       meta: {
-        requiresAuth: true
+        requiresAuth: true,
       },
-      component: () => import(/* webpackChunkName: "dashboard" */ "../views/Dashboard.vue")
+      component: () => import(/* webpackChunkName: "dashboard" */ "../views/Dashboard.vue"),
     },
     {
       path: "/login",
       name: "login",
-      component: () => import(/* webpackChunkName: "login" */ "../views/Login.vue")
-    }
-  ]
+      component: () => import(/* webpackChunkName: "login" */ "../views/Login.vue"),
+    },
+  ],
 });
 
 router.beforeEach((to, from, next) => {
   const isAuthed = store.state.auth;
 
-  if (to.matched.some(record => record.meta.requiresAuth)) {
+  if (to.matched.some((record) => record.meta.requiresAuth)) {
     if (isAuthed) {
       next();
     } else {

@@ -4,19 +4,19 @@ import "vue-loading-overlay/dist/vue-loading.css";
 
 export default {
   components: {
-    Loading
+    Loading,
   },
   props: {
     isLoading: {
       default: false,
-      type: Boolean
+      type: Boolean,
     },
     spacing: {
       default: "l",
       type: String,
-      validator: value => ["xs", "s", "m", "l", "xl"].indexOf(value) > -1
-    }
-  }
+      validator: (value) => ["xs", "s", "m", "l", "xl"].indexOf(value) > -1,
+    },
+  },
 };
 </script>
 

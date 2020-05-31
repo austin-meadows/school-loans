@@ -10,12 +10,12 @@ export default {
     Heading,
     Input,
     Loading,
-    Section
+    Section,
   },
   computed: {
     auth() {
       return this.$store.state.auth;
-    }
+    },
   },
   data() {
     return {
@@ -23,7 +23,7 @@ export default {
       isLoadingPage: false,
       isLoadingForm: false,
       name: "",
-      student: false
+      student: false,
     };
   },
   created() {
@@ -31,7 +31,7 @@ export default {
     db.collection("users")
       .doc(this.auth)
       .get()
-      .then(doc => {
+      .then((doc) => {
         // if (doc.exists) {
         // } else {
         // }
@@ -50,7 +50,7 @@ export default {
         .set(
           {
             name: this.name,
-            type: (this.donor ? 2 : 0) + (this.student ? 1 : 0)
+            type: (this.donor ? 2 : 0) + (this.student ? 1 : 0),
           },
           { merge: true }
         )
@@ -60,8 +60,8 @@ export default {
         .catch(() => {
           this.isLoadingForm = false;
         });
-    }
-  }
+    },
+  },
 };
 </script>
 

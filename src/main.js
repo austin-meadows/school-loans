@@ -9,9 +9,9 @@ new Vue({
   store,
   router,
   created() {
-    auth.onAuthStateChanged(user => {
+    auth.onAuthStateChanged((user) => {
       if (user) store.commit("auth", user.uid);
     });
   },
-  render: h => h(App)
+  render: (h) => h(App),
 }).$mount("#app");

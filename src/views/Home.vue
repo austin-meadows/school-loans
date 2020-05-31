@@ -8,27 +8,27 @@ export default {
       slides: [
         {
           title: "Text",
-          msg: "Text"
+          msg: "Text",
         },
         {
           title: "Text",
-          msg: "Text"
+          msg: "Text",
         },
         {
           title: "Text",
-          msg: "Text"
+          msg: "Text",
         },
         {
           title: "Text",
-          msg: "Text."
-        }
-      ]
+          msg: "Text.",
+        },
+      ],
     };
   },
   components: {
     Section,
-    Slide
-  }
+    Slide,
+  },
 };
 </script>
 

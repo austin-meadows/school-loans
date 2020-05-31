@@ -12,7 +12,7 @@ const config = {
   measurementId: "G-8N7TX6BQL6",
   messagingSenderId: "440598924881",
   projectId: "school-loans-a2f95",
-  storageBucket: "school-loans-a2f95.appspot.com"
+  storageBucket: "school-loans-a2f95.appspot.com",
 };
 
 firebase.initializeApp(config);

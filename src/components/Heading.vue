@@ -1,8 +1,8 @@
 <script>
 export default {
   props: {
-    type: String
-  }
+    type: String,
+  },
 };
 </script>
 

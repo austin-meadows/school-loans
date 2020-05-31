@@ -4,11 +4,11 @@ import Heading from "../../../components/Heading.vue";
 export default {
   props: {
     msg: String,
-    title: String
+    title: String,
   },
   components: {
-    Heading
-  }
+    Heading,
+  },
 };
 </script>
 

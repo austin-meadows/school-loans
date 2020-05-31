@@ -21,16 +21,16 @@ module.exports = {
                     module: true,
                     passes: 2,
                     toplevel: true,
-                    unsafe: true
+                    unsafe: true,
                   },
                   mangle: {
-                    toplevel: true
+                    toplevel: true,
                   },
                   output: {
-                    comments: false
-                  }
-                }
-              })
+                    comments: false,
+                  },
+                },
+              }),
             ]
           : [],
       moduleIds: "hashed",
@@ -41,16 +41,16 @@ module.exports = {
         cacheGroups: {
           vendors: {
             test: /[\\/]node_modules[\\/]/,
-            priority: -10
+            priority: -10,
           },
           default: {
             minChunks: 2,
             priority: -20,
-            reuseExistingChunk: true
-          }
-        }
-      }
-    }
+            reuseExistingChunk: true,
+          },
+        },
+      },
+    },
   },
-  productionSourceMap: false
+  productionSourceMap: false,
 };

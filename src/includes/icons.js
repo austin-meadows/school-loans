@@ -20,7 +20,7 @@ import { faUserGraduate } from "@fortawesome/free-solid-svg-icons/faUserGraduate
 // For use with Toasted
 dom.watch({
   autoReplaceSvgRoot: document.body,
-  observeMutationsRoot: document.body
+  observeMutationsRoot: document.body,
 });
 
 Vue.component("fa", FontAwesomeIcon);

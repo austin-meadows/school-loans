@@ -3,8 +3,8 @@ import Navigation from "./Navigation.vue";
 
 export default {
   components: {
-    Navigation
-  }
+    Navigation,
+  },
 };
 </script>
 

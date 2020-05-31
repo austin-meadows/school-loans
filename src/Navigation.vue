@@ -3,11 +3,11 @@ export default {
   computed: {
     auth() {
       return this.$store.state.auth;
-    }
+    },
   },
   data() {
     return {
-      menuState: "closed"
+      menuState: "closed",
     };
   },
   methods: {
@@ -20,8 +20,8 @@ export default {
     },
     onClickSignOut() {
       this.$store.dispatch("signOut");
-    }
-  }
+    },
+  },
 };
 </script>
 
