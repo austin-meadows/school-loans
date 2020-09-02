@@ -14,8 +14,8 @@
     "__util-run:prodserver": "cross-env NODE_ENV=production serve -s ./dist",
     "deploy:prod": "cross-env NODE_ENV=production run-s __util-build:prod __util-build:* __util-deploy:firebase",
     "lint": "vue-cli-service lint",
-    "run:dev": "vue-cli-service serve",
-    "run:prod": "cross-env NODE_ENV=production run-s __util-build:prod __util-build:* __util-run:prodserver",
+    "serve:dev": "vue-cli-service serve",
+    "serve:prod": "cross-env NODE_ENV=production run-s __util-build:prod __util-build:* __util-run:prodserver",
     "test:unit": "vue-cli-service test:unit"
   },
   "husky": {
