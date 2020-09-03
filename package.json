@@ -7,15 +7,13 @@
     "yarn": "^1.19.1"
   },
   "scripts": {
-    "__util-build:minify-precache": "cross-env NODE_ENV=production terser ./dist/precache-manifest.*.js -m -o ./dist/precache-manifest.*.js",
-    "__util-build:minify-sw": "cross-env NODE_ENV=production terser ./dist/service-worker.js -m -o ./dist/service-worker.js",
     "__util-build:prod": "cross-env NODE_ENV=production vue-cli-service build",
     "__util-deploy:firebase": "cross-env NODE_ENV=production firebase deploy",
     "__util-run:prodserver": "cross-env NODE_ENV=production serve -s ./dist",
-    "deploy:prod": "cross-env NODE_ENV=production run-s __util-build:prod __util-build:* __util-deploy:firebase",
+    "deploy:prod": "cross-env NODE_ENV=production run-s __util-build:* __util-deploy:firebase",
     "lint": "vue-cli-service lint",
     "serve:dev": "vue-cli-service serve",
-    "serve:prod": "cross-env NODE_ENV=production run-s __util-build:prod __util-build:* __util-run:prodserver",
+    "serve:prod": "cross-env NODE_ENV=production run-s __util-build:* __util-run:prodserver",
     "test:unit": "vue-cli-service test:unit"
   },
   "husky": {
