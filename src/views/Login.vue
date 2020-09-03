@@ -52,7 +52,9 @@ export default {
         }
         // Login form action
         if (formKind === "loginForm") {
-          this.$store.dispatch("signIn", { email, password });
+          this.$store.dispatch("signIn", { email, password }).then((result) => {
+            if (!result) this.isLoading = false;
+          });
         }
       }
       // If there are errors, show each of them.
