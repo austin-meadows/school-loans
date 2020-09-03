@@ -5,14 +5,14 @@ import "firebase/firestore";
 import "firebase/performance";
 
 const config = {
-  apiKey: "AIzaSyDT5QHPzN9PqSJcS0t9IxVpUjxga--un6E",
-  appId: "1:440598924881:web:ead114616680ce10a1b270",
-  authDomain: "school-loans-a2f95.firebaseapp.com",
-  databaseURL: "https://school-loans-a2f95.firebaseio.com",
-  measurementId: "G-8N7TX6BQL6",
-  messagingSenderId: "440598924881",
-  projectId: "school-loans-a2f95",
-  storageBucket: "school-loans-a2f95.appspot.com",
+  apiKey: "AIzaSyAgwVzvpvM7foyyzRRQGFQzHKD-rgq1Uas",
+  authDomain: "school-loans-2d40e.firebaseapp.com",
+  databaseURL: "https://school-loans-2d40e.firebaseio.com",
+  projectId: "school-loans-2d40e",
+  storageBucket: "school-loans-2d40e.appspot.com",
+  messagingSenderId: "477013446075",
+  appId: "1:477013446075:web:fafca2d1e5cb080f28489e",
+  measurementId: "G-KLWFQ1WTW0",
 };
 
 firebase.initializeApp(config);
