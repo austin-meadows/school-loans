@@ -49,11 +49,6 @@
     "node": "^15.3.0",
     "yarn": "^1.22.10"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "run-s lint"
-    }
-  },
   "name": "school-loans",
   "private": true,
   "scripts": {
