@@ -13,7 +13,8 @@ const router = new Router({
     {
       path: "/",
       name: "home",
-      component: () => import(/* webpackChunkName: "onboarding" */ "../views/Home.vue"),
+      component: () =>
+        import(/* webpackChunkName: "onboarding" */ "../views/Home.vue"),
     },
     {
       path: "/dashboard",
@@ -21,12 +22,14 @@ const router = new Router({
       meta: {
         requiresAuth: true,
       },
-      component: () => import(/* webpackChunkName: "dashboard" */ "../views/Dashboard.vue"),
+      component: () =>
+        import(/* webpackChunkName: "dashboard" */ "../views/Dashboard.vue"),
     },
     {
       path: "/login",
       name: "login",
-      component: () => import(/* webpackChunkName: "login" */ "../views/Login.vue"),
+      component: () =>
+        import(/* webpackChunkName: "login" */ "../views/Login.vue"),
     },
   ],
 });

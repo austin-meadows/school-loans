@@ -10,8 +10,13 @@ export default {
     return {
       parsedAutocomplete() {
         if (typeof this.autocomplete === "string") return this.autocomplete;
-        if (typeof this.autocomplete === "object" && this.autocomplete !== null) {
-          return Object.keys(this.autocomplete).filter((key) => this.autocomplete[key])[0];
+        if (
+          typeof this.autocomplete === "object" &&
+          this.autocomplete !== null
+        ) {
+          return Object.keys(this.autocomplete).filter(
+            (key) => this.autocomplete[key]
+          )[0];
         }
         return null;
       },
@@ -66,13 +71,20 @@ export default {
         :active.sync="isLoading"
         :is-full-page="false"
       ></loading>
-      <span class="input-placeholder" v-if="type === 'checkbox'">{{ placeholder }}</span>
+      <span class="input-placeholder" v-if="type === 'checkbox'">{{
+        placeholder
+      }}</span>
       <input
         :autocomplete="this.parsedAutocomplete()"
         class="input"
         :disabled="isHidden || isLoading"
         :id="name"
-        @input="$emit('input', type === 'checkbox' ? $event.target.checked : $event.target.value)"
+        @input="
+          $emit(
+            'input',
+            type === 'checkbox' ? $event.target.checked : $event.target.value
+          )
+        "
         :placeholder="placeholder"
         :type="type"
       />
@@ -85,7 +97,12 @@ export default {
     class="input"
     :disabled="isHidden || isLoading"
     :id="name"
-    @input="$emit('input', type === 'checkbox' ? $event.target.checked : $event.target.value)"
+    @input="
+      $emit(
+        'input',
+        type === 'checkbox' ? $event.target.checked : $event.target.value
+      )
+    "
     :placeholder="placeholder"
     :type="type"
   />
@@ -188,7 +205,8 @@ $label-font-size: $sizes-m;
       transition: $default-transition;
     }
     &:focus {
-      padding: $label-font-size $label-font-size * 2 $label-font-size $label-font-size;
+      padding: $label-font-size $label-font-size * 2 $label-font-size
+        $label-font-size;
       padding-right: $label-font-size;
 
       + svg {

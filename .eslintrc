@@ -8,7 +8,6 @@
     "@vue/airbnb",
     "@vue/prettier"
   ],
-  "ignorePatterns": ["**/.yarn/*", "**/.pnp.js"],
   "overrides": [
     {
       "env": {

@@ -87,7 +87,12 @@ export default {
           <a @click="onClickSwitcher">Sign up</a>
         </Heading>
       </div>
-      <form ref="form" @submit="checkForm" novalidate="true" autocomplete="true">
+      <form
+        ref="form"
+        @submit="checkForm"
+        novalidate="true"
+        autocomplete="true"
+      >
         <Input
           autocomplete="email"
           icon="envelope"
@@ -107,7 +112,10 @@ export default {
           v-model="emailConfirm"
         />
         <Input
-          :autocomplete="{ 'new-password': !isHidden, 'current-password': isHidden }"
+          :autocomplete="{
+            'new-password': !isHidden,
+            'current-password': isHidden,
+          }"
           icon="key"
           name="password"
           placeholder="Password"

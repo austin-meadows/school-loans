@@ -59,7 +59,7 @@
     "__util-start:prod": "cross-env NODE_ENV=production serve -s ./dist",
     "deploy:prod": "cross-env NODE_ENV=production run-s __util-build:* __util-deploy:firebase",
     "lint": "vue-cli-service lint",
-    "start:dev": "vue-cli-service serve",
+    "start:dev": "cross-env NODE_ENV=development vue-cli-service serve",
     "start:prod": "cross-env NODE_ENV=production run-s __util-build:* __util-start:prod",
     "test:unit": "vue-cli-service test:unit"
   },

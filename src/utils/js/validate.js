@@ -4,4 +4,5 @@ const regex = {
 // Takes input text and a type and returns true if it matches, false otherwise.
 // Valid input types:
 //  - "email"
-export default (type = "", input = "") => (type ? regex[type].test(input) : false);
+export default (type = "", input = "") =>
+  type ? regex[type].test(input) : false;
