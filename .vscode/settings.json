@@ -1,0 +1,13 @@
+{
+  "eslint.nodePath": ".yarn/sdks",
+  "files.exclude": {
+    "**/.pnp.js": true,
+    "**/.yarnrc": true,
+    "**/.yarnrc.yml": true
+  },
+  "prettier.prettierPath": ".yarn/sdks/prettier/index.js",
+  "search.exclude": {
+    "**/.pnp.*": true,
+    "**/.yarn": true
+  }
+}
