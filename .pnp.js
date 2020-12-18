@@ -71,7 +71,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["sass-loader", "virtual:4d4d67c07cd942b77bf1fb845066bd61f7aeaa9ef5d41f3942eb294a28a59bd9a005372201f4d416ff9fb50a42b73c8c4b518957bf9d39ece7bd45f29747749b#npm:10.1.0"],
             ["secure-ls", "npm:1.2.6"],
             ["serve", "npm:11.3.2"],
-            ["terser-webpack-plugin", "virtual:4d4d67c07cd942b77bf1fb845066bd61f7aeaa9ef5d41f3942eb294a28a59bd9a005372201f4d416ff9fb50a42b73c8c4b518957bf9d39ece7bd45f29747749b#npm:4.2.3"],
+            ["terser-webpack-plugin", "virtual:4d4d67c07cd942b77bf1fb845066bd61f7aeaa9ef5d41f3942eb294a28a59bd9a005372201f4d416ff9fb50a42b73c8c4b518957bf9d39ece7bd45f29747749b#npm:5.0.3"],
             ["vue", "npm:2.6.12"],
             ["vue-loading-overlay", "virtual:4d4d67c07cd942b77bf1fb845066bd61f7aeaa9ef5d41f3942eb294a28a59bd9a005372201f4d416ff9fb50a42b73c8c4b518957bf9d39ece7bd45f29747749b#npm:3.4.2"],
             ["vue-router", "npm:3.4.9"],
@@ -3014,16 +3014,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@nodelib/fs.walk", "npm:1.2.4"],
             ["@nodelib/fs.scandir", "npm:2.1.3"],
             ["fastq", "npm:1.9.0"]
-          ],
-          "linkType": "HARD",
-        }]
-      ]],
-      ["@npmcli/move-file", [
-        ["npm:1.0.1", {
-          "packageLocation": "./.yarn/cache/@npmcli-move-file-npm-1.0.1-90209166f0-ed2cb75eef.zip/node_modules/@npmcli/move-file/",
-          "packageDependencies": [
-            ["@npmcli/move-file", "npm:1.0.1"],
-            ["mkdirp", "npm:1.0.4"]
           ],
           "linkType": "HARD",
         }]
@@ -6030,30 +6020,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["promise-inflight", "virtual:6b13da0303336244e14777818f99c8dfaed4f4c27cb3f6393c3d5e11d3bb4a4a56fbe8ab1298b00979cc78a3a238458a7a0fab5133ad4c736a2296e23ba86eaa#npm:1.0.1"],
             ["rimraf", "npm:2.7.1"],
             ["ssri", "npm:7.1.0"],
-            ["unique-filename", "npm:1.1.1"]
-          ],
-          "linkType": "HARD",
-        }],
-        ["npm:15.0.5", {
-          "packageLocation": "./.yarn/cache/cacache-npm-15.0.5-5c6c90d2e8-8e371cbf3c.zip/node_modules/cacache/",
-          "packageDependencies": [
-            ["cacache", "npm:15.0.5"],
-            ["@npmcli/move-file", "npm:1.0.1"],
-            ["chownr", "npm:2.0.0"],
-            ["fs-minipass", "npm:2.1.0"],
-            ["glob", "npm:7.1.6"],
-            ["infer-owner", "npm:1.0.4"],
-            ["lru-cache", "npm:6.0.0"],
-            ["minipass", "npm:3.1.3"],
-            ["minipass-collect", "npm:1.0.2"],
-            ["minipass-flush", "npm:1.0.5"],
-            ["minipass-pipeline", "npm:1.2.4"],
-            ["mkdirp", "npm:1.0.4"],
-            ["p-map", "npm:4.0.0"],
-            ["promise-inflight", "virtual:6b13da0303336244e14777818f99c8dfaed4f4c27cb3f6393c3d5e11d3bb4a4a56fbe8ab1298b00979cc78a3a238458a7a0fab5133ad4c736a2296e23ba86eaa#npm:1.0.1"],
-            ["rimraf", "npm:3.0.2"],
-            ["ssri", "npm:8.0.0"],
-            ["tar", "npm:6.0.5"],
             ["unique-filename", "npm:1.1.1"]
           ],
           "linkType": "HARD",
@@ -14671,14 +14637,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["aggregate-error", "npm:3.1.0"]
           ],
           "linkType": "HARD",
-        }],
-        ["npm:4.0.0", {
-          "packageLocation": "./.yarn/cache/p-map-npm-4.0.0-4677ae07c7-d51e630d72.zip/node_modules/p-map/",
-          "packageDependencies": [
-            ["p-map", "npm:4.0.0"],
-            ["aggregate-error", "npm:3.1.0"]
-          ],
-          "linkType": "HARD",
         }]
       ]],
       ["p-retry", [
@@ -16950,7 +16908,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["sass-loader", "virtual:4d4d67c07cd942b77bf1fb845066bd61f7aeaa9ef5d41f3942eb294a28a59bd9a005372201f4d416ff9fb50a42b73c8c4b518957bf9d39ece7bd45f29747749b#npm:10.1.0"],
             ["secure-ls", "npm:1.2.6"],
             ["serve", "npm:11.3.2"],
-            ["terser-webpack-plugin", "virtual:4d4d67c07cd942b77bf1fb845066bd61f7aeaa9ef5d41f3942eb294a28a59bd9a005372201f4d416ff9fb50a42b73c8c4b518957bf9d39ece7bd45f29747749b#npm:4.2.3"],
+            ["terser-webpack-plugin", "virtual:4d4d67c07cd942b77bf1fb845066bd61f7aeaa9ef5d41f3942eb294a28a59bd9a005372201f4d416ff9fb50a42b73c8c4b518957bf9d39ece7bd45f29747749b#npm:5.0.3"],
             ["vue", "npm:2.6.12"],
             ["vue-loading-overlay", "virtual:4d4d67c07cd942b77bf1fb845066bd61f7aeaa9ef5d41f3942eb294a28a59bd9a005372201f4d416ff9fb50a42b73c8c4b518957bf9d39ece7bd45f29747749b#npm:3.4.2"],
             ["vue-router", "npm:3.4.9"],
@@ -17583,14 +17541,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["minipass", "npm:3.1.3"]
           ],
           "linkType": "HARD",
-        }],
-        ["npm:8.0.0", {
-          "packageLocation": "./.yarn/cache/ssri-npm-8.0.0-276fb838a8-97964745a8.zip/node_modules/ssri/",
-          "packageDependencies": [
-            ["ssri", "npm:8.0.0"],
-            ["minipass", "npm:3.1.3"]
-          ],
-          "linkType": "HARD",
         }]
       ]],
       ["stable", [
@@ -18185,28 +18135,25 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],
           "linkType": "SOFT",
         }],
-        ["npm:4.2.3", {
-          "packageLocation": "./.yarn/cache/terser-webpack-plugin-npm-4.2.3-3192d0fa12-d628fb7978.zip/node_modules/terser-webpack-plugin/",
+        ["npm:5.0.3", {
+          "packageLocation": "./.yarn/cache/terser-webpack-plugin-npm-5.0.3-df7af3661a-e71ae79f55.zip/node_modules/terser-webpack-plugin/",
           "packageDependencies": [
-            ["terser-webpack-plugin", "npm:4.2.3"]
+            ["terser-webpack-plugin", "npm:5.0.3"]
           ],
           "linkType": "SOFT",
         }],
-        ["virtual:4d4d67c07cd942b77bf1fb845066bd61f7aeaa9ef5d41f3942eb294a28a59bd9a005372201f4d416ff9fb50a42b73c8c4b518957bf9d39ece7bd45f29747749b#npm:4.2.3", {
-          "packageLocation": "./.yarn/$$virtual/terser-webpack-plugin-virtual-30da174635/0/cache/terser-webpack-plugin-npm-4.2.3-3192d0fa12-d628fb7978.zip/node_modules/terser-webpack-plugin/",
+        ["virtual:4d4d67c07cd942b77bf1fb845066bd61f7aeaa9ef5d41f3942eb294a28a59bd9a005372201f4d416ff9fb50a42b73c8c4b518957bf9d39ece7bd45f29747749b#npm:5.0.3", {
+          "packageLocation": "./.yarn/$$virtual/terser-webpack-plugin-virtual-9a51ed119f/0/cache/terser-webpack-plugin-npm-5.0.3-df7af3661a-e71ae79f55.zip/node_modules/terser-webpack-plugin/",
           "packageDependencies": [
-            ["terser-webpack-plugin", "virtual:4d4d67c07cd942b77bf1fb845066bd61f7aeaa9ef5d41f3942eb294a28a59bd9a005372201f4d416ff9fb50a42b73c8c4b518957bf9d39ece7bd45f29747749b#npm:4.2.3"],
+            ["terser-webpack-plugin", "virtual:4d4d67c07cd942b77bf1fb845066bd61f7aeaa9ef5d41f3942eb294a28a59bd9a005372201f4d416ff9fb50a42b73c8c4b518957bf9d39ece7bd45f29747749b#npm:5.0.3"],
             ["@types/webpack", null],
-            ["cacache", "npm:15.0.5"],
-            ["find-cache-dir", "npm:3.3.1"],
             ["jest-worker", "npm:26.6.2"],
             ["p-limit", "npm:3.1.0"],
             ["schema-utils", "npm:3.0.0"],
             ["serialize-javascript", "npm:5.0.1"],
             ["source-map", "npm:0.6.1"],
             ["terser", "npm:5.5.1"],
-            ["webpack", null],
-            ["webpack-sources", "npm:1.4.3"]
+            ["webpack", null]
           ],
           "packagePeers": [
             "@types/webpack",
